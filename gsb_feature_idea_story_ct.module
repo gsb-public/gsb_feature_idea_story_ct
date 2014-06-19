@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the GSB Feature Idea Story Content Type feature.
+ */
+
+include_once 'gsb_feature_idea_story_ct.features.inc';
