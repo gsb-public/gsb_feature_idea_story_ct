@@ -52,6 +52,7 @@ features[variable][] = menu_parent_idea_story
 features[variable][] = node_options_idea_story
 features[variable][] = node_preview_idea_story
 features[variable][] = node_submitted_idea_story
+features[variable][] = workbench_moderation_default_state_idea_story
 features[views_view][] = gsb_related_other_content_autocomplete
 features_exclude[dependencies][ctools] = ctools
 features_exclude[dependencies][date] = date
