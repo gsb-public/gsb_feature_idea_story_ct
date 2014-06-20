@@ -105,7 +105,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Alumni Story',
-    'weight' => '18',
+    'weight' => '14',
     'children' => array(
       0 => 'field_alumni_story',
       1 => 'field_program_single',
@@ -189,7 +189,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Related Content',
-    'weight' => '12',
+    'weight' => '13',
     'children' => array(
       0 => 'field_link_unlimited',
       1 => 'field_person_fac_ref',
@@ -247,12 +247,12 @@ function gsb_feature_idea_story_ct_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Tagging',
-    'weight' => '11',
+    'weight' => '12',
     'children' => array(
       0 => 'group_academic_area',
       1 => 'group_additional_topics',
-      2 => 'group_regions_of_interest',
-      3 => 'group_centers',
+      2 => 'group_centers',
+      3 => 'group_regions_of_interest',
       4 => 'group_tags',
     ),
     'format_type' => 'tabs',
