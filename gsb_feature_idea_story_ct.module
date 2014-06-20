@@ -10,8 +10,6 @@ include_once 'gsb_feature_idea_story_ct.features.inc';
  * Implements hook_form_FORM_ID_alter() for event node edit form.
  */
 function gsb_feature_idea_story_ct_form_idea_story_node_form_alter(&$form, &$form_state) {
-	
-	dpm($form);
 
   $language = $form['language']['#value'];
 
@@ -30,7 +28,5 @@ function gsb_feature_idea_story_ct_form_idea_story_node_form_alter(&$form, &$for
       ),
     ),
   );  
-
-	dpm($form);
 
 }	
