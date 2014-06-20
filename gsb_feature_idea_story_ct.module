@@ -5,3 +5,32 @@
  */
 
 include_once 'gsb_feature_idea_story_ct.features.inc';
+
+/**
+ * Implements hook_form_FORM_ID_alter() for event node edit form.
+ */
+function gsb_feature_idea_story_ct_form_idea_story_node_form_alter(&$form, &$form_state) {
+	
+	dpm($form);
+
+  $language = $form['language']['#value'];
+
+  $form['field_link_key_audio']['#states'] = array(
+    'visible' => array(
+      ':input[name="field_icon[' . $language . ']"]' => array(
+        array('value' => 'audio'),
+      ),
+    ),
+  );  
+
+  $form['field_link_key_video']['#states'] = array(
+    'visible' => array(
+      ':input[name="field_icon[' . $language . ']"]' => array(
+        array('value' => 'video'),
+      ),
+    ),
+  );  
+
+	dpm($form);
+
+}	
