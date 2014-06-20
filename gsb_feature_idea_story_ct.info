@@ -44,6 +44,7 @@ features[field_instance][] = node-idea_story-field_link_unlimited
 features[field_instance][] = node-idea_story-field_middle_name
 features[field_instance][] = node-idea_story-field_part_of_business_magazine
 features[field_instance][] = node-idea_story-field_part_of_rethink
+features[field_instance][] = node-idea_story-field_pathauto_title_alias
 features[field_instance][] = node-idea_story-field_person_fac_ref
 features[field_instance][] = node-idea_story-field_program_single
 features[field_instance][] = node-idea_story-field_region_of_interest
