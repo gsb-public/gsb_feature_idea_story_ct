@@ -53,7 +53,6 @@ features[field_instance][] = node-idea_story-field_related_other_content
 features[field_instance][] = node-idea_story-field_salutation
 features[field_instance][] = node-idea_story-field_tag
 features[field_instance][] = node-idea_story-field_year
-features[filter][] = markdown
 features[node][] = idea_story
 features[variable][] = field_bundle_settings_node__idea_story
 features[variable][] = menu_options_idea_story
