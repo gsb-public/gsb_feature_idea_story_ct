@@ -19,16 +19,16 @@ function gsb_feature_idea_story_ct_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '25',
+          'weight' => '23',
         ),
         'title' => array(
-          'weight' => '8',
+          'weight' => '0',
         ),
         'path' => array(
-          'weight' => '24',
+          'weight' => '22',
         ),
         'redirect' => array(
-          'weight' => '23',
+          'weight' => '21',
         ),
         'workbench_access' => array(
           'weight' => '20',
@@ -75,6 +75,13 @@ function gsb_feature_idea_story_ct_strongarm() {
   $strongarm->name = 'node_submitted_idea_story';
   $strongarm->value = 0;
   $export['node_submitted_idea_story'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'workbench_access_node_type_idea_story';
+  $strongarm->value = 0;
+  $export['workbench_access_node_type_idea_story'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
