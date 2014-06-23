@@ -205,5 +205,102 @@ function gsb_feature_idea_story_ct_field_group_info() {
   );
   $export['group_taxonomy|node|idea_story|form'] = $field_group;
 
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_wrapper_byline|node|idea_story|default';
+  $field_group->group_name = 'group_wrapper_byline';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'idea_story';
+  $field_group->mode = 'default';
+  $field_group->parent_name = 'group_wrapper_header';
+  $field_group->data = array(
+    'label' => 'Byline wrapper',
+    'weight' => '6',
+    'children' => array(
+      0 => 'field_authors',
+      1 => 'field_date',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Byline wrapper',
+      'instance_settings' => array(
+        'classes' => '',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'none',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_wrapper_byline|node|idea_story|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_wrapper_header|node|idea_story|default';
+  $field_group->group_name = 'group_wrapper_header';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'idea_story';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Header wrapper',
+    'weight' => '0',
+    'children' => array(
+      0 => 'field_editorial_summary',
+      1 => 'field_key_taxonomy',
+      2 => 'media_icon',
+      3 => 'title',
+      4 => 'group_wrapper_byline',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Header wrapper',
+      'instance_settings' => array(
+        'classes' => '',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'none',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_wrapper_header|node|idea_story|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_wrapper_taxonomy|node|idea_story|default';
+  $field_group->group_name = 'group_wrapper_taxonomy';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'idea_story';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Taxonomy wrapper',
+    'weight' => '7',
+    'children' => array(
+      0 => 'field_academic_area_unlimited',
+      1 => 'field_business_insight_topic',
+      2 => 'field_tag',
+      3 => 'field_region_of_interest',
+    ),
+    'format_type' => 'gsb_field_formatter_group_comma_separator',
+    'format_settings' => array(
+      'formatter' => 'open',
+      'instance_settings' => array(
+        'show_label' => 1,
+        'label_element' => 'h3',
+        'classes' => '',
+      ),
+    ),
+  );
+  $export['group_wrapper_taxonomy|node|idea_story|default'] = $field_group;
+
   return $export;
 }
