@@ -4,15 +4,15 @@ Drupal.behaviors.gsb_feature_idea_story_ct = {
  
   attach: function (context, settings) {
 
-		// create the HierarchyInfo using the data from the 
-		// multiple select field being replaced
+    // create the HierarchyInfo using the data from the 
+    // multiple select field being replaced
 
-		// testing testing testing
-  	//var selectFieldName = "field_key_taxonomy"; 
-  	var selectFieldName = "field_test2"; 
+    // testing testing testing
+    //var selectFieldName = "field_key_taxonomy"; 
+    var selectFieldName = "field_test2"; 
 
-  	var hi = new Drupal.gsb_feature_idea_story_ct.HierarchyInfo();
-  	hi.addCloneLevelFields(selectFieldName);	
+    var hi = new Drupal.gsb_feature_idea_story_ct.HierarchyInfo();
+    hi.addCloneLevelFields(selectFieldName);	
 
   }	
 
@@ -22,161 +22,161 @@ Drupal.gsb_feature_idea_story_ct = Drupal.gsb_feature_idea_story_ct || {};
 
 Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
 
-	var self = this;
+  var self = this;
 
-	// 
-	// hierarchyInfo
-	//
-	// ... is created during on the 'attach' event for the page
-	// will hold the following info:
-	//
-	// hierarchyInfo[key] = { 'index' : index, 'parentList' : parentList, 'childrenList' : childrenList }
-	// ... where key equals the data-index of an option item,
-	// 'index' equals the data-index of an option item,
-	// 'parentList' equals the data-index list of anscestor parents to the option item 
-	// and 'childrenList' equals the data-index list of children to the option item
-	//
-	var hierarchyInfo = []; 
+  // 
+  // hierarchyInfo
+  //
+  // ... is created during on the 'attach' event for the page
+  // will hold the following info:
+  //
+  // hierarchyInfo[key] = { 'index' : index, 'parentList' : parentList, 'childrenList' : childrenList }
+  // ... where key equals the data-index of an option item,
+  // 'index' equals the data-index of an option item,
+  // 'parentList' equals the data-index list of anscestor parents to the option item 
+  // and 'childrenList' equals the data-index list of children to the option item
+  //
+  var hierarchyInfo = []; 
 
-	// naming used for the cloned level fields
-	this.LEVELNAME = 'fake-level';
+  // naming used for the cloned level fields
+  this.LEVELNAME = 'fake-level';
 
   // selectField: the select field being replaced
   this.selectField = null;
 
-	// method getHierarchyInfo
+  // method getHierarchyInfo
 
-	this.getHierarchyInfo = function() {
-		return hierarchyInfo;
-	};
+  this.getHierarchyInfo = function() {
+    return hierarchyInfo;
+  };
 
-	// method addCloneLevelFields
+  // method addCloneLevelFields
 
-	this.addCloneLevelFields = function(selectFieldName) {
+  this.addCloneLevelFields = function(selectFieldName) {
 
-  	if ($('#'+self.LEVELNAME+'1').length > 0) {
-  		return;
-		}
+    if ($('#'+self.LEVELNAME+'1').length > 0) {
+      return;
+    }
 
     // initialize the selectFieldName and selectField object
     // setting it to the select field being replaced
     this.selectFieldName = selectFieldName;
     this.selectField = $("[name='" + self.selectFieldName + "[und][]']");
 
-		// create the HierarchyInfo using the data from the 
-		// multiple select field being replaced
-  	
-  	self.createHierarchyInfo();	
+    // create the HierarchyInfo using the data from the 
+    // multiple select field being replaced
 
-  	// find the number of levels
-  	var depth = self.findDepth();
+    self.createHierarchyInfo();	
 
-		// create clones for each depth
+    // find the number of levels
+    var depth = self.findDepth();
 
-		for (var index = 1; index <= depth; index++) {
+    // create clones for each depth
+
+    for (var index = 1; index <= depth; index++) {
       self.cloneSelect(index);
-		}         
+    }         
 
     // hide all but the level 1 select for now
 
     self.hideLowerLevels(1);
 
-		// setup a change handler for the new level 1 clone select field
+    // setup a change handler for the new level 1 clone select field
 
     self.setLevelChangeHandler(1);
 
-	}; // end of addCloneLevelFields
+  }; // end of addCloneLevelFields
 
-	// method createHierarchyInfo
+  // method createHierarchyInfo
 
-	this.createHierarchyInfo = function() {
+  this.createHierarchyInfo = function() {
 
-		console.log('in gsb_feature_idea_story_ct');
+    console.log('in gsb_feature_idea_story_ct');
 
-		// get the select element for select field
+    // get the select element for select field
 
-		var selectField = $("[name='" + self.selectFieldName + "[und][]']");
-		console.log(selectField);
+    var selectField = $("[name='" + self.selectFieldName + "[und][]']");
+    console.log(selectField);
 
-		// get the list of objects for the select
+    // get the list of objects for the select
 
-		var options = selectField.children().find( "option" );
-		if (options.length == 0) {
-			options = selectField.find( "option" );
-		}
-		console.log(options);
+    var options = selectField.children().find( "option" );
+    if (options.length == 0) {
+      options = selectField.find( "option" );
+    }
+    console.log(options);
 
-		// get the current selection value for the select
+    // get the current selection value for the select
 
-		var currentSelectionValue = selectField.val();
-		if (currentSelectionValue == null) {
-			console.log("currentSelectionValue: no value currently set");
-		} else {
-			console.log("currentSelectionValue: "+currentSelectionValue);			
-		}
+    var currentSelectionValue = selectField.val();
+    if (currentSelectionValue == null) {
+      console.log("currentSelectionValue: no value currently set");
+    } else {
+      console.log("currentSelectionValue: "+currentSelectionValue);			
+    }
 
-		// set the attribute 'data-index' for the root item '_none'
-		var rootItem = '_none';
-		$("[name='" + self.selectFieldName + "[und][]'] option[value='" + rootItem + "']").attr("data-index","-1");
+    // set the attribute 'data-index' for the root item '_none'
+    var rootItem = '_none';
+    $("[name='" + self.selectFieldName + "[und][]'] option[value='" + rootItem + "']").attr("data-index","-1");
 
-		// set the 'data-index' and the 'data-level' for the remaining options
+    // set the 'data-index' and the 'data-level' for the remaining options
 
-		var parentList = [];
-		var prevLevel = 0;
-		var prevIndex = -1;
+    var parentList = [];
+    var prevLevel = 0;
+    var prevIndex = -1;
 
-		options.each(function( index ) {
+    options.each(function( index ) {
 
-			var optionText = $( this ).text();
-			var level = self.getLevel(optionText);
+      var optionText = $( this ).text();
+      var level = self.getLevel(optionText);
 
-		  $( this ).attr("data-index", index);
-		  $( this ).attr("data-level", level);
+      $( this ).attr("data-index", index);
+      $( this ).attr("data-level", level);
 
-		  if (level > prevLevel) {
-		  	parentList[parentList.length] = prevIndex;
-		  } else if (level < prevLevel) {
-		  	while (parentList.length > level) {
-		  		parentList.splice(parentList.length-1, 1);	
-		  	}
-		  }
+      if (level > prevLevel) {
+        parentList[parentList.length] = prevIndex;
+      } else if (level < prevLevel) {
+        while (parentList.length > level) {
+          parentList.splice(parentList.length-1, 1);	
+        }
+      }
 
-		  prevLevel = level;
-		  prevIndex = index;
+      prevLevel = level;
+      prevIndex = index;
 
-		  var parentIndex = parentList[parentList.length-1];
+      var parentIndex = parentList[parentList.length-1];
 
-			$( this ).attr("data-parent", parentIndex);			  
+      $( this ).attr("data-parent", parentIndex);			  
 
-		}); 	
+    }); 	
 
-	}; // end of createHierarchyInfo
+  }; // end of createHierarchyInfo
 
-	// method findDepth
+  // method findDepth
 
-	this.findDepth = function() {
+  this.findDepth = function() {
 
-		console.log('in findDepth');
+    console.log('in findDepth');
 
-		var depth = 1;
+    var depth = 1;
 
-		// get the list of objects for the select
+    // get the list of objects for the select
 
-		var options = self.selectField.children().find( "option" );
-		if (options.length == 0) {
-			options = self.selectField.find( "option" );
-		}
+    var options = self.selectField.children().find( "option" );
+    if (options.length == 0) {
+      options = self.selectField.find( "option" );
+    }
 
-		options.each(function( index ) {
-			var level = $( this ).attr("data-level");
-			if (level > depth) {
-				depth = level;
-			}
-		}); 	
+    options.each(function( index ) {
+      var level = $( this ).attr("data-level");
+      if (level > depth) {
+       depth = level;
+      }
+    }); 	
 
-		return depth;
+    return depth;
 
-	}; // end of findDepth	
+  }; // end of findDepth	
 
   // method cloneSelect
 
@@ -298,31 +298,31 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
 
   }; // end of setLevelChangeHandler    
 
-	// method getLevel
+  // method getLevel
 
-	this.getLevel = function(text) {
+  this.getLevel = function(text) {
 
-		var level = '1';
+    var level = '1';
 
-		if (text == '- None -') {
-			return 0;
-		} 		
+    if (text == '- None -') {
+      return 0;
+    }	
 
-		if (text.charAt(0) == '-') {
-			level = '2';	
-		}
+    if (text.charAt(0) == '-') {
+      level = '2';	
+    }
 
-		if (text.charAt(1) == '-') {
-			level = '3';	
-		}
+    if (text.charAt(1) == '-') {
+      level = '3';	
+    }
 
-		if (text.charAt(2) == '-') {
-			level = '4';	
-		}
+    if (text.charAt(2) == '-') {
+      level = '4';	
+    }
 
-		return level;
+    return level;
 
-	};	// end of getLevel
+  };	// end of getLevel
 
 }	
 
