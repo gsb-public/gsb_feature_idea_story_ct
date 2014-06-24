@@ -9,6 +9,7 @@ Drupal.behaviors.gsb_feature_idea_story_ct = {
 
     // testing testing testing
     //var selectFieldName = "field_key_taxonomy"; 
+    //var selectFieldName = "field_test2";
     var selectFieldName = "field_test2"; 
 
     var hi = new Drupal.gsb_feature_idea_story_ct.HierarchyInfo();
@@ -199,9 +200,11 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
 
     // run thru the options and remove any that are not level x options
 
-    var options = $('#' + self.LEVELNAME + index).children().find( "option" );
+    var levelSelect = $('#' + self.LEVELNAME + index); 
+
+    var options = levelSelect.children().find( "option" );
     if (options.length == 0) {
-      options = $('#' + self.LEVELNAME + index).find( "option" );
+      options = levelSelect.find( "option" );
     }
     options.each(function( optionsIndex ) {
       var level = $( this ).attr("data-level");
@@ -210,11 +213,24 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
       }
     });       
 
+    // add an 'empty' option at the top 
+    levelSelect.prepend(
+      $('<option>', { value: '-none', text: '- None -'})
+    );
+
   }; // end of cloneSelect 
 
   // method setLevelOptions
 
   this.setLevelOptions = function(level, childrenIndexes) {
+
+    var depth = self.findDepth();
+
+    if (level > depth) {
+      // no more levels to set, because we are at the lowest level.
+      // so nothing to do here.
+      return;
+    }
 
     self.cloneSelect(level);
 
@@ -230,6 +246,11 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
         $( this ).remove();
       }
     }); 
+
+    // add an 'empty' option at the top 
+    levelSelect.prepend(
+      $('<option>', { value: '-none', text: '- None -'})
+    );    
 
   };  
 
@@ -280,8 +301,8 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
       console.log(self.LEVELNAME + level + ' change handler, ' + 'index = ' + index);
 
       // select the value in the original multiple select field
-      var realSelectField = $("[name='" + self.selectFieldName + "[und][]']");
-      realSelectField.val($('#' + self.LEVELNAME + handlerLevel).val());
+      var newSelection = $('#' + self.LEVELNAME + handlerLevel).val();
+      self.selectField.val(newSelection);
 
       // get list of child index, who have the just selected parent option
       var parentIndex = index;
