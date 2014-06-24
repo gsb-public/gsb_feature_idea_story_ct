@@ -9,7 +9,14 @@ include_once 'gsb_feature_idea_story_ct.features.inc';
 /**
  * Implements hook_form_FORM_ID_alter() for event node edit form.
  */
-function gsb_feature_idea_story_ct_form_idea_story_node_form_alter(&$form, &$form_state) {
+function gsb_feature_idea_story_ct_form_idea_story_node_form_alter(&$form, &$form_state, $form_id) {
+
+  if ($form_id != 'idea_story_node_form') {
+    return;
+  }
+
+  //dpm($form);
+  //dpm($form_id);
 
   $language = $form['language']['#value'];
 
@@ -29,4 +36,13 @@ function gsb_feature_idea_story_ct_form_idea_story_node_form_alter(&$form, &$for
     ),
   );  
 
-}	
+  $form['#after_build'][] = 'gsb_feature_idea_story_ct_after_build';
+
+}
+
+function gsb_feature_idea_story_ct_after_build($form, &$form_state) {
+  $path = drupal_get_path('module', 'gsb_feature_idea_story_ct');
+  drupal_add_js ("$path/js/gsb_feature_idea_story_ct.js");
+  return $form;
+}
+
