@@ -45,6 +45,9 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
   // selectField: the select field being replaced
   this.selectField = null;
 
+  // add button at the end of the selects
+  this.addButton = null;
+
   // method getHierarchyInfo
 
   this.getHierarchyInfo = function() {
@@ -81,6 +84,10 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
     // hide all but the level 1 select for now
 
     self.hideLowerLevels(1);
+
+    // add an 'Add' button to the end
+    var levelSelect = $('#' + self.LEVELNAME + depth); 
+    self.addAddButton(levelSelect);
 
     // setup a change handler for the new level 1 clone select field
 
@@ -196,7 +203,19 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
     var classFieldName = self.selectFieldName.replace("_", "-");    
 
     var levelId = self.LEVELNAME + index;
-    self.selectField.clone().attr('id', levelId).attr('data-level', index).appendTo('.form-item-' + classFieldName + '-und').removeAttr('multiple');
+
+    if (self.addButton) {
+      self.selectField.clone()
+        .attr('id', levelId).attr('data-level', index)
+        .insertBefore(self.addButton)
+        .removeAttr('multiple');     
+    } else {
+      self.selectField.clone()
+        .attr('id', levelId)
+        .attr('data-level', index)
+        .appendTo('.form-item-' + classFieldName + '-und')
+        .removeAttr('multiple');
+    }
 
     // run thru the options and remove any that are not level x options
 
@@ -298,6 +317,14 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
       var index = option.attr("data-index");
       var level = option.attr("data-level");
 
+      var index = option.attr("data-index");
+      var level = option.attr("data-level");
+      
+      if (level == undefined) {
+        self.hideLowerLevels(parseInt(handlerLevel));
+        return;
+      }
+
       console.log(self.LEVELNAME + level + ' change handler, ' + 'index = ' + index);
 
       // select the value in the original multiple select field
@@ -317,7 +344,24 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
 
     });
 
-  }; // end of setLevelChangeHandler    
+  }; // end of setLevelChangeHandler 
+
+  // method addAddButton
+
+  this.addAddButton = function(element) {
+    
+    element.after(
+      $('<input type="button" value="Add" class="fake-add-button form-submit" id="fake-add-button">')
+    );
+
+    this.addButton = $("#fake-add-button");
+
+    // setup a click handler for the new add button
+    self.addButton.click(function() {
+      console.log('got a fake add button click :)');
+    });
+
+  };  // end of addAddButton     
 
   // method getLevel
 
