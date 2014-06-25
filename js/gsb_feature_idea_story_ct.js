@@ -419,15 +419,17 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
       console.log('currentSelectedValues = ');
       console.log(self.currentSelectedValues);
 
-      var keys = $.map( self.currentSelectedValues, function( n, i ) {
-        return ( n );
-      });
-      console.log(keys.join(','));
-
       console.log('prevSelectedValue = '+prevSelectedValue+' prevSelectedText = '+prevSelectedText.join(' > '));
-      self.selectField.val(keys);
+
+      // add the selection text to the table 
+
+      self.addSelectedTableRow(prevSelectedText.join(' > '), prevSelectedValue);
+
+      self.updateCurrentSelection();      
 
     });
+
+    // add the selection text to the table
 
     self.addSelectedTable();
 
@@ -440,10 +442,10 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
 
     self.addButton.after($(
       '<div class="dropbox">' + 
-        '<table>' + 
+        '<table id="fake-selected-table">' + 
           '<caption class="dropbox-title">All selections</caption>' + 
           '<tbody>' + 
-            '<tr class="dropbox-entry first last dropbox-is-empty">' +
+            '<tr id="fake-level-is-empty">' +
               '<td>Nothing has been selected.</td>' + 
             '</tr>' + 
           '</tbody>' + 
@@ -452,6 +454,71 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
     ));
 
   };  // end of addSelectedTable   
+
+  /**
+   * addNoNothinRow
+   */
+  this.addNoNothinRow = function() {
+
+    console.log('in addNoNothinRow');
+
+    $('#fake-selected-table tr:last').after($(
+      '<tr id="fake-level-is-empty">' +
+        '<td>Nothing has been selected.</td>' + 
+      '</tr>' 
+    ));    
+
+  };  // end of addNoNothinRow    
+
+  /**
+   * addSelectedTableRow
+   */
+  this.addSelectedTableRow = function(selectedText, index) {
+
+    var oddeven = 'odd';
+    if ($('#fake-selected-table tr:last').hasClass('odd')) {
+      oddeven = 'even';
+    }
+
+    $('#fake-selected-table tr:last').after($(
+      '<tr class="' + oddeven + '" id="fake-level-remove-tr-' + index + '">' + 
+        '<td><span class="fake-level-item" >' + selectedText + '</span></td>' + 
+        '<td class="fake-level-remove"><span><a href="#" id="fake-level-remove-link-' + index + '" data-index="' + index + '">Remove</a></span></td>' + 
+      '</tr>'
+    ));
+
+    // setup a click handler for the new remove link
+    $('#fake-level-remove-link-'+index).click(function(event) {
+      var index = $(this).attr('data-index');
+      console.log('got remove link click for index = '+index);
+      self.currentSelectedValues.splice( $.inArray(index, self.currentSelectedValues), 1 );
+      console.log('currentSelectedValues = ');
+      console.log(self.currentSelectedValues);
+      self.updateCurrentSelection();
+      console.log('self.currentSelectedValues.length = '+self.currentSelectedValues.length);
+      if (self.currentSelectedValues.length == 0) {
+        // add the 'no nothin been selected' row
+        self.addNoNothinRow();
+      }
+      $('#fake-level-remove-tr-'+index).remove();
+      event.stopPropagation();
+      event.preventDefault();
+    });    
+
+    $('#fake-level-is-empty').remove();
+
+  };  // end of addSelectedTableRow   
+
+  /**
+   * updateCurrentSelection
+   */
+  this.updateCurrentSelection = function() {
+    var keys = $.map( self.currentSelectedValues, function( n, i ) {
+      return ( n );
+    });
+    console.log('in updateCurrentSelection keys = ' + keys.join(','));
+    self.selectField.val(keys);
+  };  // end of updateCurrentSelection   
 
   /**
    * getLevel
