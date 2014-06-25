@@ -15,6 +15,11 @@ Drupal.behaviors.gsb_feature_idea_story_ct = {
     var hi = new Drupal.gsb_feature_idea_story_ct.HierarchyInfo();
     hi.addCloneLevelFields(selectFieldName);	
 
+    $('.node-form').submit(function(){
+      console.log('node-form submitted');
+      hi.removeCloneLevelFields();
+    });
+
   }	
 
 };  
@@ -23,21 +28,14 @@ Drupal.gsb_feature_idea_story_ct = Drupal.gsb_feature_idea_story_ct || {};
 
 Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
 
+  /**
+   * Properties 
+   */
+
   var self = this;
 
-  // 
-  // hierarchyInfo
-  //
-  // ... is created during on the 'attach' event for the page
-  // will hold the following info:
-  //
-  // hierarchyInfo[key] = { 'index' : index, 'parentList' : parentList, 'childrenList' : childrenList }
-  // ... where key equals the data-index of an option item,
-  // 'index' equals the data-index of an option item,
-  // 'parentList' equals the data-index list of anscestor parents to the option item 
-  // and 'childrenList' equals the data-index list of children to the option item
-  //
-  var hierarchyInfo = []; 
+  // current list of selected values
+  this.currentSelectedValues = [];
 
   // naming used for the cloned level fields
   this.LEVELNAME = 'fake-level';
@@ -48,14 +46,13 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
   // add button at the end of the selects
   this.addButton = null;
 
-  // method getHierarchyInfo
+  /**
+   * Methods 
+   */
 
-  this.getHierarchyInfo = function() {
-    return hierarchyInfo;
-  };
-
-  // method addCloneLevelFields
-
+  /**
+   * addCloneLevelFields
+   */
   this.addCloneLevelFields = function(selectFieldName) {
 
     if ($('#'+self.LEVELNAME+'1').length > 0) {
@@ -86,6 +83,7 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
     self.hideLowerLevels(1);
 
     // add an 'Add' button to the end
+
     var levelSelect = $('#' + self.LEVELNAME + depth); 
     self.addAddButton(levelSelect);
 
@@ -93,10 +91,38 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
 
     self.setLevelChangeHandler(1);
 
+    // initial the list of currently selected values
+
+    self.initializeCurrentSelectedValues();
+
   }; // end of addCloneLevelFields
 
-  // method createHierarchyInfo
+  /**
+   * removeCloneLevelFields
+   */
+  this.removeCloneLevelFields = function() {
 
+    var depth = self.findDepth();
+    for (var index = 1; index <= depth; index++) {
+      var levelSelect = $('#' + self.LEVELNAME + index); 
+      levelSelect.remove();      
+    }    
+
+  }; // end of removeCloneLevelFields    
+
+  /**
+   * initializeCurrentSelectedValues
+   */
+  this.initializeCurrentSelectedValues = function() {
+    var currentSelectedValues = self.selectField.val();
+    for (var index = 0; index < currentSelectedValues.length; index++) {
+      self.currentSelectedValues[currentSelectedValues[index]] = currentSelectedValues[index];
+    }
+  }; // end of initializeCurrentSelectedValues  
+
+  /**
+   * createHierarchyInfo
+   */
   this.createHierarchyInfo = function() {
 
     console.log('in gsb_feature_idea_story_ct');
@@ -160,8 +186,9 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
 
   }; // end of createHierarchyInfo
 
-  // method findDepth
-
+  /**
+   * findDepth
+   */
   this.findDepth = function() {
 
     console.log('in findDepth');
@@ -186,8 +213,9 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
 
   }; // end of findDepth	
 
-  // method cloneSelect
-
+  /**
+   * cloneSelect
+   */
   this.cloneSelect = function(index) {
 
     console.log('in cloneSelect');
@@ -239,8 +267,9 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
 
   }; // end of cloneSelect 
 
-  // method setLevelOptions
-
+  /**
+   * setLevelOptions
+   */
   this.setLevelOptions = function(level, childrenIndexes) {
 
     var depth = self.findDepth();
@@ -273,8 +302,9 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
 
   };  
 
-    // method hideLowerLevels
-
+  /**
+   * hideLowerLevels
+   */
   this.hideLowerLevels = function(level) {
     var depth = self.findDepth();
     var level = parseInt(level);
@@ -284,8 +314,9 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
     }
   };  
 
-  // method getChildIndexes
-
+  /**
+   * getChildIndexes
+   */
   this.getChildIndexes = function(parentIndex) {
 
     var childList = [];
@@ -306,8 +337,9 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
 
   }; // end of getChildIndexes  
 
-  // method setLevelChangeHandler
-
+  /**
+   * setLevelChangeHandler
+   */
   this.setLevelChangeHandler = function(handlerLevel) {
 
     $('#' + self.LEVELNAME + handlerLevel).change(function() {
@@ -328,8 +360,8 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
       console.log(self.LEVELNAME + level + ' change handler, ' + 'index = ' + index);
 
       // select the value in the original multiple select field
-      var newSelection = $('#' + self.LEVELNAME + handlerLevel).val();
-      self.selectField.val(newSelection);
+      //var newSelection = $('#' + self.LEVELNAME + handlerLevel).val();
+      //self.selectField.val(newSelection);
 
       // get list of child index, who have the just selected parent option
       var parentIndex = index;
@@ -346,25 +378,84 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
 
   }; // end of setLevelChangeHandler 
 
-  // method addAddButton
-
+  /**
+   * addAddButton
+   */
   this.addAddButton = function(element) {
     
     element.after(
       $('<input type="button" value="Add" class="fake-add-button form-submit" id="fake-add-button">')
     );
 
-    this.addButton = $("#fake-add-button");
+    self.addButton = $("#fake-add-button");
 
     // setup a click handler for the new add button
     self.addButton.click(function() {
-      console.log('got a fake add button click :)');
+
+      // get selections from the level selects
+
+      var prevSelectedValue = '-none';
+      var prevSelectedText = [];
+
+      var depth = self.findDepth();
+      for (var index = 1; index <= depth; index++) {
+        
+        var levelSelect = $('#' + self.LEVELNAME + index); 
+
+        var selectedValue = levelSelect.val(); 
+        var selectedText = $( '#' + self.LEVELNAME + index + ' option:selected' ).text();       
+        console.log('selectedValue = '+selectedValue+' selectedText = '+selectedText);
+
+        if (selectedValue == '-none') {
+          break;
+        } 
+
+        prevSelectedValue = selectedValue;
+        prevSelectedText[prevSelectedText.length] = selectedText;
+
+      }      
+
+      self.currentSelectedValues[prevSelectedValue] = prevSelectedValue;
+      console.log('currentSelectedValues = ');
+      console.log(self.currentSelectedValues);
+
+      var keys = $.map( self.currentSelectedValues, function( n, i ) {
+        return ( n );
+      });
+      console.log(keys.join(','));
+
+      console.log('prevSelectedValue = '+prevSelectedValue+' prevSelectedText = '+prevSelectedText.join(' > '));
+      self.selectField.val(keys);
+
     });
+
+    self.addSelectedTable();
 
   };  // end of addAddButton     
 
-  // method getLevel
+  /**
+   * addSelectedTable
+   */
+  this.addSelectedTable = function() {
 
+    self.addButton.after($(
+      '<div class="dropbox">' + 
+        '<table>' + 
+          '<caption class="dropbox-title">All selections</caption>' + 
+          '<tbody>' + 
+            '<tr class="dropbox-entry first last dropbox-is-empty">' +
+              '<td>Nothing has been selected.</td>' + 
+            '</tr>' + 
+          '</tbody>' + 
+        '</table>' +
+      '</div>'
+    ));
+
+  };  // end of addSelectedTable   
+
+  /**
+   * getLevel
+   */
   this.getLevel = function(text) {
 
     var level = '1';
