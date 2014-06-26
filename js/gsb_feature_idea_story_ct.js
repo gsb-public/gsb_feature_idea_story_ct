@@ -10,7 +10,7 @@ Drupal.behaviors.gsb_feature_idea_story_ct = {
     // testing testing testing
     //var selectFieldName = "field_key_taxonomy"; 
     //var selectFieldName = "field_test2";
-    var selectFieldName = "field_key_taxonomy"; 
+    var selectFieldName = settings.gsb_feature_idea_story_ct.replace_field; 
 
     var hi = new Drupal.gsb_feature_idea_story_ct.HierarchyInfo();
     hi.addCloneLevelFields(selectFieldName);	
@@ -66,6 +66,10 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
     // setting it to the select field being replaced
     this.selectFieldName = selectFieldName;
     this.selectField = $("[name='" + self.selectFieldName + "[und][]']");
+
+    // hide the select field being replaced, sneaky eh?
+
+    self.selectField.hide();
 
     // create the HierarchyInfo using the data from the 
     // multiple select field being replaced
@@ -483,7 +487,7 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
 
     // ... now we need to remove all the options
 
-    var levelSelect = $('#' + self.LEVELNAME + index); 
+    levelSelect = $('#' + self.LEVELNAME + index); 
 
     var options = levelSelect.children().find( "option" );
     if (options.length == 0) {
@@ -507,6 +511,8 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
         $( this ).remove();
       }
     });
+
+    levelSelect.show();
 
   }; // end of createOptGroupSelect  
 
@@ -564,6 +570,8 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
       );      
     }
 
+    levelSelect.show();
+
   }; // end of cloneSelect 
 
   /**
@@ -597,10 +605,17 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
           }
         }        
         $( this ).remove();
+      } else {
+        if (self.hasOptGroups) {
+          var optionGroupie = $( this ).parent('optgroup');
+          $( this ).insertBefore(optionGroupie);
+        }
       }
     }); 
 
-    if (!self.hasOptGroups) {
+    if (self.hasOptGroups) {    
+      levelSelect.children().remove('optgroup');
+    } else {
       // add an 'empty' option at the top 
       levelSelect.prepend(
         $('<option>', { value: '-none', text: '- None -'})

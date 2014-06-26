@@ -15,9 +15,6 @@ function gsb_feature_idea_story_ct_form_idea_story_node_form_alter(&$form, &$for
     return;
   }
 
-  //dpm($form);
-  //dpm($form_id);
-
   $language = $form['language']['#value'];
 
   $form['field_link_key_audio']['#states'] = array(
@@ -42,7 +39,8 @@ function gsb_feature_idea_story_ct_form_idea_story_node_form_alter(&$form, &$for
 
 function gsb_feature_idea_story_ct_after_build($form, &$form_state) {
   $path = drupal_get_path('module', 'gsb_feature_idea_story_ct');
-  drupal_add_js ("$path/js/gsb_feature_idea_story_ct.js");
+  drupal_add_js("$path/js/gsb_feature_idea_story_ct.js");
+  drupal_add_js(array('gsb_feature_idea_story_ct' => array('replace_field' => 'field_key_taxonomy')), 'setting');
   return $form;
 }
 
