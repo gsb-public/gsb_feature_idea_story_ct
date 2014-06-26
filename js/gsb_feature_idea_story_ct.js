@@ -119,15 +119,16 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
     if (currentSelectedValues == null) {
       return;
     }
+
+    var selectedValues = [];
     for (var index = 0; index < currentSelectedValues.length; index++) {
-      self.currentSelectedValues[self.currentSelectedValues.length] = currentSelectedValues[index];
+      selectedValues[selectedValues.length] = currentSelectedValues[index];
     }
 
     // add the selection table
 
     self.addSelectedTable();
 
-// gsm
     // build up the initial rows in the selection table
 
     console.log('in initializeCurrentSelectedValues - building initial rows in selected table');
@@ -148,7 +149,7 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
       
       var value = $( this ).val();
 
-      if ($.inArray(value, self.currentSelectedValues) != -1) {
+      if ($.inArray(value, selectedValues) != -1) {
         
         var itemIndex = $( this ).attr("data-index");
         var level = $( this ).attr("data-level");   
@@ -178,8 +179,6 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
 
     console.log('childLevelItems = ');
     console.log(childLevelItems);    
-
-    debugger;
 
     var selectedRows = [];
 
@@ -235,7 +234,27 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
     flattenedRows.reverse();
 
     console.log('flattenedRows = ');
-    console.log(flattenedRows);         
+    console.log(flattenedRows); 
+
+    // now... roll thru our flattened list and row by row  
+    // add them to the selected table  
+
+    for (var index = 0; index < flattenedRows.length; index++) {
+
+      var row = flattenedRows[index];
+
+      var selectedTextList = [];
+      var indexList = [];
+
+      $.each(row, function(key, value) {
+        var item = value;
+        selectedTextList[selectedTextList.length] = item.text;
+        indexList[indexList.length] = item.value;
+      });
+
+      self.addSelectedTableRow(selectedTextList, indexList);
+
+    }
 
   }; // end of initializeCurrentSelectedValues  
 
@@ -551,12 +570,6 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
 
       }      
 
-      $.each( prevSelectedValueList, function(key, value) {
-        self.currentSelectedValues[self.currentSelectedValues.length] = value;
-      });
-      console.log('currentSelectedValues = ');
-      console.log(self.currentSelectedValues);
-
       console.log('prevSelectedValue = '+prevSelectedValue+' prevSelectedText = '+prevSelectedText.join(' > '));
 
       // add the selection text to the table 
@@ -609,7 +622,12 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
    */
   this.addSelectedTableRow = function(selectedTextList, indexList) {
 
-// gsm
+    // update the current selected values list
+
+    for (var index = 0; index < indexList.length; index++) {
+      self.currentSelectedValues[self.currentSelectedValues.length] = indexList[index];
+    }
+
     var oddeven = 'odd';
     if ($('#fake-selected-table tr:last').hasClass('odd')) {
       oddeven = 'even';
