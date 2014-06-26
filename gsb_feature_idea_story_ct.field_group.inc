@@ -292,12 +292,12 @@ function gsb_feature_idea_story_ct_field_group_info() {
     ),
     'format_type' => 'gsb_field_formatter_group_comma_separator',
     'format_settings' => array(
-      'formatter' => 'open',
+      'label' => 'Taxonomy wrapper',
       'instance_settings' => array(
-        'show_label' => 1,
-        'label_element' => 'h3',
+        'item_count' => '0',
         'classes' => '',
       ),
+      'formatter' => 'open',
     ),
   );
   $export['group_wrapper_taxonomy|node|idea_story|default'] = $field_group;
