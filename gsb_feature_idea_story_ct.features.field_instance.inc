@@ -1231,15 +1231,13 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'gsb_field_formatter',
+        'module' => 'ds',
         'settings' => array(
           'conditions' => array(),
-          'limit_depth' => 0,
-          'path_prefix' => 'taxonomy/term/',
-          'separator' => ',',
-          'tid_or_name' => 'tid',
+          'taxonomy_term_link' => 0,
+          'taxonomy_term_separator' => ',',
         ),
-        'type' => 'gsb_field_formatter_path_term_separator',
+        'type' => 'ds_taxonomy_separator',
         'weight' => 31,
       ),
       'teaser' => array(
