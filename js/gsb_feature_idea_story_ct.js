@@ -154,6 +154,13 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
     var topLevelItems = []; 
     var childLevelItems = []; 
 
+    var topLevelIndex = 1;
+    if (self.hasOptGroups) {
+      // ok... option groups make this a little wonky but...
+      // the real top level for them is at level 2 so...
+      topLevelIndex = 2;
+    }
+
     options.each(function( index ) {
       
       var value = $( this ).val();
@@ -173,7 +180,7 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
           text: text   
         };
 
-        if (level == 1) {
+        if (level == topLevelIndex) {
           topLevelItems[topLevelItems.length] = item;
         } else {
           childLevelItems[childLevelItems.length] = item; 
@@ -257,6 +264,17 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
 
       $.each(row, function(key, value) {
         var item = value;
+        // @todo: wish there was a better way to handle this
+        // sigh... well since we shifted down to use level 2 as
+        // the top-level for option group hierarchies
+        // we need to make another 'adjustment/hack' to get the 
+        // option group text and add here so that the selection table with have
+        // the following format: 
+        // top level text > next level > next level    [remove]
+        if (self.hasOptGroups && item.level == topLevelIndex) {
+          var parentText = self.getParentText(item.index);
+          selectedTextList[selectedTextList.length] = parentText;
+        }
         selectedTextList[selectedTextList.length] = item.text;
         indexList[indexList.length] = item.value;
       });
@@ -266,6 +284,38 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
     }
 
   }; // end of initializeCurrentSelectedValues  
+
+  /**
+   * getParentText
+   */
+  this.getParentText = function(dataIndex) {
+
+    var parentText = '';
+
+    // get the list of objects for the select
+
+    var options = self.selectField.children().find( "option" );
+    if (options.length == 0) {
+      options = self.selectField.find( "option" );
+    }
+    console.log(options);
+
+    options.each(function( index ) {
+
+      var optionIndex = $( this ).attr("data-index");
+
+      if (optionIndex == dataIndex) {
+        var optionGroupie = $( this ).parent('optgroup');
+        if (optionGroupie.length > 0) {
+          parentText = optionGroupie.attr('label')
+        }
+      }
+
+    });    
+
+    return parentText;
+
+  }; // end of getParentText  
 
   /**
    * getRowItems
@@ -328,7 +378,7 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
       var optionText = $( this ).text();
       var level = self.getLevel(optionText);
 
-      var optionGroupie = $( this ).closest('optgroup');
+      var optionGroupie = $( this ).parent('optgroup');
       if (optionGroupie.length > 0) {
         var optionGroupIndex = $( optionGroupie ).attr("data-index");
         if (optionGroupIndex == undefined) {
@@ -451,7 +501,6 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
       if (dataLevel.length > 0) {
         var text = $( this ).attr('label');
         var dataIndex = $( this ).attr('data-index');
-        //<option value="10001" data-index="1" data-level="2" data-parent="0">Accounting</option>
         $( this ).after($(
           '<option data-index="' + dataIndex + '" data-level="' + dataLevel + '" >' + text + '</option>'
         ));        
@@ -542,7 +591,7 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
       var itemIndex = $( this ).attr("data-index");
       if ($.inArray(itemIndex, childrenIndexes) == -1) {
         if (self.hasOptGroups) {
-          var optionGroupie = $( this ).closest('optgroup');
+          var optionGroupie = $( this ).parent('optgroup');
           if (optionGroupie.length > 0) {
             optionGroupie.remove();
           }
@@ -670,7 +719,11 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
         } 
 
         prevSelectedValue = selectedValue;
-        prevSelectedValueList[prevSelectedValueList.length] = selectedValue;
+        if (self.hasOptGroups && index == 1) {
+          // no value to add for top-level option group items
+        } else {
+          prevSelectedValueList[prevSelectedValueList.length] = selectedValue;
+        }
         prevSelectedText[prevSelectedText.length] = selectedText;
 
       }      
