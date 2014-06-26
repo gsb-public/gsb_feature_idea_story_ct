@@ -10,7 +10,7 @@ Drupal.behaviors.gsb_feature_idea_story_ct = {
     // testing testing testing
     //var selectFieldName = "field_key_taxonomy"; 
     //var selectFieldName = "field_test2";
-    var selectFieldName = "field_test2"; 
+    var selectFieldName = "field_key_taxonomy"; 
 
     var hi = new Drupal.gsb_feature_idea_story_ct.HierarchyInfo();
     hi.addCloneLevelFields(selectFieldName);	
@@ -46,6 +46,9 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
   // add button at the end of the selects
   this.addButton = null;
 
+  // keep track if the select has optgroups
+  this.hasOptGroups = false;
+
   /**
    * Methods 
    */
@@ -75,7 +78,13 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
     // create clones for each depth
 
     for (var index = 1; index <= depth; index++) {
-      self.cloneSelect(index);
+      if (self.hasOptGroups && index == 1) {
+        // we can't just clone the top level select
+        // when we have an optgroup
+        self.createOptGroupSelect(index);
+      } else {
+        self.cloneSelect(index);
+      }
     }         
 
     // hide all but the level 1 select for now
@@ -90,6 +99,10 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
     // setup a change handler for the new level 1 clone select field
 
     self.setLevelChangeHandler(1);
+
+    // add the selection table
+
+    self.addSelectedTable();    
 
     // initial the list of currently selected values
 
@@ -124,10 +137,6 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
     for (var index = 0; index < currentSelectedValues.length; index++) {
       selectedValues[selectedValues.length] = currentSelectedValues[index];
     }
-
-    // add the selection table
-
-    self.addSelectedTable();
 
     // build up the initial rows in the selection table
 
@@ -278,7 +287,7 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
    */
   this.createHierarchyInfo = function() {
 
-    console.log('in gsb_feature_idea_story_ct');
+    console.log('in createHierarchyInfo');
 
     // get the select element for select field
 
@@ -312,12 +321,26 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
     var prevLevel = 0;
     var prevIndex = -1;
 
+    var itemIndex = 0;
+
     options.each(function( index ) {
 
       var optionText = $( this ).text();
       var level = self.getLevel(optionText);
 
-      $( this ).attr("data-index", index);
+      var optionGroupie = $( this ).closest('optgroup');
+      if (optionGroupie.length > 0) {
+        var optionGroupIndex = $( optionGroupie ).attr("data-index");
+        if (optionGroupIndex == undefined) {
+          $( optionGroupie ).attr("data-index", itemIndex);
+          $( optionGroupie ).attr("data-level", 1);
+          itemIndex++;
+        }
+        level++;
+        self.hasOptGroups = true;
+      }
+
+      $( this ).attr("data-index", itemIndex);
       $( this ).attr("data-level", level);
 
       if (level > prevLevel) {
@@ -329,11 +352,18 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
       }
 
       prevLevel = level;
-      prevIndex = index;
+      prevIndex = itemIndex;
 
-      var parentIndex = parentList[parentList.length-1];
+      var parentIndex = 0;
+      if (self.hasOptGroups) {
+        parentIndex = $( optionGroupie ).attr("data-index");
+      } else {
+        parentIndex = parentList[parentList.length-1];
+      }  
 
-      $( this ).attr("data-parent", parentIndex);			  
+      $( this ).attr("data-parent", parentIndex);	
+
+      itemIndex++;		  
 
     }); 	
 
@@ -367,6 +397,71 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
   }; // end of findDepth	
 
   /**
+   * createOptGroupSelect
+   */
+  this.createOptGroupSelect = function(index) {
+
+    console.log('in createOptGroupSelect');
+
+    // check if the level select already exists,
+    // and if it does delete it... so that we can recreate it
+
+    var levelSelect = $('#' + self.LEVELNAME + index); 
+    if (levelSelect != undefined) {
+      levelSelect.remove();
+    }
+
+    var classFieldName = self.selectFieldName.replace(/_/g, "-");    
+
+    var levelId = self.LEVELNAME + index;
+
+    // we are cloning the select just to get a happy starting 
+    // little select with optgroups and then... 
+
+    if (self.addButton) {
+      self.selectField.clone()
+        .attr('id', levelId).attr('data-level', index)
+        .insertBefore(self.addButton)
+        .removeAttr('multiple');     
+    } else {
+      self.selectField.clone()
+        .attr('id', levelId)
+        .attr('data-level', index)
+        .appendTo('.form-item-' + classFieldName + '-und')
+        .removeAttr('multiple');
+    }  
+
+    // ... now we need to remove all the options
+
+    var levelSelect = $('#' + self.LEVELNAME + index); 
+
+    var options = levelSelect.children().find( "option" );
+    if (options.length == 0) {
+      options = levelSelect.find( "option" );
+    }
+    options.each(function( optionsIndex ) {
+      $( this ).remove();
+    }); 
+
+    // ... and change the optgroups to options
+
+    var groupieList = $('#'+levelId).find( "optgroup" );
+    groupieList.each(function( gIndex ) {
+      var dataLevel = $( this ).attr('data-level');
+      if (dataLevel.length > 0) {
+        var text = $( this ).attr('label');
+        var dataIndex = $( this ).attr('data-index');
+        //<option value="10001" data-index="1" data-level="2" data-parent="0">Accounting</option>
+        $( this ).after($(
+          '<option data-index="' + dataIndex + '" data-level="' + dataLevel + '" >' + text + '</option>'
+        ));        
+        $( this ).remove();
+      }
+    });
+
+  }; // end of createOptGroupSelect  
+
+  /**
    * cloneSelect
    */
   this.cloneSelect = function(index) {
@@ -381,7 +476,7 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
       levelSelect.remove();
     }
 
-    var classFieldName = self.selectFieldName.replace("_", "-");    
+    var classFieldName = self.selectFieldName.replace(/_/g, "-");    
 
     var levelId = self.LEVELNAME + index;
 
@@ -400,7 +495,7 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
 
     // run thru the options and remove any that are not level x options
 
-    var levelSelect = $('#' + self.LEVELNAME + index); 
+    levelSelect = $('#' + self.LEVELNAME + index); 
 
     var options = levelSelect.children().find( "option" );
     if (options.length == 0) {
@@ -413,10 +508,12 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
       }
     });       
 
-    // add an 'empty' option at the top 
-    levelSelect.prepend(
-      $('<option>', { value: '-none', text: '- None -'})
-    );
+    if (!self.hasOptGroups) {
+      // add an 'empty' option at the top 
+      levelSelect.prepend(
+        $('<option>', { value: '-none', text: '- None -'})
+      );      
+    }
 
   }; // end of cloneSelect 
 
@@ -444,14 +541,22 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
     options.each(function( optionsIndex ) {
       var itemIndex = $( this ).attr("data-index");
       if ($.inArray(itemIndex, childrenIndexes) == -1) {
+        if (self.hasOptGroups) {
+          var optionGroupie = $( this ).closest('optgroup');
+          if (optionGroupie.length > 0) {
+            optionGroupie.remove();
+          }
+        }        
         $( this ).remove();
       }
     }); 
 
-    // add an 'empty' option at the top 
-    levelSelect.prepend(
-      $('<option>', { value: '-none', text: '- None -'})
-    );    
+    if (!self.hasOptGroups) {
+      // add an 'empty' option at the top 
+      levelSelect.prepend(
+        $('<option>', { value: '-none', text: '- None -'})
+      );          
+    }
 
   };  
 
