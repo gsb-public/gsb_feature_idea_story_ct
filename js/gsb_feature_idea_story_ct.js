@@ -114,6 +114,7 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
    * initializeCurrentSelectedValues
    */
   this.initializeCurrentSelectedValues = function() {
+
     var currentSelectedValues = self.selectField.val();
     if (currentSelectedValues == null) {
       return;
@@ -121,7 +122,137 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
     for (var index = 0; index < currentSelectedValues.length; index++) {
       self.currentSelectedValues[self.currentSelectedValues.length] = currentSelectedValues[index];
     }
+
+    // add the selection table
+
+    self.addSelectedTable();
+
+// gsm
+    // build up the initial rows in the selection table
+
+    console.log('in initializeCurrentSelectedValues - building initial rows in selected table');
+  
+    // breakout the items with their levels and parents
+
+    var options = self.selectField.children().find( "option" );
+    if (options.length == 0) {
+      options = self.selectField.find( "option" );
+    }
+
+    var depth = self.findDepth();    
+
+    var topLevelItems = []; 
+    var childLevelItems = []; 
+
+    options.each(function( index ) {
+      
+      var value = $( this ).val();
+
+      if ($.inArray(value, self.currentSelectedValues) != -1) {
+        
+        var itemIndex = $( this ).attr("data-index");
+        var level = $( this ).attr("data-level");   
+        var parentIndex = $( this ).attr("data-parent");   
+        var text = $( this ).text(); 
+
+        var item = { 
+          value: value,
+          index: itemIndex,
+          level: level,
+          parentIndex: parentIndex,
+          text: text   
+        };
+
+        if (level == 1) {
+          topLevelItems[topLevelItems.length] = item;
+        } else {
+          childLevelItems[childLevelItems.length] = item; 
+        }
+
+      }
+
+    });    
+
+    console.log('topLevelItems = ');
+    console.log(topLevelItems);     
+
+    console.log('childLevelItems = ');
+    console.log(childLevelItems);    
+
+    debugger;
+
+    var selectedRows = [];
+
+    for (var index = 0; index < topLevelItems.length; index++) {
+      var rowItems = [];
+      self.getRowItems(rowItems, topLevelItems[index], childLevelItems); 
+      selectedRows[selectedRows.length] = [ rowItems.reverse() ];      
+    }
+
+    console.log('selectedRows = ');
+    console.log(selectedRows);   
+
+    var flattenedRows = [];
+    var flatRow = [];
+    var prevLevel = 0;
+
+    for (var index = 0; index < selectedRows.length; index++) {
+
+      var items = selectedRows[index][0];
+
+      for (var itemsIndex = 0; itemsIndex < items.length; itemsIndex++) {
+
+        var item = items[itemsIndex];
+
+        if (item.level > prevLevel) {
+          // add item, and track prevLevel
+          flatRow[flatRow.length] = item;
+          prevLevel = item.level;
+          continue;
+        }
+
+        // we've got a flat row, add it
+        flattenedRows[flattenedRows.length] = $.extend({}, flatRow);
+        
+        // pop diff + 1
+        var diff = prevLevel - item.level;
+        diff++;
+        for (var diffIndex = 0; diffIndex < diff; diffIndex++) {
+          flatRow.splice(flatRow.length-1, 1);
+        }
+
+        // add item, and track prevLevel
+        flatRow[flatRow.length] = item;
+        prevLevel = item.level;   
+
+      }     
+
+    }    
+
+    // we've got one last flat row, add it
+    flattenedRows[flattenedRows.length] = $.extend({}, flatRow);     
+
+    flattenedRows.reverse();
+
+    console.log('flattenedRows = ');
+    console.log(flattenedRows);         
+
   }; // end of initializeCurrentSelectedValues  
+
+  /**
+   * getRowItems
+   */
+  this.getRowItems = function(rowItems, parentItem, childItems) {
+
+    for (var index = 0; index < childItems.length; index++) {
+      if (parentItem.index == childItems[index].parentIndex) {
+        this.getRowItems(rowItems, childItems[index], childItems);
+      }
+    }
+
+    rowItems[rowItems.length] = parentItem;
+
+  }; // end getRowItems
 
   /**
    * createHierarchyInfo
@@ -436,10 +567,6 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
 
     });
 
-    // add the selection table
-
-    self.addSelectedTable();
-
   };  // end of addAddButton     
 
   /**
@@ -482,6 +609,7 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
    */
   this.addSelectedTableRow = function(selectedTextList, indexList) {
 
+// gsm
     var oddeven = 'odd';
     if ($('#fake-selected-table tr:last').hasClass('odd')) {
       oddeven = 'even';
