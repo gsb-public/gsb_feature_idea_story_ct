@@ -104,7 +104,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'field_collection_embed',
-      'weight' => 10,
+      'weight' => 7,
     ),
     'workbench_access_field' => 0,
   );
@@ -194,7 +194,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 12,
+      'weight' => 8,
     ),
     'workbench_access_field' => 0,
   );
@@ -346,14 +346,14 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'increment' => 15,
         'input_format' => 'M j Y - g:i:sa',
         'input_format_custom' => '',
-        'label_position' => 'above',
+        'label_position' => 'none',
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         'repeat_collapsed' => 0,
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 9,
+      'weight' => 0,
     ),
     'workbench_access_field' => 0,
   );
@@ -409,7 +409,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 11,
+      'weight' => 2,
     ),
     'workbench_access_field' => 0,
   );
@@ -443,7 +443,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_icon',
-    'label' => 'Media format',
+    'label' => 'Media Format',
     'required' => 1,
     'settings' => array(
       'custom_add_another' => '',
@@ -457,7 +457,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'options_buttons',
-      'weight' => 5,
+      'weight' => 3,
     ),
     'workbench_access_field' => 0,
   );
@@ -486,7 +486,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_image_key_image',
-    'label' => 'Key image',
+    'label' => 'Key Image',
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
@@ -510,7 +510,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 3,
+      'weight' => 6,
     ),
     'workbench_access_field' => 0,
   );
@@ -563,7 +563,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 10,
     ),
     'workbench_access_field' => 0,
   );
@@ -593,7 +593,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_link_key_audio',
-    'label' => 'Key audio',
+    'label' => 'Key Audio',
     'required' => 0,
     'settings' => array(
       'attributes' => array(
@@ -630,7 +630,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'link_field',
-      'weight' => 7,
+      'weight' => 4,
     ),
     'workbench_access_field' => 0,
   );
@@ -660,7 +660,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_link_key_video',
-    'label' => 'Key video',
+    'label' => 'Key Video',
     'required' => 0,
     'settings' => array(
       'attributes' => array(
@@ -697,7 +697,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'link_field',
-      'weight' => 6,
+      'weight' => 5,
     ),
     'workbench_access_field' => 0,
   );
@@ -764,7 +764,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'link_field',
-      'weight' => 2,
+      'weight' => 13,
     ),
     'workbench_access_field' => 0,
   );
@@ -794,7 +794,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_link_unlimited',
-    'label' => 'Related Link',
+    'label' => 'Link',
     'required' => 0,
     'settings' => array(
       'attributes' => array(
@@ -865,7 +865,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_part_of_business_magazine',
-    'label' => 'Was this published in Business Magazine?',
+    'label' => 'Was this published in Stanford Business?',
     'required' => 1,
     'settings' => array(
       'custom_add_another' => '',
@@ -879,7 +879,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'options_buttons',
-      'weight' => 17,
+      'weight' => 15,
     ),
     'workbench_access_field' => 0,
   );
@@ -913,7 +913,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_part_of_rethink',
-    'label' => 'Was this part of Rethink',
+    'label' => 'Was this promoted in Re:Think?',
     'required' => 1,
     'settings' => array(
       'custom_add_another' => '',
@@ -927,7 +927,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'options_buttons',
-      'weight' => 16,
+      'weight' => 14,
     ),
     'workbench_access_field' => 0,
   );
@@ -962,7 +962,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_pathauto_title_alias',
-    'label' => 'URL Alias',
+    'label' => 'Path Alias',
     'required' => FALSE,
     'settings' => array(
       'custom_add_another' => '',
@@ -976,7 +976,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'pathauto_title_alias_form',
-      'weight' => 1,
+      'weight' => 12,
     ),
     'workbench_access_field' => 0,
   );
@@ -988,7 +988,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Enter the first few characters of the Stanford GSB author\'s name to lookup and select the desired person.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1006,7 +1006,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_person_fac_ref',
-    'label' => 'Related Faculty',
+    'label' => 'Faculty',
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
@@ -1074,7 +1074,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'options_select',
-      'weight' => 20,
+      'weight' => 14,
     ),
     'workbench_access_field' => 0,
   );
@@ -1104,7 +1104,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_related_events',
-    'label' => 'Related Events',
+    'label' => 'Event',
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
@@ -1151,7 +1151,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_related_idea_story',
-    'label' => 'Related Idea Story',
+    'label' => 'Story or Announcement',
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
@@ -1198,7 +1198,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_related_other_content',
-    'label' => 'Related Other Content',
+    'label' => 'Publication',
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
@@ -1279,23 +1279,24 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
   t('Byline');
   t('Circle (Centers and Research Programs)');
   t('Dek');
+  t('Enter the first few characters of the Stanford GSB author\'s name to lookup and select the desired person.');
+  t('Event');
+  t('Faculty');
+  t('Key Audio');
+  t('Key Image');
   t('Key Taxonomy');
-  t('Key audio');
-  t('Key image');
-  t('Key video');
+  t('Key Video');
   t('Keywords');
-  t('Media format');
+  t('Link');
+  t('Media Format');
+  t('Path Alias');
+  t('Publication');
   t('Publication Date');
   t('Region of Interest');
-  t('Related Events');
-  t('Related Faculty');
-  t('Related Idea Story');
-  t('Related Link');
-  t('Related Other Content');
   t('Short URL');
-  t('URL Alias');
-  t('Was this part of Rethink');
-  t('Was this published in Business Magazine?');
+  t('Story or Announcement');
+  t('Was this promoted in Re:Think?');
+  t('Was this published in Stanford Business?');
 
   return $field_instances;
 }

@@ -9,7 +9,11 @@ include_once 'gsb_feature_idea_story_ct.features.inc';
 /**
  * Implements hook_form_FORM_ID_alter() for event node edit form.
  */
-function gsb_feature_idea_story_ct_form_idea_story_node_form_alter(&$form, &$form_state) {
+function gsb_feature_idea_story_ct_form_idea_story_node_form_alter(&$form, &$form_state, $form_id) {
+
+  if ($form_id != 'idea_story_node_form') {
+    return;
+  }
 
   $language = $form['language']['#value'];
 
@@ -29,4 +33,61 @@ function gsb_feature_idea_story_ct_form_idea_story_node_form_alter(&$form, &$for
     ),
   );  
 
-}	
+  $form['#after_build'][] = 'gsb_feature_idea_story_ct_after_build';
+
+}
+
+/**
+ * gsb_feature_idea_story_ct_after_build()
+ * 
+ * Adds the js needed for replace the key taxonomy select field with
+ * our hierarchy lite select field.
+ */
+function gsb_feature_idea_story_ct_after_build($form, &$form_state) {
+
+  $path = drupal_get_path('module', 'gsb_feature_idea_story_ct');
+  drupal_add_js("$path/js/gsb_feature_idea_story_ct.js");
+  drupal_add_js(array('gsb_feature_idea_story_ct' => array('replace_field' => 'field_key_taxonomy')), 'setting');
+
+  $form['field_link_unlimited']['und']['#title'] = 'Link Title';
+  $form['field_link_unlimited']['und'][0]['title']['#title'] = 'Link Title';
+
+  return $form;
+}
+
+/**
+ * Implements hook_date_popup_process_alter().
+ */
+function gsb_feature_idea_story_ct_date_popup_process_alter(&$element, &$form_state, $context) {
+  if ($form_state['build_info']['form_id'] != 'idea_story_node_form') {
+    return;
+  }
+  if (isset($element['#field']['field_name']) && $element['#field']['field_name'] == 'field_date') {
+    $element['date']['#description'] = '';
+  }
+}
+
+/**
+ * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ */
+function gsb_feature_idea_story_ct_field_widget_entityreference_autocomplete_form_alter(&$element, &$form_state, $context) {
+  if ($form_state['build_info']['form_id'] != 'idea_story_node_form') {
+    return;
+  }  
+  if (isset($element['target_id']['#field_name']) && $element['target_id']['#field_name'] == 'field_person_fac_ref') {
+    $element['target_id']['#title'] = 'Faculty Name';
+    $element['target_id']['#title_display'] = 'before';
+  }  
+  if (isset($element['target_id']['#field_name']) && $element['target_id']['#field_name'] == 'field_related_idea_story') {
+    $element['target_id']['#title'] = 'Existing Node Title';
+    $element['target_id']['#title_display'] = 'before';
+  }    
+  if (isset($element['target_id']['#field_name']) && $element['target_id']['#field_name'] == 'field_related_other_content') {
+    $element['target_id']['#title'] = 'Existing Node Title';
+    $element['target_id']['#title_display'] = 'before';
+  }      
+  if (isset($element['target_id']['#field_name']) && $element['target_id']['#field_name'] == 'field_related_events') {
+    $element['target_id']['#title'] = 'Existing Node Title';
+    $element['target_id']['#title_display'] = 'before';
+  }    
+}

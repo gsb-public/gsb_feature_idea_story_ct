@@ -21,7 +21,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
   $field_group->parent_name = 'group_taxonomy';
   $field_group->data = array(
     'label' => 'Academic Area',
-    'weight' => '17',
+    'weight' => '14',
     'children' => array(
       0 => 'field_academic_area_unlimited',
     ),
@@ -48,7 +48,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
   $field_group->parent_name = 'group_taxonomy';
   $field_group->data = array(
     'label' => 'Additional Topics',
-    'weight' => '18',
+    'weight' => '15',
     'children' => array(
       0 => 'field_business_insight_topic',
     ),
@@ -75,7 +75,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
   $field_group->parent_name = 'group_taxonomy';
   $field_group->data = array(
     'label' => 'Centers',
-    'weight' => '20',
+    'weight' => '17',
     'children' => array(
       0 => 'field_centers_research_programs',
     ),
@@ -102,7 +102,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
   $field_group->parent_name = 'group_taxonomy';
   $field_group->data = array(
     'label' => 'Regions of Interest',
-    'weight' => '19',
+    'weight' => '16',
     'children' => array(
       0 => 'field_region_of_interest',
     ),
@@ -129,7 +129,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Related Content',
-    'weight' => '14',
+    'weight' => '9',
     'children' => array(
       0 => 'field_link_unlimited',
       1 => 'field_person_fac_ref',
@@ -160,7 +160,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
   $field_group->parent_name = 'group_taxonomy';
   $field_group->data = array(
     'label' => 'Tags',
-    'weight' => '21',
+    'weight' => '18',
     'children' => array(
       0 => 'field_tag',
     ),
@@ -187,7 +187,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Tagging',
-    'weight' => '13',
+    'weight' => '11',
     'children' => array(
       0 => 'group_academic_area',
       1 => 'group_additional_topics',
