@@ -4,16 +4,23 @@ Drupal.behaviors.gsb_feature_idea_story_ct = {
  
   attach: function (context, settings) {
 
-    // create the HierarchyInfo using the data from the 
-    // multiple select field being replaced
+    // get the name of the field we will be replacing
 
     // testing testing testing
     //var selectFieldName = "field_key_taxonomy"; 
     //var selectFieldName = "field_test2";
+    //var selectFieldName = settings.gsb_feature_idea_story_ct.replace_field; 
     var selectFieldName = settings.gsb_feature_idea_story_ct.replace_field; 
+
+    // create the hierarchy info using the data from the 
+    // select field being replaced... adding in cloned field at each 
+    // level in the heirarchy
 
     var hi = new Drupal.gsb_feature_idea_story_ct.HierarchyInfo();
     hi.addCloneLevelFields(selectFieldName);	
+
+    // setup a submit handler to remove these cloned select fields 
+    // whenever the user submits the form
 
     $('.node-form').submit(function(){
       console.log('node-form submitted');
@@ -37,13 +44,13 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
   // current list of selected values
   this.currentSelectedValues = [];
 
-  // naming used for the cloned level fields
+  // naming used for the cloned select fields
   this.LEVELNAME = 'fake-level';
 
   // selectField: the select field being replaced
   this.selectField = null;
 
-  // add button at the end of the selects
+  // add button at the end of the cloned selects
   this.addButton = null;
 
   // keep track if the select has optgroups
@@ -83,6 +90,7 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
 
     for (var index = 1; index <= depth; index++) {
       if (self.hasOptGroups && index == 1) {
+        // need to do a little special handling here... 
         // we can't just clone the top level select
         // when we have an optgroup
         self.createOptGroupSelect(index);
@@ -94,6 +102,11 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
     // hide all but the level 1 select for now
 
     self.hideLowerLevels(1);
+
+    // unselect any possible selections carried over 
+    // when we cloned the fields
+
+    self.unselectClonedFields();
 
     // add an 'Add' button to the end
 
@@ -112,6 +125,10 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
 
     self.initializeCurrentSelectedValues();
 
+    // check whether the Add Button should be enabled or disabled
+
+    self.enableDisableAddButton();    
+
   }; // end of addCloneLevelFields
 
   /**
@@ -126,6 +143,19 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
     }    
 
   }; // end of removeCloneLevelFields    
+
+  /**
+   * unselectClonedFields
+   */
+  this.unselectClonedFields = function() {
+
+    var depth = self.findDepth();
+    for (var index = 1; index <= depth; index++) {
+      var levelSelect = $('#' + self.LEVELNAME + index + ' option:selected'); 
+      levelSelect.removeAttr('selected');     
+    }    
+
+  }; // end of unselectClonedFields    
 
   /**
    * initializeCurrentSelectedValues
@@ -151,9 +181,7 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
     var options = self.selectField.children().find( "option" );
     if (options.length == 0) {
       options = self.selectField.find( "option" );
-    }
-
-    var depth = self.findDepth();    
+    }  
 
     var topLevelItems = []; 
     var childLevelItems = []; 
@@ -666,6 +694,9 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
 
     $('#' + self.LEVELNAME + handlerLevel).change(function() {
       
+      // check whether the Add Button should be enabled or disabled
+      self.enableDisableAddButton();
+
       var option = $(this).find('option:selected');
 
       var index = option.attr("data-index");
@@ -754,6 +785,44 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
     });
 
   };  // end of addAddButton     
+
+  /**
+   * enableDisableAddButton
+   */
+  this.enableDisableAddButton = function() {
+
+    // run thru the first 2 clone selects to see
+    // if we should enable or disable the add button
+
+    console.log('in enableDisableAddButton');
+
+    var depth = self.findDepth();
+
+    var isSelected = false;
+
+    for (var depthIndex = 2; depthIndex <= depth; depthIndex++) {
+      $('#' + self.LEVELNAME + depthIndex + ' option').each(function() {
+        if (this.selected) {
+          isSelected = true;
+        }
+      }); 
+      var value = $('#' + self.LEVELNAME + depthIndex).val();
+      console.log('cloneSelect2 value = ' + value);
+      if (value == '_none') {
+        isSelected = false;
+        break;
+      }      
+    }
+
+    if (isSelected) {
+      self.addButton.removeAttr('disabled');
+      self.addButton.css('color', '#5a5a5a');
+    } else {
+      self.addButton.attr('disabled', 'disabled');
+      self.addButton.css('color', 'lightgrey');
+    }      
+
+  }; // end of enableDisableAddButton
 
   /**
    * addSelectedTable
