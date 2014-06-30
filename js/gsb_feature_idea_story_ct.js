@@ -103,11 +103,6 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
 
     self.hideLowerLevels(1);
 
-    // unselect any possible selections carried over 
-    // when we cloned the fields
-
-    self.unselectClonedFields();
-
     // add an 'Add' button to the end
 
     var levelSelect = $('#' + self.LEVELNAME + depth); 
@@ -123,11 +118,12 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
 
     // initial the list of currently selected values
 
-    self.initializeCurrentSelectedValues();
+    self.initializeCurrentSelectedValues();  
 
-    // check whether the Add Button should be enabled or disabled
+    // unselect any possible selections carried over 
+    // when we cloned the fields
 
-    self.enableDisableAddButton();    
+    self.unselectClonedFields(1);       
 
   }; // end of addCloneLevelFields
 
@@ -147,13 +143,15 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
   /**
    * unselectClonedFields
    */
-  this.unselectClonedFields = function() {
+  this.unselectClonedFields = function(level) {
 
     var depth = self.findDepth();
-    for (var index = 1; index <= depth; index++) {
+    for (var index = level; index <= depth; index++) {
       var levelSelect = $('#' + self.LEVELNAME + index + ' option:selected'); 
-      levelSelect.removeAttr('selected');     
-    }    
+      levelSelect.removeAttr('selected'); 
+    }  
+
+    self.enableDisableAddButton();     
 
   }; // end of unselectClonedFields    
 
@@ -693,20 +691,15 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
   this.setLevelChangeHandler = function(handlerLevel) {
 
     $('#' + self.LEVELNAME + handlerLevel).change(function() {
-      
-      // check whether the Add Button should be enabled or disabled
-      self.enableDisableAddButton();
 
       var option = $(this).find('option:selected');
-
-      var index = option.attr("data-index");
-      var level = option.attr("data-level");
 
       var index = option.attr("data-index");
       var level = option.attr("data-level");
       
       if (level == undefined) {
         self.hideLowerLevels(parseInt(handlerLevel));
+        self.unselectClonedFields(parseInt(handlerLevel));      
         return;
       }
 
@@ -725,7 +718,9 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
       self.setLevelOptions(parseInt(level)+1, childrenIndexes);
       self.hideLowerLevels(parseInt(level)+1);
 
-      self.setLevelChangeHandler(parseInt(level)+1);
+      self.setLevelChangeHandler(parseInt(level)+1);   
+
+      self.unselectClonedFields(parseInt(level)+1);           
 
     });
 
@@ -864,6 +859,13 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
    */
   this.addSelectedTableRow = function(selectedTextList, indexList) {
 
+    // first check to see if there is anything new to add 
+
+    var newAddFound = self.checkNewAdds(indexList);
+    if (!newAddFound) {
+      return;
+    }
+
     // update the current selected values list
 
     for (var index = 0; index < indexList.length; index++) {
@@ -940,6 +942,26 @@ Drupal.gsb_feature_idea_story_ct.HierarchyInfo = function () {
     console.log('in updateCurrentSelection keys = ' + keys.join(','));
     self.selectField.val(keys);
   };  // end of updateCurrentSelection   
+
+  /**
+   * checkNewAdds
+   */
+  this.checkNewAdds = function(indexList) {
+
+    var found = false;
+
+    // if we find any index that isn't already in the list 
+    // then... we have a new add
+
+    for (var index = 0; index < indexList.length; index++) {
+      if ($.inArray(indexList[index], self.currentSelectedValues) == -1) {
+        return true;
+      }  
+    } 
+
+    return found;
+
+  }; // end of checkNewAdds
 
   /**
    * getLevel
