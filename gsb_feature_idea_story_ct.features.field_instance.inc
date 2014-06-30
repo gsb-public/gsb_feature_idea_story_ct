@@ -1069,11 +1069,11 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'hs_taxonomy',
       'settings' => array(
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
-      'type' => 'options_select',
+      'type' => 'taxonomy_hs',
       'weight' => 14,
     ),
     'workbench_access_field' => 0,
