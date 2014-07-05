@@ -136,6 +136,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
       2 => 'field_related_events',
       3 => 'field_related_idea_story',
       4 => 'field_related_other_content',
+      5 => 'field_related_other_unlimited',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

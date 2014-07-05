@@ -831,7 +831,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'link_field',
-      'weight' => 17,
+      'weight' => 18,
     ),
     'workbench_access_field' => 0,
   );
@@ -1079,53 +1079,6 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-idea_story-field_related_events'
-  $field_instances['node-idea_story-field_related_events'] = array(
-    'bundle' => 'idea_story',
-    'custom_add_another' => '',
-    'custom_remove' => '',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 22,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_related_events',
-    'label' => 'Event',
-    'required' => 0,
-    'settings' => array(
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'path' => '',
-        'size' => 60,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 16,
-    ),
-    'workbench_access_field' => 0,
-  );
-
   // Exported field_instance: 'node-idea_story-field_related_idea_story'
   $field_instances['node-idea_story-field_related_idea_story'] = array(
     'bundle' => 'idea_story',
@@ -1173,8 +1126,8 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-idea_story-field_related_other_content'
-  $field_instances['node-idea_story-field_related_other_content'] = array(
+  // Exported field_instance: 'node-idea_story-field_related_other_unlimited'
+  $field_instances['node-idea_story-field_related_other_unlimited'] = array(
     'bundle' => 'idea_story',
     'custom_add_another' => '',
     'custom_remove' => '',
@@ -1184,9 +1137,17 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 18,
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'conditions' => array(),
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 32,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1197,7 +1158,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     ),
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
-    'field_name' => 'field_related_other_content',
+    'field_name' => 'field_related_other_unlimited',
     'label' => 'Publication',
     'required' => 0,
     'settings' => array(
@@ -1206,16 +1167,13 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
+      'active' => 0,
+      'module' => 'field_collection',
       'settings' => array(
-        'match_operator' => 'CONTAINS',
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'path' => '',
-        'size' => 60,
       ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 15,
+      'type' => 'field_collection_embed',
+      'weight' => 16,
     ),
     'workbench_access_field' => 0,
   );
@@ -1280,7 +1238,6 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
   t('Circle (Centers and Research Programs)');
   t('Dek');
   t('Enter the first few characters of the Stanford GSB author\'s name to lookup and select the desired person.');
-  t('Event');
   t('Faculty');
   t('Key Audio');
   t('Key Image');
