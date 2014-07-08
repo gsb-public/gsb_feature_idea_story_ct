@@ -91,3 +91,39 @@ function gsb_feature_idea_story_ct_field_widget_entityreference_autocomplete_for
     $element['target_id']['#title_display'] = 'before';
   }    
 }
+/**
+ * Implements hook_field_extra_fields().
+ */
+function gsb_feature_idea_story_ct_field_extra_fields() {
+  $extra['field_collection_item']['field_related_other']['display']['related_content_label'] = array(
+    'label' => t('Related content entity: Title'),
+    'description' => t('Title from referenced entity field.'),
+    'weight' => 1,
+  );
+
+  return $extra;
+}
+
+/**
+ * Implements hook_entity_view().
+ *
+ *  - Render referenced entity title from 'field_related_other' field as an extra field.
+ */
+function gsb_feature_idea_story_ct_entity_view($entity, $type, $view_mode, $langcode) {
+  if ($type == 'field_collection_item' && $entity->field_name == 'field_related_other') {
+    $wrapper = entity_metadata_wrapper($type, $entity);
+
+    if ($wrapper->field_related_other_content->value()) {
+      // Add extra field that displays refernced entity title.
+      $entity->content['related_content_label'] = array(
+        '#theme' => 'link',
+        '#path' => 'node/' . $wrapper->field_related_other_content[0]->getIdentifier(),
+        '#text' => $wrapper->field_related_other_content->label(),
+        '#options' => array(
+          'attributes' => array(),
+          'html' => FALSE,
+        ),
+      );
+    }
+  }
+}
