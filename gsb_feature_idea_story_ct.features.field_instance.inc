@@ -554,6 +554,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
       ),
       'custom_add_another' => '',
       'custom_remove' => '',
+      'use_hierarchical_select_lite' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
