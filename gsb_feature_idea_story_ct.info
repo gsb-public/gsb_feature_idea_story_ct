@@ -1,7 +1,7 @@
 name = GSB Feature Idea Story Content Type
 core = 7.x
 package = GSB
-version = 7.x-1.0
+version = 7.x-3.0
 project = gsb_feature_idea_story_ct
 dependencies[] = ds
 dependencies[] = entityreference
