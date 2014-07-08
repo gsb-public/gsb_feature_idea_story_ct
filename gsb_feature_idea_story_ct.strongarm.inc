@@ -64,6 +64,9 @@ function gsb_feature_idea_story_ct_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'idea_story_related' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -87,6 +90,20 @@ function gsb_feature_idea_story_ct_strongarm() {
         'gsb_feature_base_fields_faculty_authors' => array(
           'default' => array(
             'weight' => '14',
+            'visible' => FALSE,
+          ),
+          'idea_story_related' => array(
+            'weight' => '19',
+            'visible' => FALSE,
+          ),
+        ),
+        'gsb_feature_idea_story_display_top_stories_field' => array(
+          'default' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+          'idea_story_related' => array(
+            'weight' => '13',
             'visible' => FALSE,
           ),
         ),
