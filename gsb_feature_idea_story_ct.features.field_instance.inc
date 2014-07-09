@@ -1270,13 +1270,8 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'ds',
-        'settings' => array(
-          'conditions' => array(),
-          'taxonomy_term_link' => 0,
-          'taxonomy_term_separator' => ',',
-        ),
-        'type' => 'ds_taxonomy_separator',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 31,
       ),
       'idea_story_related' => array(

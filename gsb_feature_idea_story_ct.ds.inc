@@ -130,13 +130,6 @@ function gsb_feature_idea_story_ct_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_tag' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-        ),
-      ),
-    ),
     'field_key_taxonomy' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -296,9 +289,8 @@ function gsb_feature_idea_story_ct_ds_layout_settings_info() {
         8 => 'field_academic_area_unlimited',
         9 => 'field_business_insight_topic',
         10 => 'field_region_of_interest',
-        11 => 'field_tag',
-        12 => 'media_icon',
-        13 => 'title',
+        11 => 'media_icon',
+        12 => 'title',
       ),
     ),
     'fields' => array(
@@ -313,7 +305,6 @@ function gsb_feature_idea_story_ct_ds_layout_settings_info() {
       'field_academic_area_unlimited' => 'left',
       'field_business_insight_topic' => 'left',
       'field_region_of_interest' => 'left',
-      'field_tag' => 'left',
       'media_icon' => 'left',
       'title' => 'left',
     ),

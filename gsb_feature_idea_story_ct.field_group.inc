@@ -288,8 +288,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
     'children' => array(
       0 => 'field_academic_area_unlimited',
       1 => 'field_business_insight_topic',
-      2 => 'field_tag',
-      3 => 'field_region_of_interest',
+      2 => 'field_region_of_interest',
     ),
     'format_type' => 'gsb_field_formatter_group_comma_separator',
     'format_settings' => array(
