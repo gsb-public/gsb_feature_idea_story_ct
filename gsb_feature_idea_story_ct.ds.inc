@@ -18,7 +18,7 @@ function gsb_feature_idea_story_ct_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
     'media_icon' => array(
-      'weight' => '36',
+      'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -29,7 +29,7 @@ function gsb_feature_idea_story_ct_ds_field_settings_info() {
       ),
     ),
     'title' => array(
-      'weight' => '37',
+      'weight' => '3',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -239,6 +239,49 @@ function gsb_feature_idea_story_ct_ds_field_settings_info() {
   );
   $export['node|idea_story|idea_story_related'] = $ds_fieldsetting;
 
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|idea_story|idea_story_top_stories';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'idea_story';
+  $ds_fieldsetting->view_mode = 'idea_story_top_stories';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h2',
+        'class' => '',
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => '',
+          'ow-def-cl' => TRUE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+        'conditions' => array(),
+      ),
+    ),
+    'field_image_key_image' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => '',
+          'ow-def-cl' => TRUE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $export['node|idea_story|idea_story_top_stories'] = $ds_fieldsetting;
+
   return $export;
 }
 
@@ -286,36 +329,40 @@ function gsb_feature_idea_story_ct_ds_layout_settings_info() {
     'regions' => array(
       'left' => array(
         0 => 'group_wrapper_header',
-        1 => 'field_key_taxonomy',
-        2 => 'field_date',
-        3 => 'field_editorial_summary',
-        4 => 'group_wrapper_byline',
-        5 => 'field_authors',
-        6 => 'field_body',
-        7 => 'group_wrapper_taxonomy',
-        8 => 'field_academic_area_unlimited',
-        9 => 'field_business_insight_topic',
-        10 => 'field_region_of_interest',
-        11 => 'field_tag',
-        12 => 'media_icon',
-        13 => 'title',
+        1 => 'field_body',
+        2 => 'field_key_taxonomy',
+        3 => 'media_icon',
+        4 => 'group_wrapper_taxonomy',
+        6 => 'title',
+        7 => 'field_editorial_summary',
+        8 => 'group_wrapper_byline',
+        9 => 'field_date',
+        10 => 'field_authors',
+        11 => 'field_academic_area_unlimited',
+        12 => 'field_business_insight_topic',
+        13 => 'field_region_of_interest',
+        14 => 'field_tag',
+      ),
+      'right' => array(
+        5 => 'gsb_feature_idea_story_display_top_stories_field',
       ),
     ),
     'fields' => array(
       'group_wrapper_header' => 'left',
+      'field_body' => 'left',
       'field_key_taxonomy' => 'left',
-      'field_date' => 'left',
+      'media_icon' => 'left',
+      'group_wrapper_taxonomy' => 'left',
+      'gsb_feature_idea_story_display_top_stories_field' => 'right',
+      'title' => 'left',
       'field_editorial_summary' => 'left',
       'group_wrapper_byline' => 'left',
+      'field_date' => 'left',
       'field_authors' => 'left',
-      'field_body' => 'left',
-      'group_wrapper_taxonomy' => 'left',
       'field_academic_area_unlimited' => 'left',
       'field_business_insight_topic' => 'left',
       'field_region_of_interest' => 'left',
       'field_tag' => 'left',
-      'media_icon' => 'left',
-      'title' => 'left',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -364,6 +411,39 @@ function gsb_feature_idea_story_ct_ds_layout_settings_info() {
   );
   $export['node|idea_story|idea_story_related'] = $ds_layout;
 
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|idea_story|idea_story_top_stories';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'idea_story';
+  $ds_layout->view_mode = 'idea_story_top_stories';
+  $ds_layout->layout = 'ds_2col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'right' => array(
+        0 => 'title',
+      ),
+      'left' => array(
+        1 => 'field_image_key_image',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'right',
+      'field_image_key_image' => 'left',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'left' => 'div',
+      'right' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['node|idea_story|idea_story_top_stories'] = $ds_layout;
+
   return $export;
 }
 
@@ -381,6 +461,15 @@ function gsb_feature_idea_story_ct_ds_view_modes_info() {
     'node' => 'node',
   );
   $export['idea_story_related'] = $ds_view_mode;
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'idea_story_top_stories';
+  $ds_view_mode->label = 'Top Stories';
+  $ds_view_mode->entities = array(
+    'node' => 'node',
+  );
+  $export['idea_story_top_stories'] = $ds_view_mode;
 
   return $export;
 }
