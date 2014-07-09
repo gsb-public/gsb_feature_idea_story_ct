@@ -217,7 +217,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
   $field_group->parent_name = 'group_wrapper_header';
   $field_group->data = array(
     'label' => 'Byline wrapper',
-    'weight' => '6',
+    'weight' => '5',
     'children' => array(
       0 => 'field_authors',
       1 => 'field_date',
@@ -284,7 +284,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Taxonomy wrapper',
-    'weight' => '7',
+    'weight' => '2',
     'children' => array(
       0 => 'field_academic_area_unlimited',
       1 => 'field_business_insight_topic',
