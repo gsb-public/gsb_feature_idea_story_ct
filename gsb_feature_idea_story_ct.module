@@ -44,14 +44,8 @@ function gsb_feature_idea_story_ct_form_idea_story_node_form_alter(&$form, &$for
  * our hierarchy lite select field.
  */
 function gsb_feature_idea_story_ct_after_build($form, &$form_state) {
-
-  $path = drupal_get_path('module', 'gsb_feature_idea_story_ct');
-  drupal_add_js("$path/js/gsb_feature_idea_story_ct.js");
-  drupal_add_js(array('gsb_feature_idea_story_ct' => array('replace_field' => 'field_key_taxonomy')), 'setting');
-
   $form['field_link_unlimited']['und']['#title'] = 'Link Title';
   $form['field_link_unlimited']['und'][0]['title']['#title'] = 'Link Title';
-
   return $form;
 }
 
