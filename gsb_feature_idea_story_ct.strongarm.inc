@@ -70,6 +70,9 @@ function gsb_feature_idea_story_ct_strongarm() {
       'idea_story_top_stories' => array(
         'custom_settings' => TRUE,
       ),
+      'insight_featured_card' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -92,7 +95,7 @@ function gsb_feature_idea_story_ct_strongarm() {
       'display' => array(
         'gsb_feature_base_fields_faculty_authors' => array(
           'default' => array(
-            'weight' => '11',
+            'weight' => '15',
             'visible' => FALSE,
           ),
           'idea_story_related' => array(
