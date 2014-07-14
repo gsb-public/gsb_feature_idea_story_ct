@@ -23,7 +23,7 @@ function gsb_feature_idea_story_ct_form_idea_story_node_form_alter(&$form, &$for
         array('value' => 'audio'),
       ),
     ),
-  );  
+  );
 
   $form['field_link_key_video']['#states'] = array(
     'visible' => array(
@@ -31,7 +31,7 @@ function gsb_feature_idea_story_ct_form_idea_story_node_form_alter(&$form, &$for
         array('value' => 'video'),
       ),
     ),
-  );  
+  );
 
   $form['#after_build'][] = 'gsb_feature_idea_story_ct_after_build';
 
@@ -39,7 +39,7 @@ function gsb_feature_idea_story_ct_form_idea_story_node_form_alter(&$form, &$for
 
 /**
  * gsb_feature_idea_story_ct_after_build()
- * 
+ *
  * Adds the js needed for replace the key taxonomy select field with
  * our hierarchy lite select field.
  */
@@ -67,23 +67,23 @@ function gsb_feature_idea_story_ct_date_popup_process_alter(&$element, &$form_st
 function gsb_feature_idea_story_ct_field_widget_entityreference_autocomplete_form_alter(&$element, &$form_state, $context) {
   if ($form_state['build_info']['form_id'] != 'idea_story_node_form') {
     return;
-  }  
+  }
   if (isset($element['target_id']['#field_name']) && $element['target_id']['#field_name'] == 'field_person_fac_ref') {
     $element['target_id']['#title'] = 'Faculty Name';
     $element['target_id']['#title_display'] = 'before';
-  }  
+  }
   if (isset($element['target_id']['#field_name']) && $element['target_id']['#field_name'] == 'field_related_idea_story') {
     $element['target_id']['#title'] = 'Existing Node Title';
     $element['target_id']['#title_display'] = 'before';
-  }    
+  }
   if (isset($element['target_id']['#field_name']) && $element['target_id']['#field_name'] == 'field_related_other_content') {
     $element['target_id']['#title'] = 'Existing Node Title';
     $element['target_id']['#title_display'] = 'before';
-  }      
+  }
   if (isset($element['target_id']['#field_name']) && $element['target_id']['#field_name'] == 'field_related_events') {
     $element['target_id']['#title'] = 'Existing Node Title';
     $element['target_id']['#title_display'] = 'before';
-  }    
+  }
 }
 /**
  * Implements hook_field_extra_fields().
