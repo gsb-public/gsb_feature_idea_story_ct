@@ -289,7 +289,8 @@ function gsb_feature_idea_story_ct_field_group_info() {
       0 => 'field_link_unlimited',
       1 => 'field_person_fac_ref',
       2 => 'field_related_idea_story',
-      3 => 'related_title',
+      3 => 'field_related_other_unlimited',
+      4 => 'related_title',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

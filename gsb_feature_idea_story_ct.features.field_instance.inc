@@ -959,7 +959,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'link_default',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'idea_story_related' => array(
         'label' => 'above',
@@ -1407,18 +1407,26 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'field_collection',
         'settings' => array(
-          'add' => 'Add',
           'conditions' => array(),
-          'delete' => 'Delete',
-          'description' => TRUE,
-          'edit' => 'Edit',
           'view_mode' => 'full',
         ),
-        'type' => 'field_collection_view',
-        'weight' => 32,
+        'type' => 'field_collection_fields',
+        'weight' => 3,
+      ),
+      'idea_story_related' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'idea_story_top_stories' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1525,6 +1533,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
   t('Link');
   t('Media Format');
   t('Path Alias');
+  t('Publication');
   t('Publication Date');
   t('Region of Interest');
   t('Short URL');
