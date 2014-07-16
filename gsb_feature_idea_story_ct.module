@@ -95,6 +95,12 @@ function gsb_feature_idea_story_ct_field_extra_fields() {
     'weight' => 1,
   );
 
+  $extra['node']['idea_story']['display']['gsb_feature_idea_story_ct_explore_more'] = array(
+    'label' => t('Explore more'),
+    'description' => t('Shows 3 best matching idea stories by Key Taxonomy.'),
+    'weight' => 20,
+  );
+
   return $extra;
 }
 
@@ -105,6 +111,12 @@ function gsb_feature_idea_story_ct_field_extra_fields() {
  */
 function gsb_feature_idea_story_ct_entity_view($entity, $type, $view_mode, $langcode) {
   if ($type == 'field_collection_item' && $entity->field_name == 'field_related_other_unlimited') {
+    // If this field is not configured for this view mode, skip it.
+    $fields = field_extra_fields_get_display($type, $entity->field_name, $view_mode);
+    if (empty($fields['related_content_label']['visible'])) {
+      return;
+    }
+
     $wrapper = entity_metadata_wrapper($type, $entity);
 
     if ($wrapper->field_related_other_content->value()) {
@@ -118,6 +130,60 @@ function gsb_feature_idea_story_ct_entity_view($entity, $type, $view_mode, $lang
           'html' => FALSE,
         ),
       );
+    }
+  }
+
+  /**
+   * Explore more extra field.
+   *  - Pick 3 most relevant nodes by Key Taxonomy.
+   */
+  if ($type == 'node' && $entity->type == 'idea_story') {
+    // If this field is not configured for this view mode, skip it.
+    $fields = field_extra_fields_get_display('node', $entity->type, $view_mode);
+    if (empty($fields['gsb_feature_idea_story_ct_explore_more']['visible'])) {
+      return;
+    }
+
+    $wrapper = entity_metadata_wrapper($type, $entity);
+    $tids = array();
+    foreach ($wrapper->field_key_taxonomy as $term) {
+      if ($term->value()) {
+        $tids[] = $term->value()->tid;
+      }
+    };
+
+    if (empty($tids)) {
+      return;
+    }
+    $result = db_query("
+      SELECT n.nid, n.created, COUNT(t.tid) score
+      FROM {node} n
+      INNER JOIN {field_data_field_key_taxonomy} kt ON kt.entity_id = n.nid
+      INNER JOIN {taxonomy_term_data} t ON t.tid = kt.field_key_taxonomy_target_id
+      WHERE nid != :nid
+      AND n.type = 'idea_story'
+      AND t.tid IN (:tids)
+      GROUP BY n.nid
+      ORDER BY score DESC, created DESC
+      LIMIT 3
+    ", array(':nid' => $entity->nid, ':tids' => $tids))->fetchAllAssoc('nid');
+
+    $nids = array_keys($result);
+
+    if ($nids) {
+      $nodes = node_load_multiple($nids);
+      $content = node_view_multiple($nodes, 'teaser');
+      // Add a title.
+      $content['#prefix'] = '<div class="superhead">' . t('Explore more') . '</div>';
+      // Wrap in container.
+      $container = array(
+        '#type' => 'container',
+        '#attributes' => array(
+          'class' => array('explore-more-wrapper'),
+        ),
+      );
+      $container['content'] = $content;
+      $entity->content['gsb_feature_idea_story_ct_explore_more'] = $container;
     }
   }
 }

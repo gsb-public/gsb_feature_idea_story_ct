@@ -297,7 +297,7 @@ function gsb_feature_idea_story_ct_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'idea_story_top_stories';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '0',
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -395,49 +395,51 @@ function gsb_feature_idea_story_ct_ds_layout_settings_info() {
   $ds_layout->layout = 'ds_2col';
   $ds_layout->settings = array(
     'regions' => array(
-      'left' => array(
-        0 => 'group_wrapper_header',
-        2 => 'field_body',
-        3 => 'field_key_taxonomy',
-        6 => 'media_icon',
-        7 => 'group_wrapper_taxonomy',
-        10 => 'title',
-        13 => 'field_editorial_summary',
-        14 => 'group_wrapper_byline',
-        15 => 'field_date',
-        16 => 'field_authors',
-        17 => 'field_academic_area_unlimited',
-        18 => 'field_business_insight_topic',
-        19 => 'field_region_of_interest',
-      ),
       'right' => array(
-        1 => 'related_title',
+        0 => 'related_title',
         4 => 'field_person_fac_ref',
-        5 => 'field_related_idea_story',
+        7 => 'field_related_idea_story',
         8 => 'field_related_other_unlimited',
-        9 => 'gsb_feature_idea_story_display_top_stories_field',
-        11 => 'field_link_unlimited',
-        12 => 'group_wrapper_related',
+        10 => 'gsb_feature_idea_story_display_top_stories_field',
+        11 => 'group_wrapper_related',
+        12 => 'field_link_unlimited',
+      ),
+      'left' => array(
+        1 => 'group_wrapper_header',
+        2 => 'field_key_taxonomy',
+        3 => 'field_body',
+        5 => 'group_wrapper_taxonomy',
+        6 => 'media_icon',
+        9 => 'title',
+        13 => 'field_editorial_summary',
+        14 => 'field_date',
+        15 => 'group_wrapper_byline',
+        16 => 'field_authors',
+        17 => 'gsb_feature_idea_story_ct_explore_more',
+        18 => 'field_academic_area_unlimited',
+        19 => 'field_business_insight_topic',
+        20 => 'field_region_of_interest',
       ),
     ),
     'fields' => array(
-      'group_wrapper_header' => 'left',
       'related_title' => 'right',
-      'field_body' => 'left',
+      'group_wrapper_header' => 'left',
       'field_key_taxonomy' => 'left',
+      'field_body' => 'left',
       'field_person_fac_ref' => 'right',
-      'field_related_idea_story' => 'right',
-      'media_icon' => 'left',
       'group_wrapper_taxonomy' => 'left',
+      'media_icon' => 'left',
+      'field_related_idea_story' => 'right',
       'field_related_other_unlimited' => 'right',
-      'gsb_feature_idea_story_display_top_stories_field' => 'right',
       'title' => 'left',
-      'field_link_unlimited' => 'right',
+      'gsb_feature_idea_story_display_top_stories_field' => 'right',
       'group_wrapper_related' => 'right',
+      'field_link_unlimited' => 'right',
       'field_editorial_summary' => 'left',
-      'group_wrapper_byline' => 'left',
       'field_date' => 'left',
+      'group_wrapper_byline' => 'left',
       'field_authors' => 'left',
+      'gsb_feature_idea_story_ct_explore_more' => 'left',
       'field_academic_area_unlimited' => 'left',
       'field_business_insight_topic' => 'left',
       'field_region_of_interest' => 'left',
@@ -498,16 +500,16 @@ function gsb_feature_idea_story_ct_ds_layout_settings_info() {
   $ds_layout->layout = 'ds_2col';
   $ds_layout->settings = array(
     'regions' => array(
-      'right' => array(
-        0 => 'title',
-      ),
       'left' => array(
-        1 => 'field_image_key_image',
+        0 => 'field_image_key_image',
+      ),
+      'right' => array(
+        1 => 'title',
       ),
     ),
     'fields' => array(
-      'title' => 'right',
       'field_image_key_image' => 'left',
+      'title' => 'right',
     ),
     'classes' => array(),
     'wrappers' => array(
