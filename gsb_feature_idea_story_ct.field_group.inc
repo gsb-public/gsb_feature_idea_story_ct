@@ -333,5 +333,37 @@ function gsb_feature_idea_story_ct_field_group_info() {
   );
   $export['group_wrapper_taxonomy|node|idea_story|default'] = $field_group;
 
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_wrapper_title|field_collection_item|field_related_other_unlimited|default';
+  $field_group->group_name = 'group_wrapper_title';
+  $field_group->entity_type = 'field_collection_item';
+  $field_group->bundle = 'field_related_other_unlimited';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Title wrapper',
+    'weight' => '0',
+    'children' => array(
+      0 => 'field_related_other_label',
+      1 => 'related_content_label',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Title wrapper',
+      'instance_settings' => array(
+        'classes' => '',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'none',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_wrapper_title|field_collection_item|field_related_other_unlimited|default'] = $field_group;
+
   return $export;
 }
