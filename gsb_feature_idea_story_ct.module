@@ -120,13 +120,17 @@ function gsb_feature_idea_story_ct_entity_view($entity, $type, $view_mode, $lang
     $wrapper = entity_metadata_wrapper($type, $entity);
 
     if ($wrapper->field_related_other_content->value()) {
-      // Add extra field that displays refernced entity title.
+      // Add extra field that displays referenced entity title.
       $entity->content['related_content_label'] = array(
         '#theme' => 'link',
         '#path' => 'node/' . $wrapper->field_related_other_content->getIdentifier(),
         '#text' => $wrapper->field_related_other_content->label(),
+        '#prefix' => '<h3>',
+        '#suffix' => '</h3>',
         '#options' => array(
-          'attributes' => array(),
+          'attributes' => array(
+            'class' => array('field-name-field-title'),
+            ),
           'html' => FALSE,
         ),
       );
