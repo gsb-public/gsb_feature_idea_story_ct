@@ -173,16 +173,27 @@ function gsb_feature_idea_story_ct_entity_view($entity, $type, $view_mode, $lang
     if ($nids) {
       $nodes = node_load_multiple($nids);
       $content = node_view_multiple($nodes, 'teaser');
-      // Add a title.
-      $content['#prefix'] = '<div class="superhead">' . t('Explore more') . '</div>';
-      // Wrap in container.
+
+      // Wrap content in container.
+      $content_wrapper = array(
+        '#type' => 'container',
+        '#attributes' => array(
+          'class' => array('explore-more-content'),
+        ),
+      );
+      $content_wrapper['content'] = $content;
+      // Wrap content and title in container.
       $container = array(
         '#type' => 'container',
         '#attributes' => array(
           'class' => array('explore-more-wrapper'),
         ),
       );
-      $container['content'] = $content;
+
+      // Add a title.
+      $container['title'] = array('#markup' => '<div class="superhead">' . t('Explore more') . '</div>');
+      $container['content'] = $content_wrapper;
+
       $entity->content['gsb_feature_idea_story_ct_explore_more'] = $container;
     }
   }
