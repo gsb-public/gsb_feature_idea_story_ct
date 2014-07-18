@@ -107,8 +107,8 @@ function gsb_feature_idea_story_ct_strongarm() {
             'visible' => FALSE,
           ),
           'teaser' => array(
-            'weight' => '1',
-            'visible' => TRUE,
+            'weight' => '12',
+            'visible' => FALSE,
           ),
         ),
         'gsb_feature_idea_story_display_top_stories_field' => array(
@@ -125,7 +125,7 @@ function gsb_feature_idea_story_ct_strongarm() {
             'visible' => FALSE,
           ),
           'teaser' => array(
-            'weight' => '8',
+            'weight' => '19',
             'visible' => FALSE,
           ),
         ),
