@@ -101,6 +101,12 @@ function gsb_feature_idea_story_ct_field_extra_fields() {
     'weight' => 20,
   );
 
+  $extra['node']['idea_story']['display']['insights_signup_form'] = array(
+    'label' => t('Insights signup form'),
+    'description' => t('Displays a "Sign up for more insights & ideaas." form'),
+    'weight' => 21,
+  );
+
   return $extra;
 }
 
