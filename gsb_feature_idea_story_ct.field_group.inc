@@ -67,6 +67,34 @@ function gsb_feature_idea_story_ct_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_alumni_story|node|idea_story|form';
+  $field_group->group_name = 'group_alumni_story';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'idea_story';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Alumni/Past Participant Mention',
+    'weight' => '11',
+    'children' => array(
+      0 => 'field_alumni_story',
+      1 => 'field_program_single',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_alumni_story|node|idea_story|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_centers|node|idea_story|form';
   $field_group->group_name = 'group_centers';
   $field_group->entity_type = 'node';
@@ -133,10 +161,8 @@ function gsb_feature_idea_story_ct_field_group_info() {
     'children' => array(
       0 => 'field_link_unlimited',
       1 => 'field_person_fac_ref',
-      2 => 'field_related_events',
-      3 => 'field_related_idea_story',
-      4 => 'field_related_other_content',
-      5 => 'field_related_other_unlimited',
+      2 => 'field_related_idea_story',
+      3 => 'field_related_other_unlimited',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -188,7 +214,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Tagging',
-    'weight' => '11',
+    'weight' => '12',
     'children' => array(
       0 => 'group_academic_area',
       1 => 'group_additional_topics',
