@@ -95,7 +95,7 @@ function gsb_feature_idea_story_ct_strongarm() {
       'display' => array(
         'gsb_feature_base_fields_faculty_authors' => array(
           'default' => array(
-            'weight' => '15',
+            'weight' => '14',
             'visible' => FALSE,
           ),
           'idea_story_related' => array(
@@ -113,7 +113,7 @@ function gsb_feature_idea_story_ct_strongarm() {
         ),
         'gsb_feature_idea_story_display_top_stories_field' => array(
           'default' => array(
-            'weight' => '3',
+            'weight' => '5',
             'visible' => TRUE,
           ),
           'idea_story_related' => array(
@@ -131,7 +131,7 @@ function gsb_feature_idea_story_ct_strongarm() {
         ),
         'gsb_feature_idea_story_ct_explore_more' => array(
           'default' => array(
-            'weight' => '20',
+            'weight' => '4',
             'visible' => TRUE,
           ),
           'teaser' => array(
@@ -145,6 +145,12 @@ function gsb_feature_idea_story_ct_strongarm() {
           'idea_story_top_stories' => array(
             'weight' => '23',
             'visible' => FALSE,
+          ),
+        ),
+        'insights_signup_form' => array(
+          'default' => array(
+            'weight' => '3',
+            'visible' => TRUE,
           ),
         ),
       ),
