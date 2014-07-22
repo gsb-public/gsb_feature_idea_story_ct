@@ -601,6 +601,7 @@ function gsb_feature_idea_story_ct_ds_layout_settings_info() {
       'media_icon' => 'left',
       'field_related_idea_story' => 'right',
       'field_related_other_unlimited' => 'right',
+      'insights_signup_form' => 'left',
       'title' => 'left',
       'gsb_feature_idea_story_display_top_stories_field' => 'right',
       'group_wrapper_related' => 'right',
