@@ -173,6 +173,7 @@ function gsb_feature_idea_story_ct_entity_view($entity, $type, $view_mode, $lang
       WHERE nid != :nid
       AND n.type = 'idea_story'
       AND t.tid IN (:tids)
+      AND n.status = 1
       GROUP BY n.nid
       ORDER BY score DESC, created DESC
       LIMIT 3
