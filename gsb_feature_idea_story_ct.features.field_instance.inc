@@ -88,11 +88,8 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
-        'settings' => array(
-          'conditions' => array(),
-        ),
-        'type' => 'list_default',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 31,
       ),
       'idea_story_related' => array(
@@ -1366,11 +1363,8 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(
-          'conditions' => array(),
-        ),
-        'type' => 'taxonomy_term_reference_link',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 32,
       ),
       'idea_story_related' => array(
@@ -1553,12 +1547,12 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'field_collection',
+        'module' => 'gsb_field_formatter',
         'settings' => array(
           'conditions' => array(),
           'view_mode' => 'full',
         ),
-        'type' => 'field_collection_fields',
+        'type' => 'gsb_field_formatter_related_items_field_collection',
         'weight' => 3,
       ),
       'idea_story_related' => array(
