@@ -485,7 +485,9 @@ function gsb_feature_idea_story_ct_ds_custom_fields_info() {
   $ds_field->entities = array(
     'node' => 'node',
   );
-  $ds_field->ui_limit = 'idea_story|*';
+  $ds_field->ui_limit = 'idea_story|*
+announcement|*
+school_story|*';
   $ds_field->properties = array(
     'code' => array(
       'value' => '<span class="media-icon [node:field-icon]"><span class="element-invisible">[node:field-icon]</span></span>',
@@ -503,7 +505,9 @@ function gsb_feature_idea_story_ct_ds_custom_fields_info() {
   $ds_field->entities = array(
     'node' => 'node',
   );
-  $ds_field->ui_limit = 'idea_story|default';
+  $ds_field->ui_limit = 'idea_story|default
+announcement|default
+school_story|default';
   $ds_field->properties = array(
     'code' => array(
       'value' => '<div class="superhead related">Related</div>',
