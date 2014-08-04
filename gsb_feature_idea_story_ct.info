@@ -78,6 +78,7 @@ features[variable][] = menu_parent_idea_story
 features[variable][] = node_options_idea_story
 features[variable][] = node_preview_idea_story
 features[variable][] = node_submitted_idea_story
+features[variable][] = pathauto_node_idea_story_pattern
 features[variable][] = workbench_access_node_type_idea_story
 features[variable][] = workbench_moderation_default_state_idea_story
 features[views_view][] = gsb_related_other_content_autocomplete
