@@ -21,7 +21,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
   $field_group->parent_name = 'group_taxonomy';
   $field_group->data = array(
     'label' => 'Academic Area',
-    'weight' => '14',
+    'weight' => '28',
     'children' => array(
       0 => 'field_academic_area_unlimited',
     ),
@@ -48,7 +48,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
   $field_group->parent_name = 'group_taxonomy';
   $field_group->data = array(
     'label' => 'Additional Topics',
-    'weight' => '15',
+    'weight' => '29',
     'children' => array(
       0 => 'field_business_insight_topic',
     ),
@@ -103,7 +103,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
   $field_group->parent_name = 'group_taxonomy';
   $field_group->data = array(
     'label' => 'Centers',
-    'weight' => '17',
+    'weight' => '31',
     'children' => array(
       0 => 'field_centers_research_programs',
     ),
@@ -130,7 +130,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
   $field_group->parent_name = 'group_taxonomy';
   $field_group->data = array(
     'label' => 'Regions of Interest',
-    'weight' => '16',
+    'weight' => '30',
     'children' => array(
       0 => 'field_region_of_interest',
     ),
@@ -160,9 +160,9 @@ function gsb_feature_idea_story_ct_field_group_info() {
     'weight' => '10',
     'children' => array(
       0 => 'field_link_unlimited',
-      1 => 'field_person_fac_ref',
-      2 => 'field_related_idea_story',
-      3 => 'field_related_other_unlimited',
+      1 => 'field_related_idea_story',
+      2 => 'field_related_other_unlimited',
+      3 => 'field_related_faculty',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -187,7 +187,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
   $field_group->parent_name = 'group_taxonomy';
   $field_group->data = array(
     'label' => 'Tags',
-    'weight' => '18',
+    'weight' => '32',
     'children' => array(
       0 => 'field_tag',
     ),

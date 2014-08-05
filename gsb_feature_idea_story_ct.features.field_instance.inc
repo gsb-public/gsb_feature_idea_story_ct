@@ -68,7 +68,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'taxonomy_hs',
-      'weight' => 18,
+      'weight' => 23,
     ),
     'workbench_access_field' => 0,
   );
@@ -410,7 +410,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'options_select',
-      'weight' => 21,
+      'weight' => 28,
     ),
     'workbench_access_field' => 0,
   );
@@ -1102,7 +1102,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'link_field',
-      'weight' => 18,
+      'weight' => 17,
     ),
     'workbench_access_field' => 0,
   );
@@ -1288,70 +1288,6 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-idea_story-field_person_fac_ref'
-  $field_instances['node-idea_story-field_person_fac_ref'] = array(
-    'bundle' => 'idea_story',
-    'custom_add_another' => '',
-    'custom_remove' => '',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Enter the first few characters of the Stanford GSB author\'s name to lookup and select the desired person.',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'entityreference',
-        'settings' => array(
-          'conditions' => array(),
-          'links' => 0,
-          'view_mode' => 'people_fpp',
-        ),
-        'type' => 'entityreference_entity_view',
-        'weight' => 1,
-      ),
-      'idea_story_related' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 23,
-      ),
-      'idea_story_top_stories' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 19,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 29,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_person_fac_ref',
-    'label' => 'Faculty',
-    'required' => 0,
-    'settings' => array(
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'path' => '',
-        'size' => 60,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 13,
-    ),
-    'workbench_access_field' => 0,
-  );
-
   // Exported field_instance: 'node-idea_story-field_program_single'
   $field_instances['node-idea_story-field_program_single'] = array(
     'bundle' => 'idea_story',
@@ -1472,6 +1408,70 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
+  // Exported field_instance: 'node-idea_story-field_related_faculty'
+  $field_instances['node-idea_story-field_related_faculty'] = array(
+    'bundle' => 'idea_story',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'conditions' => array(),
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 31,
+      ),
+      'idea_story_related' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'idea_story_top_stories' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_related_faculty',
+    'label' => 'Faculty',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'field_collection_embed',
+      'weight' => 14,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Exported field_instance: 'node-idea_story-field_related_idea_story'
   $field_instances['node-idea_story-field_related_idea_story'] = array(
     'bundle' => 'idea_story',
@@ -1531,7 +1531,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 14,
+      'weight' => 15,
     ),
     'workbench_access_field' => 0,
   );
@@ -1662,7 +1662,6 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
   t('Byline');
   t('Circle (Centers and Research Programs)');
   t('Dek');
-  t('Enter the first few characters of the Stanford GSB author\'s name to lookup and select the desired person.');
   t('Faculty');
   t('Key Audio');
   t('Key Image');
