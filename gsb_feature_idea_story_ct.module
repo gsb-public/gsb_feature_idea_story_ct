@@ -33,8 +33,31 @@ function gsb_feature_idea_story_ct_form_idea_story_node_form_alter(&$form, &$for
     ),
   );
 
+  // Define visibility states for Alumni Mentioned.
   $form['field_program_single']['#states']['invisible'][':input[name="field_alumni_story[' . $language . ']"]'] = array(
     array('checked' => FALSE),
+  );
+
+  // Define visibility states for Rethink fields.
+  $form['field_rethink_date']['#states']['invisible'][':input[name="field_part_of_rethink[' . $language . ']"]'] = array(
+    array('value' => 0),
+  );
+
+  // Define visibility states for Stanford Business Magazine fields.
+  $form['field_season']['#states']['invisible'][':input[name="field_part_of_business_magazine[' . $language . ']"]'] = array(
+    array('value' => 0),
+  );
+
+  $form['field_year']['#states']['invisible'][':input[name="field_part_of_business_magazine[' . $language . ']"]'] = array(
+    array('value' => 0),
+  );
+
+  $form['field_volume_number']['#states']['invisible'][':input[name="field_part_of_business_magazine[' . $language . ']"]'] = array(
+    array('value' => 0),
+  );
+
+  $form['field_issue_number']['#states']['invisible'][':input[name="field_part_of_business_magazine[' . $language . ']"]'] = array(
+    array('value' => 0),
   );
 
   $form['#after_build'][] = 'gsb_feature_idea_story_ct_after_build';
