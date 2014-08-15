@@ -122,6 +122,65 @@ function gsb_feature_idea_story_ct_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_part_of_rethink|node|idea_story|form';
+  $field_group->group_name = 'group_part_of_rethink';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'idea_story';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Rethink',
+    'weight' => '16',
+    'children' => array(
+      0 => 'field_part_of_rethink',
+      1 => 'field_rethink_date',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_part_of_rethink|node|idea_story|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_part_of_stanford_business|node|idea_story|form';
+  $field_group->group_name = 'group_part_of_stanford_business';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'idea_story';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Stanford Business',
+    'weight' => '17',
+    'children' => array(
+      0 => 'field_part_of_business_magazine',
+      1 => 'field_season',
+      2 => 'field_year',
+      3 => 'field_volume_number',
+      4 => 'field_issue_number',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_part_of_stanford_business|node|idea_story|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_regions_of_interest|node|idea_story|form';
   $field_group->group_name = 'group_regions_of_interest';
   $field_group->entity_type = 'node';

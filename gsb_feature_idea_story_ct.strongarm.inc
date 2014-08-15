@@ -77,16 +77,16 @@ function gsb_feature_idea_story_ct_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '19',
+          'weight' => '21',
         ),
         'title' => array(
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '18',
+          'weight' => '20',
         ),
         'redirect' => array(
-          'weight' => '17',
+          'weight' => '19',
         ),
         'workbench_access' => array(
           'weight' => '20',
