@@ -1742,6 +1742,10 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_rethink_date',
     'label' => 'ReThink date',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'default_value' => 'now',
       'default_value2' => 'same',
       'default_value_code' => '',
