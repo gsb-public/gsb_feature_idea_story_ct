@@ -1765,9 +1765,12 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 30,
+        'module' => 'concat_field',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'concat_field_blank',
+        'weight' => 32,
       ),
       'idea_story_related' => array(
         'label' => 'above',
