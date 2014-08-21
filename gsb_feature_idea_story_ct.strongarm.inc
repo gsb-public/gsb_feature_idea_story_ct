@@ -73,6 +73,9 @@ function gsb_feature_idea_story_ct_strongarm() {
       'insight_featured_card' => array(
         'custom_settings' => FALSE,
       ),
+      'news_listing' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -95,7 +98,7 @@ function gsb_feature_idea_story_ct_strongarm() {
       'display' => array(
         'gsb_feature_base_fields_faculty_authors' => array(
           'default' => array(
-            'weight' => '15',
+            'weight' => '18',
             'visible' => FALSE,
           ),
           'idea_story_related' => array(
@@ -113,7 +116,7 @@ function gsb_feature_idea_story_ct_strongarm() {
         ),
         'gsb_feature_idea_story_display_top_stories_field' => array(
           'default' => array(
-            'weight' => '6',
+            'weight' => '9',
             'visible' => TRUE,
           ),
           'idea_story_related' => array(
@@ -131,7 +134,7 @@ function gsb_feature_idea_story_ct_strongarm() {
         ),
         'gsb_feature_idea_story_ct_explore_more' => array(
           'default' => array(
-            'weight' => '5',
+            'weight' => '8',
             'visible' => TRUE,
           ),
           'teaser' => array(
@@ -149,13 +152,13 @@ function gsb_feature_idea_story_ct_strongarm() {
         ),
         'insights_signup_form' => array(
           'default' => array(
-            'weight' => '3',
+            'weight' => '6',
             'visible' => TRUE,
           ),
         ),
         'gsb_media_inquiries' => array(
           'default' => array(
-            'weight' => '4',
+            'weight' => '7',
             'visible' => TRUE,
           ),
         ),
