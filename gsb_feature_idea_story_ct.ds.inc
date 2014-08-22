@@ -12,6 +12,23 @@ function gsb_feature_idea_story_ct_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'field_collection_item|field_related_faculty|default';
+  $ds_fieldsetting->entity_type = 'field_collection_item';
+  $ds_fieldsetting->bundle = 'field_related_faculty';
+  $ds_fieldsetting->view_mode = 'default';
+  $ds_fieldsetting->settings = array(
+    'field_person_fac_single_ref' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+        ),
+      ),
+    ),
+  );
+  $export['field_collection_item|field_related_faculty|default'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'field_collection_item|field_related_other_unlimited|default';
   $ds_fieldsetting->entity_type = 'field_collection_item';
   $ds_fieldsetting->bundle = 'field_related_other_unlimited';
@@ -213,14 +230,14 @@ function gsb_feature_idea_story_ct_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_person_fac_ref' => array(
+    'field_region_of_interest' => array(
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => '',
-          'ow-def-cl' => TRUE,
+          'ow-el' => 'span',
+          'ow-cl' => 'taxonomy-category',
+          'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
         ),
@@ -239,16 +256,10 @@ function gsb_feature_idea_story_ct_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_region_of_interest' => array(
+    'field_related_faculty' => array(
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'span',
-          'ow-cl' => 'taxonomy-category',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
         ),
       ),
     ),
@@ -540,6 +551,34 @@ function gsb_feature_idea_story_ct_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'field_collection_item|field_related_faculty|default';
+  $ds_layout->entity_type = 'field_collection_item';
+  $ds_layout->bundle = 'field_related_faculty';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_person_fac_single_ref',
+      ),
+    ),
+    'fields' => array(
+      'field_person_fac_single_ref' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['field_collection_item|field_related_faculty|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'field_collection_item|field_related_other_unlimited|default';
   $ds_layout->entity_type = 'field_collection_item';
   $ds_layout->bundle = 'field_related_other_unlimited';
@@ -635,6 +674,7 @@ function gsb_feature_idea_story_ct_ds_layout_settings_info() {
       'gsb_media_inquiries' => 'left',
       'gsb_feature_idea_story_ct_explore_more' => 'left',
       'gsb_feature_idea_story_display_top_stories_field' => 'right',
+      'field_authors' => 'left',
       'group_wrapper_related' => 'right',
       'field_academic_area_unlimited' => 'left',
       'field_business_insight_topic' => 'left',

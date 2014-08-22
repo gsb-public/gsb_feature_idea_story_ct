@@ -731,7 +731,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 35,
+        'weight' => 37,
       ),
       'idea_story_related' => array(
         'label' => 'above',
@@ -1518,10 +1518,14 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 29,
+        'label' => 'hidden',
+        'module' => 'field_collection',
+        'settings' => array(
+          'conditions' => array(),
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_fields',
+        'weight' => 1,
       ),
       'idea_story_related' => array(
         'label' => 'above',
@@ -1700,7 +1704,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 31,
+        'weight' => 33,
       ),
       'idea_story_related' => array(
         'label' => 'above',
@@ -1765,11 +1769,8 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'concat_field',
-        'settings' => array(
-          'conditions' => array(),
-        ),
-        'type' => 'concat_field_blank',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 32,
       ),
       'idea_story_related' => array(
@@ -1853,7 +1854,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 32,
+        'weight' => 34,
       ),
       'idea_story_related' => array(
         'label' => 'above',
@@ -1968,7 +1969,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 34,
+        'weight' => 36,
       ),
       'idea_story_related' => array(
         'label' => 'above',
@@ -2064,7 +2065,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 33,
+        'weight' => 35,
       ),
       'idea_story_related' => array(
         'label' => 'above',
