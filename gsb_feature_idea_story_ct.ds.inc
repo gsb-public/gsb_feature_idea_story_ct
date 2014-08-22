@@ -12,6 +12,23 @@ function gsb_feature_idea_story_ct_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'field_collection_item|field_related_faculty|default';
+  $ds_fieldsetting->entity_type = 'field_collection_item';
+  $ds_fieldsetting->bundle = 'field_related_faculty';
+  $ds_fieldsetting->view_mode = 'default';
+  $ds_fieldsetting->settings = array(
+    'field_person_fac_single_ref' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+        ),
+      ),
+    ),
+  );
+  $export['field_collection_item|field_related_faculty|default'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'field_collection_item|field_related_other_unlimited|default';
   $ds_fieldsetting->entity_type = 'field_collection_item';
   $ds_fieldsetting->bundle = 'field_related_other_unlimited';
@@ -203,14 +220,14 @@ function gsb_feature_idea_story_ct_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_person_fac_ref' => array(
+    'field_region_of_interest' => array(
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => '',
-          'ow-def-cl' => TRUE,
+          'ow-el' => 'span',
+          'ow-cl' => 'taxonomy-category',
+          'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
         ),
@@ -229,16 +246,10 @@ function gsb_feature_idea_story_ct_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_region_of_interest' => array(
+    'field_related_faculty' => array(
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'span',
-          'ow-cl' => 'taxonomy-category',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
         ),
       ),
     ),
@@ -528,6 +539,34 @@ function gsb_feature_idea_story_ct_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'field_collection_item|field_related_faculty|default';
+  $ds_layout->entity_type = 'field_collection_item';
+  $ds_layout->bundle = 'field_related_faculty';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_person_fac_single_ref',
+      ),
+    ),
+    'fields' => array(
+      'field_person_fac_single_ref' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['field_collection_item|field_related_faculty|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'field_collection_item|field_related_other_unlimited|default';
   $ds_layout->entity_type = 'field_collection_item';
   $ds_layout->bundle = 'field_related_other_unlimited';
@@ -571,27 +610,27 @@ function gsb_feature_idea_story_ct_ds_layout_settings_info() {
     'regions' => array(
       'right' => array(
         0 => 'related_title',
-        3 => 'field_person_fac_ref',
-        7 => 'field_related_idea_story',
-        10 => 'field_related_other_unlimited',
-        12 => 'field_link_unlimited',
-        18 => 'gsb_feature_idea_story_display_top_stories_field',
+        4 => 'field_related_faculty',
+        6 => 'field_related_idea_story',
+        8 => 'field_related_other_unlimited',
+        13 => 'field_link_unlimited',
+        17 => 'gsb_feature_idea_story_display_top_stories_field',
         19 => 'group_wrapper_related',
       ),
       'left' => array(
         1 => 'group_wrapper_header',
         2 => 'field_key_taxonomy',
-        4 => 'field_body',
-        5 => 'media_icon',
-        6 => 'group_wrapper_taxonomy',
-        8 => 'insights_signup_form',
+        3 => 'field_body',
+        5 => 'group_wrapper_taxonomy',
+        7 => 'media_icon',
         9 => 'title',
-        11 => 'gsb_media_inquiries',
-        13 => 'field_editorial_summary',
+        10 => 'insights_signup_form',
+        11 => 'field_editorial_summary',
+        12 => 'gsb_media_inquiries',
         14 => 'gsb_feature_idea_story_ct_explore_more',
         15 => 'field_date',
         16 => 'group_wrapper_byline',
-        17 => 'field_authors',
+        18 => 'field_authors',
         20 => 'field_academic_area_unlimited',
         21 => 'field_business_insight_topic',
         22 => 'field_region_of_interest',
@@ -601,22 +640,22 @@ function gsb_feature_idea_story_ct_ds_layout_settings_info() {
       'related_title' => 'right',
       'group_wrapper_header' => 'left',
       'field_key_taxonomy' => 'left',
-      'field_person_fac_ref' => 'right',
       'field_body' => 'left',
-      'media_icon' => 'left',
+      'field_related_faculty' => 'right',
       'group_wrapper_taxonomy' => 'left',
       'field_related_idea_story' => 'right',
-      'insights_signup_form' => 'left',
-      'title' => 'left',
+      'media_icon' => 'left',
       'field_related_other_unlimited' => 'right',
+      'title' => 'left',
+      'insights_signup_form' => 'left',
+      'field_editorial_summary' => 'left',
       'gsb_media_inquiries' => 'left',
       'field_link_unlimited' => 'right',
-      'field_editorial_summary' => 'left',
       'gsb_feature_idea_story_ct_explore_more' => 'left',
       'field_date' => 'left',
       'group_wrapper_byline' => 'left',
-      'field_authors' => 'left',
       'gsb_feature_idea_story_display_top_stories_field' => 'right',
+      'field_authors' => 'left',
       'group_wrapper_related' => 'right',
       'field_academic_area_unlimited' => 'left',
       'field_business_insight_topic' => 'left',

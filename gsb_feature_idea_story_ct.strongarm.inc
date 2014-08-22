@@ -73,6 +73,9 @@ function gsb_feature_idea_story_ct_strongarm() {
       'insight_featured_card' => array(
         'custom_settings' => FALSE,
       ),
+      'news_listing' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
