@@ -510,7 +510,8 @@ function gsb_feature_idea_story_ct_ds_custom_fields_info() {
 announcement|*
 school_story|*
 offsite_school_story|*
-offsite_idea_story|*';
+offsite_idea_story|*
+ranking|*';
   $ds_field->properties = array(
     'code' => array(
       'value' => '<span class="media-icon [node:field-icon]"><span class="element-invisible">[node:field-icon]</span></span>',
