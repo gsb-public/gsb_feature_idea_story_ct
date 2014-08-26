@@ -76,6 +76,9 @@ function gsb_feature_idea_story_ct_strongarm() {
       'news_listing' => array(
         'custom_settings' => TRUE,
       ),
+      'idea_story_latest_stories' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -117,6 +120,10 @@ function gsb_feature_idea_story_ct_strongarm() {
             'weight' => '24',
             'visible' => FALSE,
           ),
+          'idea_story_latest_stories' => array(
+            'weight' => '24',
+            'visible' => FALSE,
+          ),
         ),
         'gsb_feature_idea_story_display_top_stories_field' => array(
           'default' => array(
@@ -136,6 +143,10 @@ function gsb_feature_idea_story_ct_strongarm() {
             'visible' => FALSE,
           ),
           'news_listing' => array(
+            'weight' => '22',
+            'visible' => FALSE,
+          ),
+          'idea_story_latest_stories' => array(
             'weight' => '22',
             'visible' => FALSE,
           ),
@@ -161,6 +172,10 @@ function gsb_feature_idea_story_ct_strongarm() {
             'weight' => '21',
             'visible' => FALSE,
           ),
+          'idea_story_latest_stories' => array(
+            'weight' => '21',
+            'visible' => FALSE,
+          ),
         ),
         'insights_signup_form' => array(
           'default' => array(
@@ -171,6 +186,10 @@ function gsb_feature_idea_story_ct_strongarm() {
             'weight' => '18',
             'visible' => FALSE,
           ),
+          'idea_story_latest_stories' => array(
+            'weight' => '19',
+            'visible' => FALSE,
+          ),
         ),
         'gsb_media_inquiries' => array(
           'default' => array(
@@ -178,6 +197,10 @@ function gsb_feature_idea_story_ct_strongarm() {
             'visible' => TRUE,
           ),
           'news_listing' => array(
+            'weight' => '20',
+            'visible' => FALSE,
+          ),
+          'idea_story_latest_stories' => array(
             'weight' => '20',
             'visible' => FALSE,
           ),
