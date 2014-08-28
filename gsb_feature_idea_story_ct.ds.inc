@@ -755,7 +755,6 @@ function gsb_feature_idea_story_ct_ds_layout_settings_info() {
       'gsb_media_inquiries' => 'left',
       'gsb_feature_idea_story_ct_explore_more' => 'left',
       'gsb_feature_idea_story_display_top_stories_field' => 'right',
-      'field_authors' => 'left',
       'group_wrapper_related' => 'right',
       'field_academic_area_unlimited' => 'left',
       'field_business_insight_topic' => 'left',
