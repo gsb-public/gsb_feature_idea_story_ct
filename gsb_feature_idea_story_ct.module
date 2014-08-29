@@ -65,19 +65,6 @@ function gsb_feature_idea_story_ct_form_idea_story_node_form_alter(&$form, &$for
 }
 
 /**
- *  Implements hook_field_group_pre_render_alter().
- */
-function gsb_feature_idea_story_ct_field_group_pre_render_alter(&$element, $group, &$form) {
-  // Hide field group for alumni name if alumni checkbox is not checked.
-  if ($element['#id'] == 'node_idea_story_form_group_alumni_name') {
-    $language = $form['language']['#value'];
-    $element['#states']['invisible'][':input[name="field_alumni_story[' . $language . ']"]'] = array(
-      array('checked' => FALSE),
-    );
-  }
-}
-
-/**
  * gsb_feature_idea_story_ct_after_build()
  *
  * Adds the js needed for replace the key taxonomy select field with
