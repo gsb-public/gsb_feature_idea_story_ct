@@ -1804,8 +1804,12 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'field_collection',
+        'settings' => array(
+          'conditions' => array(),
+          'view_mode' => 'people_fpp',
+        ),
+        'type' => 'field_collection_fields',
         'weight' => 1,
       ),
       'idea_story_latest_stories' => array(

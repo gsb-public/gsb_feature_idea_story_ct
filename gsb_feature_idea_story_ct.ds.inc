@@ -71,16 +71,6 @@ function gsb_feature_idea_story_ct_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'idea_story';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
-    'social_buttons_bottom' => array(
-      'weight' => '4',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'social_buttons_top' => array(
-      'weight' => '1',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
     'media_icon' => array(
       'weight' => '2',
       'label' => 'hidden',
@@ -102,6 +92,16 @@ function gsb_feature_idea_story_ct_ds_field_settings_info() {
         ),
         'conditions' => array(),
       ),
+    ),
+    'social_buttons_bottom' => array(
+      'weight' => '4',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'social_buttons_top' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
     ),
     'title' => array(
       'weight' => '3',
@@ -211,6 +211,19 @@ function gsb_feature_idea_story_ct_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_key_taxonomy' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => '',
+          'ow-def-cl' => TRUE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
     'field_link_unlimited' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -243,7 +256,7 @@ function gsb_feature_idea_story_ct_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_key_taxonomy' => array(
+    'field_related_faculty' => array(
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
@@ -253,13 +266,6 @@ function gsb_feature_idea_story_ct_ds_field_settings_info() {
           'ow-def-cl' => TRUE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'field_related_faculty' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
         ),
       ),
     ),
@@ -789,17 +795,17 @@ function gsb_feature_idea_story_ct_ds_layout_settings_info() {
     'regions' => array(
       'left' => array(
         0 => 'group_wrapper_header',
-        2 => 'social_buttons_top',
-        4 => 'field_key_taxonomy',
-        5 => 'media_icon',
-        7 => 'field_body',
-        8 => 'group_wrapper_taxonomy',
+        2 => 'field_key_taxonomy',
+        3 => 'social_buttons_top',
+        6 => 'field_body',
+        7 => 'media_icon',
         9 => 'title',
-        11 => 'field_editorial_summary',
-        12 => 'social_buttons_bottom',
-        14 => 'group_wrapper_byline',
-        15 => 'field_link_single',
-        16 => 'field_date',
+        10 => 'group_wrapper_taxonomy',
+        11 => 'social_buttons_bottom',
+        12 => 'field_editorial_summary',
+        14 => 'field_link_single',
+        15 => 'field_date',
+        16 => 'group_wrapper_byline',
         17 => 'field_authors',
         18 => 'insights_signup_form',
         19 => 'gsb_media_inquiries',
@@ -810,9 +816,9 @@ function gsb_feature_idea_story_ct_ds_layout_settings_info() {
       ),
       'right' => array(
         1 => 'related_title',
-        3 => 'field_person_fac_ref',
-        6 => 'field_related_idea_story',
-        10 => 'field_related_other_unlimited',
+        4 => 'field_related_faculty',
+        5 => 'field_related_idea_story',
+        8 => 'field_related_other_unlimited',
         13 => 'field_link_unlimited',
         21 => 'gsb_feature_idea_story_display_top_stories_field',
         22 => 'group_wrapper_related',
@@ -821,21 +827,21 @@ function gsb_feature_idea_story_ct_ds_layout_settings_info() {
     'fields' => array(
       'group_wrapper_header' => 'left',
       'related_title' => 'right',
-      'social_buttons_top' => 'left',
-      'field_person_fac_ref' => 'right',
       'field_key_taxonomy' => 'left',
-      'media_icon' => 'left',
+      'social_buttons_top' => 'left',
+      'field_related_faculty' => 'right',
       'field_related_idea_story' => 'right',
       'field_body' => 'left',
-      'group_wrapper_taxonomy' => 'left',
-      'title' => 'left',
+      'media_icon' => 'left',
       'field_related_other_unlimited' => 'right',
-      'field_editorial_summary' => 'left',
+      'title' => 'left',
+      'group_wrapper_taxonomy' => 'left',
       'social_buttons_bottom' => 'left',
+      'field_editorial_summary' => 'left',
       'field_link_unlimited' => 'right',
-      'group_wrapper_byline' => 'left',
       'field_link_single' => 'left',
       'field_date' => 'left',
+      'group_wrapper_byline' => 'left',
       'field_authors' => 'left',
       'insights_signup_form' => 'left',
       'gsb_media_inquiries' => 'left',
