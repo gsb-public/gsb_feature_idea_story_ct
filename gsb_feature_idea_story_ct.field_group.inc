@@ -361,6 +361,41 @@ function gsb_feature_idea_story_ct_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_wrapper_idea_story_text|node|idea_story|teaser';
+  $field_group->group_name = 'group_wrapper_idea_story_text';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'idea_story';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Idea story text wrapper',
+    'weight' => '2',
+    'children' => array(
+      0 => 'field_date',
+      1 => 'field_editorial_summary',
+      2 => 'field_key_taxonomy',
+      3 => 'media_icon',
+      4 => 'title',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Idea story text wrapper',
+      'instance_settings' => array(
+        'classes' => '',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'none',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_wrapper_idea_story_text|node|idea_story|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_wrapper_related|node|idea_story|default';
   $field_group->group_name = 'group_wrapper_related';
   $field_group->entity_type = 'node';

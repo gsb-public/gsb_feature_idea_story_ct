@@ -54,6 +54,7 @@ features[field_group][] = group_tags|node|idea_story|form
 features[field_group][] = group_taxonomy|node|idea_story|form
 features[field_group][] = group_wrapper_byline|node|idea_story|default
 features[field_group][] = group_wrapper_header|node|idea_story|default
+features[field_group][] = group_wrapper_idea_story_text|node|idea_story|teaser
 features[field_group][] = group_wrapper_related|node|idea_story|default
 features[field_group][] = group_wrapper_taxonomy|node|idea_story|default
 features[field_group][] = group_wrapper_title|field_collection_item|field_related_other_unlimited|default

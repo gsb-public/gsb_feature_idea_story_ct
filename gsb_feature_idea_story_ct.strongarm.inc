@@ -113,7 +113,7 @@ function gsb_feature_idea_story_ct_strongarm() {
             'visible' => FALSE,
           ),
           'teaser' => array(
-            'weight' => '22',
+            'weight' => '23',
             'visible' => FALSE,
           ),
           'news_listing' => array(
@@ -139,7 +139,7 @@ function gsb_feature_idea_story_ct_strongarm() {
             'visible' => FALSE,
           ),
           'teaser' => array(
-            'weight' => '29',
+            'weight' => '30',
             'visible' => FALSE,
           ),
           'news_listing' => array(
@@ -157,7 +157,7 @@ function gsb_feature_idea_story_ct_strongarm() {
             'visible' => TRUE,
           ),
           'teaser' => array(
-            'weight' => '43',
+            'weight' => '44',
             'visible' => FALSE,
           ),
           'idea_story_related' => array(
@@ -191,7 +191,7 @@ function gsb_feature_idea_story_ct_strongarm() {
             'visible' => FALSE,
           ),
           'teaser' => array(
-            'weight' => '31',
+            'weight' => '32',
             'visible' => FALSE,
           ),
         ),
@@ -209,7 +209,7 @@ function gsb_feature_idea_story_ct_strongarm() {
             'visible' => FALSE,
           ),
           'teaser' => array(
-            'weight' => '41',
+            'weight' => '42',
             'visible' => FALSE,
           ),
         ),
