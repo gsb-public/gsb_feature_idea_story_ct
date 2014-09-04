@@ -224,6 +224,26 @@ function gsb_feature_idea_story_ct_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_link_single' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'prefix' => '<span class="share-label">Share this</span>',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'short-url-wrapper',
+          'ow-def-cl' => TRUE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+          'fi' => TRUE,
+          'fi-el' => 'div',
+          'fi-cl' => 'short-url',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
     'field_link_unlimited' => array(
       'formatter_settings' => array(
         'ft' => array(

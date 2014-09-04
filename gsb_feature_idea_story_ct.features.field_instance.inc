@@ -1258,7 +1258,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
         ),
-        'type' => 'link_url',
+        'type' => 'link_plain',
         'weight' => 5,
       ),
       'idea_story_latest_stories' => array(
