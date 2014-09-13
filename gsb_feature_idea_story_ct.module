@@ -236,3 +236,68 @@ function gsb_feature_idea_story_ct_entity_view($entity, $type, $view_mode, $lang
     }
   }
 }
+
+/**
+ * Implements hook_ds_pre_render_alter()
+ *
+ * Determine if top stories and related sections have any items.
+ * If they don't, then we will remove them so that they do not render as empty sections
+ */
+function gsb_feature_idea_story_ct_ds_pre_render_alter(&$layout_render_array, $context, &$vars) {
+
+  // if the context is an idea story, and the view mode is full
+  if (!empty($context['bundle']) && $context['bundle'] == 'idea_story' && $context['view_mode'] == 'full') {
+
+    // get the list of top stories
+    $top_stories = variable_get('gsb_feature_idea_story_display_top_stories', array());
+
+    // determine if there are any top stories
+    $no_top_stories = TRUE;
+    foreach($top_stories as $top_story_nid) {
+      if ($top_story_nid != null) {
+        $no_top_stories = FALSE;
+        break;
+      }
+    }
+
+    // get the id for the top story and related section in the right-hand layout
+    $related_id = -1;
+    $top_story_id = -1;
+    foreach($layout_render_array['right'] as $key => $right_stuff) {
+      if (!empty($right_stuff['#markup'])) {
+        if (strstr($right_stuff['#markup'],'top-stories-fieldset')) {
+          $top_story_id = $key;
+        }
+      }
+      if (!empty($right_stuff['#id'])) {
+        $related_id = $key;
+      }
+    }
+
+    if ($related_id != -1) {
+      $related_faculty = array();
+      if (!empty($context['entity']->field_related_faculty)) {
+        $item_id = $context['entity']->field_related_faculty['und'][0]['value'];
+        $related_faculty = $layout_render_array['right'][$related_id]['field_related_faculty'][0]['entity']['field_collection_item'][$item_id]['#entity']->field_person_fac_single_ref;
+      }
+      $publication = array();
+      if (!empty($context['entity']->field_related_other_unlimited)) {
+        $item_id = $context['entity']->field_related_other_unlimited['und'][0]['value'];
+        $publication = $layout_render_array['right'][$related_id]['field_related_other_unlimited'][0]['entity']['field_collection_item'][$item_id]['#entity']->field_related_other_content;
+      }
+      $idea_story = $layout_render_array['right'][$related_id]['field_related_idea_story'];
+      $links = $layout_render_array['right'][$related_id]['field_link_unlimited'];
+      // remove the related section if there are no items
+      if(empty($related_faculty) && empty($publication) && empty($idea_story) && empty($links)) {
+        unset($layout_render_array['right'][$related_id]);
+      }
+    }
+
+    // remove the top stories section if there are no items
+    if ($no_top_stories && $top_story_id != -1) {
+      unset($layout_render_array['right'][$top_story_id]);
+    }
+
+  }
+
+}
