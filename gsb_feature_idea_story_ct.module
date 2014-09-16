@@ -193,8 +193,9 @@ function gsb_feature_idea_story_ct_entity_view($entity, $type, $view_mode, $lang
       return;
     }
     $result = db_query("
-      SELECT n.nid, n.created, COUNT(t.tid) score
+      SELECT n.nid, fd.field_date_value created, COUNT(t.tid) score
       FROM {node} n
+      INNER JOIN {field_data_field_date} fd ON fd.entity_id = n.nid
       INNER JOIN {field_data_field_key_taxonomy} kt ON kt.entity_id = n.nid
       INNER JOIN {taxonomy_term_data} t ON t.tid = kt.field_key_taxonomy_target_id
       WHERE nid != :nid
