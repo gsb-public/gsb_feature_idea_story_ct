@@ -42,7 +42,7 @@ function gsb_feature_idea_story_ct_metatag_export_default() {
         'value' => '@stanfordbiz',
       ),
       'twitter:image:src' => array(
-        'value' => '[node:field-image-key-image:path]',
+        'value' => '[node:field_image_key_image]',
       ),
       'twitter:player' => array(
         'value' => '[node:field-link-key-video:url]',
