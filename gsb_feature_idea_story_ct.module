@@ -286,11 +286,20 @@ function gsb_feature_idea_story_ct_ds_pre_render_alter(&$layout_render_array, $c
         $item_id = $context['entity']->field_related_other_unlimited['und'][0]['value'];
         $publication = $layout_render_array['right'][$related_id]['field_related_other_unlimited'][0]['entity']['field_collection_item'][$item_id]['#entity']->field_related_other_content;
       }
-      $idea_story = $layout_render_array['right'][$related_id]['field_related_idea_story'];
-      $links = $layout_render_array['right'][$related_id]['field_link_unlimited'];
+      $idea_story = array();
+      if (!empty($layout_render_array['right'][$related_id]['field_related_idea_story'])) {
+        $idea_story = $layout_render_array['right'][$related_id]['field_related_idea_story'];
+      }      
+      $links = array();
+      if (!empty($layout_render_array['right'][$related_id]['field_link_unlimited'])) {
+        $links = $layout_render_array['right'][$related_id]['field_link_unlimited'];
+      }      
       // remove the related section if there are no items
       if(empty($related_faculty) && empty($publication) && empty($idea_story) && empty($links)) {
         unset($layout_render_array['right'][$related_id]);
+      }
+      if (empty($related_faculty)) {
+        unset($layout_render_array['right'][$related_id]['field_related_faculty']);
       }
     }
 
