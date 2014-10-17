@@ -1629,7 +1629,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_pathauto_title_alias',
-    'label' => 'Path Alias',
+    'label' => 'URL Alias',
     'required' => FALSE,
     'settings' => array(
       'custom_add_another' => '',
@@ -2528,7 +2528,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
   t('Link');
   t('Media Format');
   t('Mentioned');
-  t('Path Alias');
+  t('URL Alias');
   t('Program');
   t('Publication');
   t('Publication Date');
