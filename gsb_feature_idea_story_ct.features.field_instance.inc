@@ -1332,7 +1332,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'link_field',
-      'weight' => 15,
+      'weight' => 14,
     ),
     'workbench_access_field' => 0,
   );
@@ -1648,8 +1648,8 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-idea_story-field_program_single'
-  $field_instances['node-idea_story-field_program_single'] = array(
+  // Exported field_instance: 'node-idea_story-field_program_unlimited'
+  $field_instances['node-idea_story-field_program_unlimited'] = array(
     'bundle' => 'idea_story',
     'custom_add_another' => '',
     'custom_remove' => '',
@@ -1659,15 +1659,18 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 28,
+        'module' => 'taxonomy',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 38,
       ),
       'idea_story_latest_stories' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 35,
+        'weight' => 0,
       ),
       'idea_story_related' => array(
         'label' => 'above',
@@ -1685,18 +1688,18 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 33,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 0,
       ),
     ),
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
-    'field_name' => 'field_program_single',
+    'field_name' => 'field_program_unlimited',
     'label' => 'Program',
     'required' => 0,
     'settings' => array(
@@ -1712,7 +1715,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'options_select',
-      'weight' => 26,
+      'weight' => 27,
     ),
     'workbench_access_field' => 0,
   );
@@ -1785,7 +1788,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'taxonomy_hs',
-      'weight' => 14,
+      'weight' => 30,
     ),
     'workbench_access_field' => 0,
   );
@@ -2178,7 +2181,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'concat_field_default',
-      'weight' => 19,
+      'weight' => 17,
     ),
     'workbench_access_field' => 0,
   );
@@ -2528,7 +2531,6 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
   t('Link');
   t('Media Format');
   t('Mentioned');
-  t('URL Alias');
   t('Program');
   t('Publication');
   t('Publication Date');
@@ -2538,6 +2540,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
   t('Short URL');
   t('Stanford Business Season');
   t('Story or Announcement');
+  t('URL Alias');
   t('Volume');
   t('Was this promoted in Re:Think?');
   t('Was this published in Stanford Business?');
