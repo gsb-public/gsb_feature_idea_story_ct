@@ -34,7 +34,7 @@ function gsb_feature_idea_story_ct_form_idea_story_node_form_alter(&$form, &$for
   );
 
   // Define visibility states for Alumni Mentioned.
-  $form['field_program_single']['#states']['invisible'][':input[name="field_alumni_story[' . $language . ']"]'] = array(
+  $form['field_program_unlimited']['#states']['invisible'][':input[name="field_alumni_story[' . $language . ']"]'] = array(
     array('checked' => FALSE),
   );
 
