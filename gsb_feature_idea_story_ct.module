@@ -33,6 +33,11 @@ function gsb_feature_idea_story_ct_form_idea_story_node_form_alter(&$form, &$for
     ),
   );
 
+  // Add required field markers. The actual field validation is done in validate callback.
+  if (!empty($form['field_program_unlimited'][$language])) {
+    $form['field_program_unlimited'][$language]['#title'] .= " " . theme('form_required_marker');
+  }
+
   // Define visibility states for Alumni Mentioned.
   $form['field_program_unlimited']['#states']['invisible'][':input[name="field_alumni_story[' . $language . ']"]'] = array(
     array('checked' => FALSE),
@@ -62,6 +67,8 @@ function gsb_feature_idea_story_ct_form_idea_story_node_form_alter(&$form, &$for
 
   $form['#after_build'][] = 'gsb_feature_idea_story_ct_after_build';
 
+  // Perform additional validation.
+  $form['#validate'][] = 'gsb_feature_idea_story_ct_idea_story_node_form_validate';
 }
 
 /**
@@ -74,6 +81,24 @@ function gsb_feature_idea_story_ct_after_build($form, &$form_state) {
   $form['field_link_unlimited']['und']['#title'] = 'Link Title';
   $form['field_link_unlimited']['und'][0]['title']['#title'] = 'Link Title';
   return $form;
+}
+
+/**
+ * Validate callback for idea_story_node_form.
+ *  - Conditionally validate alumni story fields.
+ */
+function gsb_feature_idea_story_ct_idea_story_node_form_validate($form, &$form_state) {
+  $language = $form['language']['#value'];
+  $values = $form_state['values'];
+
+  // If idea_story is an alumni story we need to manually validate some required fields.
+  if ($values['field_alumni_story'][$language][0]['value'] == TRUE) {
+
+    if (empty($values['field_program_unlimited'][$language][0]['tid'])) {
+      $field_label = $form['field_program_unlimited'][$language]['#title'];
+      form_set_error('field_program_unlimited]['.$language.'][0][tid', $field_label . ' field is required.');
+    }
+  }
 }
 
 /**
