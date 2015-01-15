@@ -79,6 +79,12 @@ function gsb_feature_idea_story_ct_strongarm() {
       'idea_story_latest_stories' => array(
         'custom_settings' => TRUE,
       ),
+      'alumni_featured_content' => array(
+        'custom_settings' => TRUE,
+      ),
+      'alumni_reunion_agenda_list' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -124,6 +130,10 @@ function gsb_feature_idea_story_ct_strongarm() {
             'weight' => '24',
             'visible' => FALSE,
           ),
+          'alumni_featured_content' => array(
+            'weight' => '23',
+            'visible' => FALSE,
+          ),
         ),
         'gsb_feature_idea_story_display_top_stories_field' => array(
           'default' => array(
@@ -148,6 +158,10 @@ function gsb_feature_idea_story_ct_strongarm() {
           ),
           'idea_story_latest_stories' => array(
             'weight' => '22',
+            'visible' => FALSE,
+          ),
+          'alumni_featured_content' => array(
+            'weight' => '21',
             'visible' => FALSE,
           ),
         ),
@@ -176,6 +190,10 @@ function gsb_feature_idea_story_ct_strongarm() {
             'weight' => '21',
             'visible' => FALSE,
           ),
+          'alumni_featured_content' => array(
+            'weight' => '20',
+            'visible' => FALSE,
+          ),
         ),
         'insights_signup_form' => array(
           'default' => array(
@@ -194,6 +212,10 @@ function gsb_feature_idea_story_ct_strongarm() {
             'weight' => '32',
             'visible' => FALSE,
           ),
+          'alumni_featured_content' => array(
+            'weight' => '17',
+            'visible' => FALSE,
+          ),
         ),
         'gsb_media_inquiries' => array(
           'default' => array(
@@ -210,6 +232,10 @@ function gsb_feature_idea_story_ct_strongarm() {
           ),
           'teaser' => array(
             'weight' => '42',
+            'visible' => FALSE,
+          ),
+          'alumni_featured_content' => array(
+            'weight' => '19',
             'visible' => FALSE,
           ),
         ),
