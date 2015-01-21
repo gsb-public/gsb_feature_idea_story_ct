@@ -742,6 +742,7 @@ function gsb_feature_idea_story_ct_ds_custom_fields_info() {
   $ds_field->label = 'Media icon';
   $ds_field->field_type = 5;
   $ds_field->entities = array(
+    'field_collection_item' => 'field_collection_item',
     'node' => 'node',
   );
   $ds_field->ui_limit = 'idea_story|*
@@ -749,7 +750,8 @@ announcement|*
 school_story|*
 offsite_school_story|*
 offsite_idea_story|*
-ranking|*';
+ranking|*
+field_featured_item|*';
   $ds_field->properties = array(
     'code' => array(
       'value' => '<span class="media-icon [node:field-icon]"><span class="element-invisible">[node:field-icon]</span></span>',
