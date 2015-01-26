@@ -754,7 +754,7 @@ ranking|*
 field_featured_item|*';
   $ds_field->properties = array(
     'code' => array(
-      'value' => '<span class="media-icon [node:field-icon]"><span class="element-invisible">[node:field-icon]</span></span>',
+      'value' => '<span class="media-icon [node:field-icon][field_collection_item:field-icon]"><span class="element-invisible">[node:field-icon][field_collection_item:field-icon]</span></span>',
       'format' => 'gsb_html_text',
     ),
     'use_token' => 1,
