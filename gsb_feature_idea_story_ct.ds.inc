@@ -772,7 +772,8 @@ field_featured_item|*';
   $ds_field->ui_limit = 'idea_story|default
 announcement|default
 school_story|default
-alumni_reunion_agenda_item|default';
+alumni_reunion_agenda_item|default
+act|default';
   $ds_field->properties = array(
     'code' => array(
       'value' => '<div class="superhead related">Related</div>',
