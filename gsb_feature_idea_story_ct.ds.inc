@@ -191,12 +191,6 @@ function gsb_feature_idea_story_ct_ds_field_settings_info() {
           'ow-def-cl' => TRUE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
-          'fi' => TRUE,
-          'fi-el' => 'span',
-          'fi-cl' => '',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => TRUE,
         ),
       ),
     ),
@@ -282,6 +276,7 @@ function gsb_feature_idea_story_ct_ds_field_settings_info() {
           'fi-at' => '',
           'fi-def-at' => FALSE,
           'fi-odd-even' => FALSE,
+          'fi-first-last' => FALSE,
         ),
       ),
     ),
@@ -301,6 +296,7 @@ function gsb_feature_idea_story_ct_ds_field_settings_info() {
           'fi-at' => '',
           'fi-def-at' => FALSE,
           'fi-odd-even' => TRUE,
+          'fi-first-last' => FALSE,
         ),
       ),
     ),
@@ -962,6 +958,7 @@ function gsb_feature_idea_story_ct_ds_layout_settings_info() {
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => 0,
   );
   $export['node|idea_story|default'] = $ds_layout;
 

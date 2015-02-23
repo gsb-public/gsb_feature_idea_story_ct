@@ -85,6 +85,15 @@ function gsb_feature_idea_story_ct_strongarm() {
       'alumni_reunion_agenda_list' => array(
         'custom_settings' => FALSE,
       ),
+      'act_project_by_criteria' => array(
+        'custom_settings' => FALSE,
+      ),
+      'act_project_listing' => array(
+        'custom_settings' => FALSE,
+      ),
+      'alumni_name' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
