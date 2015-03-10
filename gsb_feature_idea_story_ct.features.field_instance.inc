@@ -831,7 +831,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'custom_add_another' => '',
     'custom_remove' => '',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'minimum size 1200 x 630 px',
     'display' => array(
       'alumni_featured_content' => array(
         'label' => 'above',
@@ -903,6 +903,26 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
       'default_image' => 0,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
+      'filefield_paths' => array(
+        'active_updating' => 0,
+        'file_name' => array(
+          'options' => array(
+            'pathauto' => 0,
+            'transliterate' => 0,
+          ),
+          'value' => '[file:ffp-name-only-original].[file:ffp-extension-original]',
+        ),
+        'file_path' => array(
+          'options' => array(
+            'pathauto' => 0,
+            'transliterate' => 0,
+          ),
+          'value' => '',
+        ),
+        'replace_existing_files' => 0,
+        'retroactive_update' => 0,
+      ),
+      'filefield_paths_enabled' => 1,
       'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '1200x630',
@@ -913,7 +933,6 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
       'active' => 1,
       'module' => 'image',
       'settings' => array(
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
       ),
@@ -2726,6 +2745,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
   t('Was this promoted in Re:Think?');
   t('Was this published in Stanford Business?');
   t('Year');
+  t('minimum size 1200 x 630 px');
 
   return $field_instances;
 }
