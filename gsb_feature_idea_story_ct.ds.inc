@@ -769,7 +769,10 @@ field_featured_item|*';
 announcement|default
 school_story|default
 alumni_reunion_agenda_item|default
-act|default';
+act|default
+book|default
+publication|default
+working_paper|default';
   $ds_field->properties = array(
     'code' => array(
       'value' => '<div class="superhead related">Related</div>',
