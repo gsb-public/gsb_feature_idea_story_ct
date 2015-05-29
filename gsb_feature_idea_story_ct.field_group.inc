@@ -75,7 +75,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Alumni/Past Participant Mention',
-    'weight' => '12',
+    'weight' => '13',
     'children' => array(
       0 => 'field_alumni_story',
       1 => 'field_program_unlimited',
@@ -130,7 +130,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Rethink',
-    'weight' => '15',
+    'weight' => '16',
     'children' => array(
       0 => 'field_part_of_rethink',
       1 => 'field_rethink_date',
@@ -158,7 +158,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Stanford Business',
-    'weight' => '16',
+    'weight' => '17',
     'children' => array(
       0 => 'field_issue_number',
       1 => 'field_part_of_business_magazine',
@@ -222,6 +222,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
       1 => 'field_related_faculty',
       2 => 'field_related_idea_story',
       3 => 'field_related_other_unlimited',
+      4 => 'field_person_ref_unlimited',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -273,7 +274,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Tagging',
-    'weight' => '13',
+    'weight' => '14',
     'children' => array(
       0 => 'group_academic_area',
       1 => 'group_additional_topics',
