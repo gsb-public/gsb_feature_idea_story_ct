@@ -762,13 +762,13 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'file',
         'settings' => array(
           'conditions' => array(),
         ),
         'type' => 'file_default',
-        'weight' => 40,
+        'weight' => 6,
       ),
       'idea_story_latest_stories' => array(
         'label' => 'above',
@@ -1571,7 +1571,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'link_default',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'idea_story_latest_stories' => array(
         'label' => 'hidden',
@@ -1901,14 +1901,15 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
           'conditions' => array(),
-          'link' => FALSE,
+          'links' => 0,
+          'view_mode' => 'people_fpp',
         ),
-        'type' => 'entityreference_label',
-        'weight' => 39,
+        'type' => 'entityreference_entity_view',
+        'weight' => 2,
       ),
       'idea_story_latest_stories' => array(
         'label' => 'above',
@@ -2221,7 +2222,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
           'view_mode' => 'idea_story_related',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'idea_story_latest_stories' => array(
         'label' => 'hidden',
@@ -2302,7 +2303,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'gsb_field_formatter_related_items_field_collection',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'idea_story_latest_stories' => array(
         'label' => 'hidden',
