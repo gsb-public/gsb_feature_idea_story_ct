@@ -842,7 +842,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 11,
+      'weight' => 19,
     ),
     'workbench_access_field' => 0,
   );
