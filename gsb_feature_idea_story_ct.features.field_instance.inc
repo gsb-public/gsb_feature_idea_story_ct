@@ -1945,7 +1945,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_person_ref_unlimited',
-    'label' => 'Faculty, Alumni, PhD Student, MSx Fellow, or Staff',
+    'label' => 'People (Faculty, Alumni, PhD Student, MSx Fellow, Staff)',
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
@@ -2901,7 +2901,6 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
   t('Circle (Centers and Research Programs)');
   t('Dek');
   t('Faculty');
-  t('Faculty, Alumni, PhD Student, MSx Fellow, or Staff');
   t('Files');
   t('Issue');
   t('Key Audio');
@@ -2912,6 +2911,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
   t('Link');
   t('Media Format');
   t('Mentioned');
+  t('People (Faculty, Alumni, PhD Student, MSx Fellow, Staff)');
   t('Program');
   t('Publication Date');
   t('Publication or Event');
