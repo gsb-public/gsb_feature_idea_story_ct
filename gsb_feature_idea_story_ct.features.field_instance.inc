@@ -809,7 +809,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'settings' => array(
       'custom_add_another' => '',
       'custom_remove' => '',
-      'description_field' => 0,
+      'description_field' => 1,
       'file_directory' => '',
       'file_extensions' => 'pdf doc docx xlsx xls ppt pptx txt odf ods odp',
       'filefield_paths' => array(
