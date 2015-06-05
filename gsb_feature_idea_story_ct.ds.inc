@@ -805,7 +805,8 @@ alumni_reunion_agenda_item|default
 act|default
 book|default
 publication|default
-working_paper|default';
+working_paper|default
+case|default';
   $ds_field->properties = array(
     'code' => array(
       'value' => '<div class="superhead related">Related</div>',
