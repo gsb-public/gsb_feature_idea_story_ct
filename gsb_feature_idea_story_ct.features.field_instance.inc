@@ -648,7 +648,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
           'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
-        'weight' => 2,
+        'weight' => 0,
       ),
       'idea_story_latest_stories' => array(
         'label' => 'hidden',
