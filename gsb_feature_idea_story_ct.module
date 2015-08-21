@@ -196,6 +196,14 @@ function gsb_feature_idea_story_ct_entity_view($entity, $type, $view_mode, $lang
           'html' => FALSE,
         ),
       );
+      if (in_array($wrapper->field_related_other_content->value()->type, array('event', 'admission_event'))) {
+        if (!empty($wrapper->field_related_other_content->field_link_single->value()['url'])) {
+          $entity->content['related_content_label']['#path'] = $wrapper->field_related_other_content->field_link_single->value()['url'];
+          if (!empty($wrapper->field_related_other_content->field_link_single->value()['attributes']['target'])) {
+            $entity->content['related_content_label']['#options']['attributes']['target'] = $wrapper->field_related_other_content->field_link_single->value()['attributes']['target'];
+          }
+        }
+      }
     }
   }
 
