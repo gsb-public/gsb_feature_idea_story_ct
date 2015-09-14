@@ -150,11 +150,11 @@ function gsb_feature_idea_story_ct_strongarm() {
             'visible' => FALSE,
           ),
           'compact' => array(
-            'weight' => '28',
+            'weight' => '29',
             'visible' => FALSE,
           ),
           'expanded' => array(
-            'weight' => '26',
+            'weight' => '27',
             'visible' => FALSE,
           ),
         ),
@@ -188,11 +188,11 @@ function gsb_feature_idea_story_ct_strongarm() {
             'visible' => FALSE,
           ),
           'compact' => array(
-            'weight' => '23',
+            'weight' => '24',
             'visible' => FALSE,
           ),
           'expanded' => array(
-            'weight' => '24',
+            'weight' => '25',
             'visible' => FALSE,
           ),
         ),
@@ -226,11 +226,11 @@ function gsb_feature_idea_story_ct_strongarm() {
             'visible' => FALSE,
           ),
           'compact' => array(
-            'weight' => '22',
+            'weight' => '23',
             'visible' => FALSE,
           ),
           'expanded' => array(
-            'weight' => '23',
+            'weight' => '24',
             'visible' => FALSE,
           ),
         ),
@@ -256,11 +256,11 @@ function gsb_feature_idea_story_ct_strongarm() {
             'visible' => FALSE,
           ),
           'compact' => array(
-            'weight' => '19',
+            'weight' => '20',
             'visible' => FALSE,
           ),
           'expanded' => array(
-            'weight' => '20',
+            'weight' => '21',
             'visible' => FALSE,
           ),
         ),
@@ -286,11 +286,11 @@ function gsb_feature_idea_story_ct_strongarm() {
             'visible' => FALSE,
           ),
           'compact' => array(
-            'weight' => '21',
+            'weight' => '22',
             'visible' => FALSE,
           ),
           'expanded' => array(
-            'weight' => '22',
+            'weight' => '23',
             'visible' => FALSE,
           ),
         ),

@@ -113,7 +113,7 @@ function gsb_feature_idea_story_ct_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'compact';
   $ds_fieldsetting->settings = array(
     'media_icon' => array(
-      'weight' => '1',
+      'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -124,7 +124,7 @@ function gsb_feature_idea_story_ct_ds_field_settings_info() {
       ),
     ),
     'title' => array(
-      'weight' => '2',
+      'weight' => '3',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -444,7 +444,7 @@ function gsb_feature_idea_story_ct_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'expanded';
   $ds_fieldsetting->settings = array(
     'media_icon' => array(
-      'weight' => '1',
+      'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -455,7 +455,7 @@ function gsb_feature_idea_story_ct_ds_field_settings_info() {
       ),
     ),
     'title' => array(
-      'weight' => '2',
+      'weight' => '3',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -1062,12 +1062,14 @@ function gsb_feature_idea_story_ct_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'field_date',
-        1 => 'media_icon',
-        2 => 'title',
+        1 => 'group_wrapper_title',
+        2 => 'media_icon',
+        3 => 'title',
       ),
     ),
     'fields' => array(
       'field_date' => 'ds_content',
+      'group_wrapper_title' => 'ds_content',
       'media_icon' => 'ds_content',
       'title' => 'ds_content',
     ),
@@ -1180,16 +1182,18 @@ function gsb_feature_idea_story_ct_ds_layout_settings_info() {
     'regions' => array(
       'left' => array(
         0 => 'field_date',
-        1 => 'media_icon',
-        2 => 'title',
-        3 => 'field_editorial_summary',
+        1 => 'group_wrapper_title',
+        2 => 'media_icon',
+        3 => 'title',
+        4 => 'field_editorial_summary',
       ),
       'right' => array(
-        4 => 'field_image_key_image',
+        5 => 'field_image_key_image',
       ),
     ),
     'fields' => array(
       'field_date' => 'left',
+      'group_wrapper_title' => 'left',
       'media_icon' => 'left',
       'title' => 'left',
       'field_editorial_summary' => 'left',
