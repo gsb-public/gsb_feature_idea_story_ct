@@ -480,7 +480,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
     'format_settings' => array(
       'label' => 'Title wrapper',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => 'field-group-format group_wrapper_title field-group-div group-wrapper-title',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
