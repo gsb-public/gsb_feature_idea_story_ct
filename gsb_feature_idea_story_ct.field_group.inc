@@ -313,7 +313,8 @@ function gsb_feature_idea_story_ct_field_group_info() {
     'format_settings' => array(
       'label' => 'Byline wrapper',
       'instance_settings' => array(
-        'classes' => '',
+        'id' => '',
+        'classes' => 'field-group-format group_wrapper_byline field-group-div group-wrapper-byline',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
@@ -348,7 +349,8 @@ function gsb_feature_idea_story_ct_field_group_info() {
     'format_settings' => array(
       'label' => 'Header wrapper',
       'instance_settings' => array(
-        'classes' => '',
+        'id' => '',
+        'classes' => 'field-group-format group_wrapper_header field-group-div group-wrapper-header',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
@@ -451,7 +453,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
       'label' => 'Taxonomy wrapper',
       'instance_settings' => array(
         'item_count' => '0',
-        'classes' => '',
+        'classes' => 'field-group-format group_wrapper_taxonomy field-group-gsb_field_formatter_group_comma_separator group-wrapper-taxonomy',
       ),
       'formatter' => 'open',
     ),
