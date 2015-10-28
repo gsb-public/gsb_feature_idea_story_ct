@@ -21,6 +21,7 @@ dependencies[] = markdown
 dependencies[] = metatag
 dependencies[] = options
 dependencies[] = pathauto_title_alias
+dependencies[] = smart_trim
 dependencies[] = strongarm
 dependencies[] = taxonomy
 dependencies[] = text
