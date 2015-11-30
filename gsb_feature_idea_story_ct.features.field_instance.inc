@@ -10,7 +10,7 @@
 function gsb_feature_idea_story_ct_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-idea_story-field_academic_area_unlimited'
+  // Exported field_instance: 'node-idea_story-field_academic_area_unlimited'.
   $field_instances['node-idea_story-field_academic_area_unlimited'] = array(
     'bundle' => 'idea_story',
     'custom_add_another' => '',
@@ -101,7 +101,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-idea_story-field_alumni_story'
+  // Exported field_instance: 'node-idea_story-field_alumni_story'.
   $field_instances['node-idea_story-field_alumni_story'] = array(
     'bundle' => 'idea_story',
     'custom_add_another' => '',
@@ -192,7 +192,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-idea_story-field_authors'
+  // Exported field_instance: 'node-idea_story-field_authors'.
   $field_instances['node-idea_story-field_authors'] = array(
     'bundle' => 'idea_story',
     'custom_add_another' => '',
@@ -282,7 +282,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-idea_story-field_body'
+  // Exported field_instance: 'node-idea_story-field_body'.
   $field_instances['node-idea_story-field_body'] = array(
     'bundle' => 'idea_story',
     'custom_add_another' => '',
@@ -414,7 +414,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-idea_story-field_business_insight_topic'
+  // Exported field_instance: 'node-idea_story-field_business_insight_topic'.
   $field_instances['node-idea_story-field_business_insight_topic'] = array(
     'bundle' => 'idea_story',
     'custom_add_another' => '',
@@ -505,7 +505,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-idea_story-field_centers_research_programs'
+  // Exported field_instance: 'node-idea_story-field_centers_research_programs'.
   $field_instances['node-idea_story-field_centers_research_programs'] = array(
     'bundle' => 'idea_story',
     'custom_add_another' => '',
@@ -591,7 +591,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-idea_story-field_date'
+  // Exported field_instance: 'node-idea_story-field_date'.
   $field_instances['node-idea_story-field_date'] = array(
     'bundle' => 'idea_story',
     'custom_add_another' => '',
@@ -758,7 +758,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-idea_story-field_editorial_summary'
+  // Exported field_instance: 'node-idea_story-field_editorial_summary'.
   $field_instances['node-idea_story-field_editorial_summary'] = array(
     'bundle' => 'idea_story',
     'custom_add_another' => '',
@@ -882,7 +882,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-idea_story-field_file_unlimited_public'
+  // Exported field_instance: 'node-idea_story-field_file_unlimited_public'.
   $field_instances['node-idea_story-field_file_unlimited_public'] = array(
     'bundle' => 'idea_story',
     'custom_add_another' => '',
@@ -994,7 +994,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-idea_story-field_icon'
+  // Exported field_instance: 'node-idea_story-field_icon'.
   $field_instances['node-idea_story-field_icon'] = array(
     'bundle' => 'idea_story',
     'custom_add_another' => '',
@@ -1085,7 +1085,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-idea_story-field_image_key_image'
+  // Exported field_instance: 'node-idea_story-field_image_key_image'.
   $field_instances['node-idea_story-field_image_key_image'] = array(
     'bundle' => 'idea_story',
     'custom_add_another' => '',
@@ -1150,7 +1150,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'conditions' => array(),
-          'image_link' => '',
+          'image_link' => 'content',
           'image_style' => '270x158',
         ),
         'type' => 'image',
@@ -1161,7 +1161,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'conditions' => array(),
-          'image_link' => '',
+          'image_link' => 'content',
           'image_style' => '',
         ),
         'type' => 'image',
@@ -1219,7 +1219,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-idea_story-field_issue_number'
+  // Exported field_instance: 'node-idea_story-field_issue_number'.
   $field_instances['node-idea_story-field_issue_number'] = array(
     'bundle' => 'idea_story',
     'custom_add_another' => '',
@@ -1346,7 +1346,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-idea_story-field_key_taxonomy'
+  // Exported field_instance: 'node-idea_story-field_key_taxonomy'.
   $field_instances['node-idea_story-field_key_taxonomy'] = array(
     'bundle' => 'idea_story',
     'custom_add_another' => '',
@@ -1453,7 +1453,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-idea_story-field_link_key_audio'
+  // Exported field_instance: 'node-idea_story-field_link_key_audio'.
   $field_instances['node-idea_story-field_link_key_audio'] = array(
     'bundle' => 'idea_story',
     'custom_add_another' => '',
@@ -1563,7 +1563,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-idea_story-field_link_key_video'
+  // Exported field_instance: 'node-idea_story-field_link_key_video'.
   $field_instances['node-idea_story-field_link_key_video'] = array(
     'bundle' => 'idea_story',
     'custom_add_another' => '',
@@ -1673,7 +1673,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-idea_story-field_link_single'
+  // Exported field_instance: 'node-idea_story-field_link_single'.
   $field_instances['node-idea_story-field_link_single'] = array(
     'bundle' => 'idea_story',
     'custom_add_another' => '',
@@ -1786,7 +1786,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-idea_story-field_link_unlimited'
+  // Exported field_instance: 'node-idea_story-field_link_unlimited'.
   $field_instances['node-idea_story-field_link_unlimited'] = array(
     'bundle' => 'idea_story',
     'custom_add_another' => '',
@@ -1899,7 +1899,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-idea_story-field_part_of_business_magazine'
+  // Exported field_instance: 'node-idea_story-field_part_of_business_magazine'.
   $field_instances['node-idea_story-field_part_of_business_magazine'] = array(
     'bundle' => 'idea_story',
     'custom_add_another' => '',
@@ -1990,7 +1990,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-idea_story-field_part_of_rethink'
+  // Exported field_instance: 'node-idea_story-field_part_of_rethink'.
   $field_instances['node-idea_story-field_part_of_rethink'] = array(
     'bundle' => 'idea_story',
     'custom_add_another' => '',
@@ -2081,7 +2081,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-idea_story-field_pathauto_title_alias'
+  // Exported field_instance: 'node-idea_story-field_pathauto_title_alias'.
   $field_instances['node-idea_story-field_pathauto_title_alias'] = array(
     'bundle' => 'idea_story',
     'custom_add_another' => '',
@@ -2172,7 +2172,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-idea_story-field_person_ref_unlimited'
+  // Exported field_instance: 'node-idea_story-field_person_ref_unlimited'.
   $field_instances['node-idea_story-field_person_ref_unlimited'] = array(
     'bundle' => 'idea_story',
     'custom_add_another' => '',
@@ -2265,7 +2265,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-idea_story-field_program_unlimited'
+  // Exported field_instance: 'node-idea_story-field_program_unlimited'.
   $field_instances['node-idea_story-field_program_unlimited'] = array(
     'bundle' => 'idea_story',
     'custom_add_another' => '',
@@ -2352,7 +2352,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-idea_story-field_region_of_interest'
+  // Exported field_instance: 'node-idea_story-field_region_of_interest'.
   $field_instances['node-idea_story-field_region_of_interest'] = array(
     'bundle' => 'idea_story',
     'custom_add_another' => '',
@@ -2443,7 +2443,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-idea_story-field_related_faculty'
+  // Exported field_instance: 'node-idea_story-field_related_faculty'.
   $field_instances['node-idea_story-field_related_faculty'] = array(
     'bundle' => 'idea_story',
     'custom_add_another' => '',
@@ -2533,7 +2533,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-idea_story-field_related_idea_story'
+  // Exported field_instance: 'node-idea_story-field_related_idea_story'.
   $field_instances['node-idea_story-field_related_idea_story'] = array(
     'bundle' => 'idea_story',
     'custom_add_another' => '',
@@ -2627,7 +2627,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-idea_story-field_related_other_unlimited'
+  // Exported field_instance: 'node-idea_story-field_related_other_unlimited'.
   $field_instances['node-idea_story-field_related_other_unlimited'] = array(
     'bundle' => 'idea_story',
     'custom_add_another' => '',
@@ -2715,7 +2715,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-idea_story-field_rethink_date'
+  // Exported field_instance: 'node-idea_story-field_rethink_date'.
   $field_instances['node-idea_story-field_rethink_date'] = array(
     'bundle' => 'idea_story',
     'custom_add_another' => '',
@@ -2812,7 +2812,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-idea_story-field_search_field'
+  // Exported field_instance: 'node-idea_story-field_search_field'.
   $field_instances['node-idea_story-field_search_field'] = array(
     'bundle' => 'idea_story',
     'custom_add_another' => '',
@@ -2924,7 +2924,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-idea_story-field_season'
+  // Exported field_instance: 'node-idea_story-field_season'.
   $field_instances['node-idea_story-field_season'] = array(
     'bundle' => 'idea_story',
     'custom_add_another' => '',
@@ -3011,7 +3011,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-idea_story-field_tag'
+  // Exported field_instance: 'node-idea_story-field_tag'.
   $field_instances['node-idea_story-field_tag'] = array(
     'bundle' => 'idea_story',
     'custom_add_another' => '',
@@ -3099,7 +3099,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-idea_story-field_volume_number'
+  // Exported field_instance: 'node-idea_story-field_volume_number'.
   $field_instances['node-idea_story-field_volume_number'] = array(
     'bundle' => 'idea_story',
     'custom_add_another' => '',
@@ -3226,7 +3226,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-idea_story-field_year'
+  // Exported field_instance: 'node-idea_story-field_year'.
   $field_instances['node-idea_story-field_year'] = array(
     'bundle' => 'idea_story',
     'custom_add_another' => '',

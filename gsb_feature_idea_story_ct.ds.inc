@@ -793,8 +793,8 @@ function gsb_feature_idea_story_ct_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'idea_story';
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
-    'insights_label_insights' => array(
-      'weight' => '0',
+    'media_icon' => array(
+      'weight' => '4',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -804,8 +804,8 @@ function gsb_feature_idea_story_ct_ds_field_settings_info() {
         'conditions' => array(),
       ),
     ),
-    'media_icon' => array(
-      'weight' => '4',
+    'insights_label_insights' => array(
+      'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -1352,6 +1352,7 @@ function gsb_feature_idea_story_ct_ds_layout_settings_info() {
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => 0,
   );
   $export['node|idea_story|news_listing'] = $ds_layout;
 
