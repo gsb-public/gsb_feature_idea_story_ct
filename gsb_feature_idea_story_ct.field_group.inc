@@ -423,7 +423,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
     'format_settings' => array(
       'label' => 'Related',
       'instance_settings' => array(
-        'classes' => 'group-wrapper-related',
+        'classes' => '',
         'description' => '',
       ),
       'formatter' => 'collapsed',
