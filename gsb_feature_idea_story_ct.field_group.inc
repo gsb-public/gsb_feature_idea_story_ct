@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function gsb_feature_idea_story_ct_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -35,7 +35,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
       ),
     ),
   );
-  $export['group_academic_area|node|idea_story|form'] = $field_group;
+  $field_groups['group_academic_area|node|idea_story|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -62,7 +62,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
       ),
     ),
   );
-  $export['group_additional_topics|node|idea_story|form'] = $field_group;
+  $field_groups['group_additional_topics|node|idea_story|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -90,7 +90,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
       ),
     ),
   );
-  $export['group_alumni_story|node|idea_story|form'] = $field_group;
+  $field_groups['group_alumni_story|node|idea_story|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -117,7 +117,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
       ),
     ),
   );
-  $export['group_centers|node|idea_story|form'] = $field_group;
+  $field_groups['group_centers|node|idea_story|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -145,7 +145,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
       ),
     ),
   );
-  $export['group_part_of_rethink|node|idea_story|form'] = $field_group;
+  $field_groups['group_part_of_rethink|node|idea_story|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -176,7 +176,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
       ),
     ),
   );
-  $export['group_part_of_stanford_business|node|idea_story|form'] = $field_group;
+  $field_groups['group_part_of_stanford_business|node|idea_story|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -203,7 +203,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
       ),
     ),
   );
-  $export['group_regions_of_interest|node|idea_story|form'] = $field_group;
+  $field_groups['group_regions_of_interest|node|idea_story|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -235,7 +235,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
       ),
     ),
   );
-  $export['group_related_content|node|idea_story|form'] = $field_group;
+  $field_groups['group_related_content|node|idea_story|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -262,7 +262,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
       ),
     ),
   );
-  $export['group_tags|node|idea_story|form'] = $field_group;
+  $field_groups['group_tags|node|idea_story|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -291,7 +291,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
       ),
     ),
   );
-  $export['group_taxonomy|node|idea_story|form'] = $field_group;
+  $field_groups['group_taxonomy|node|idea_story|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -324,7 +324,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_wrapper_byline|node|idea_story|default'] = $field_group;
+  $field_groups['group_wrapper_byline|node|idea_story|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -360,7 +360,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_wrapper_header|node|idea_story|default'] = $field_group;
+  $field_groups['group_wrapper_header|node|idea_story|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -396,7 +396,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_wrapper_idea_story_text|node|idea_story|teaser'] = $field_group;
+  $field_groups['group_wrapper_idea_story_text|node|idea_story|teaser'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -429,7 +429,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
       'formatter' => 'collapsed',
     ),
   );
-  $export['group_wrapper_related|node|idea_story|default'] = $field_group;
+  $field_groups['group_wrapper_related|node|idea_story|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -458,7 +458,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_wrapper_taxonomy|node|idea_story|default'] = $field_group;
+  $field_groups['group_wrapper_taxonomy|node|idea_story|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -490,7 +490,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_wrapper_title|field_collection_item|field_related_other_unlimited|default'] = $field_group;
+  $field_groups['group_wrapper_title|field_collection_item|field_related_other_unlimited|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -523,7 +523,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_wrapper_title|node|idea_story|compact'] = $field_group;
+  $field_groups['group_wrapper_title|node|idea_story|compact'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -556,7 +556,26 @@ function gsb_feature_idea_story_ct_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_wrapper_title|node|idea_story|expanded'] = $field_group;
+  $field_groups['group_wrapper_title|node|idea_story|expanded'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Academic Area');
+  t('Additional Topics');
+  t('Alumni/Past Participant Mention');
+  t('Byline wrapper');
+  t('Centers');
+  t('Header wrapper');
+  t('Idea story text wrapper');
+  t('Regions of Interest');
+  t('Related');
+  t('Related Content');
+  t('Rethink');
+  t('Stanford Business');
+  t('Tagging');
+  t('Tags');
+  t('Taxonomy wrapper');
+  t('Title wrapper');
+
+  return $field_groups;
 }

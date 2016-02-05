@@ -940,7 +940,8 @@ act|default
 book|default
 publication|default
 working_paper|default
-case|default';
+case|default
+program|field_program_related';
   $ds_field->properties = array(
     'code' => array(
       'value' => '<div class="superhead related">Related</div>',
@@ -1419,7 +1420,7 @@ function gsb_feature_idea_story_ct_ds_view_modes_info() {
   $ds_view_mode = new stdClass();
   $ds_view_mode->api_version = 1;
   $ds_view_mode->view_mode = 'idea_story_related';
-  $ds_view_mode->label = 'Related to Idea Story';
+  $ds_view_mode->label = 'Related sidebar';
   $ds_view_mode->entities = array(
     'node' => 'node',
   );
