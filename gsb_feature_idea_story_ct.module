@@ -283,10 +283,17 @@ function gsb_feature_idea_story_ct_entity_view($entity, $type, $view_mode, $lang
   if ($entity->bundle == 'quotes') {
     if (!empty($entity->field_existing_node_title_ref)){
       $wrapper = entity_metadata_wrapper('node', $entity->field_existing_node_title_ref['und'][0]['target_id']);
-      $container = '<a href='.$wrapper->value()->path['alias'].'><span class="first-double-apostrophe">&ldquo;</span><span class="quote">'.$entity->field_body['und'][0]['value'].'</span><span class="last-double-apostrophe">&rdquo;</span><br/><span class="dash">—</span><span class="attribution">'.$entity->field_attribution['und'][0]['value'].'</span><br/><span class="attribution-title">'.$entity->field_attribution_title['und'][0]['value'].'</span></a>';
+      $quotes_markup = '<a href='.$wrapper->value()->path['alias'].'><span class="first-double-apostrophe">&ldquo;</span>
+        <span class="quote">'.$entity->field_body['und'][0]['value'].'</span><span class="last-double-apostrophe">&rdquo;</span><br/>
+        <span class="dash">—</span><span class="attribution">'.$entity->field_attribution['und'][0]['value'].'</span><br/>
+        <span class="attribution-title">'.$entity->field_attribution_title['und'][0]['value'].'</span></a>';
     }
     else {
-      $container = '<span class="first-double-apostrophe">&ldquo;</span><span class="quote">'.$entity->field_body['und'][0]['value'].'</span><span class="last-double-apostrophe">&rdquo;</span><br/><span class="dash">—</span><span class="attribution">'.$entity->field_attribution['und'][0]['value'].'</span><br/><span class="attribution-title">'.$entity->field_attribution_title['und'][0]['value'].'</span>';
+      $quotes_markup = '<span class="first-double-apostrophe">&ldquo;</span>
+        <span class="quote">'.$entity->field_body['und'][0]['value'].'</span>
+        <span class="last-double-apostrophe">&rdquo;</span><br/><span class="dash">—</span>
+        <span class="attribution">'.$entity->field_attribution['und'][0]['value'].'</span><br/>
+        <span class="attribution-title">'.$entity->field_attribution_title['und'][0]['value'].'</span>';
     }
 
     $entity->content['quotes_title'] = array(
@@ -296,7 +303,7 @@ function gsb_feature_idea_story_ct_entity_view($entity, $type, $view_mode, $lang
           'quotes-title',
         ),
       ),
-     '#children' => $container,
+     '#children' => $quotes_markup,
     );
   }
 }
