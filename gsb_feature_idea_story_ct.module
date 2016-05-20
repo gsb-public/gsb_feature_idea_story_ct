@@ -283,7 +283,7 @@ function gsb_feature_idea_story_ct_entity_view($entity, $type, $view_mode, $lang
   if ($entity->bundle == 'quotes') {
     if (!empty($entity->field_existing_node_title_ref)){
       $wrapper = entity_metadata_wrapper('node', $entity->field_existing_node_title_ref['und'][0]['target_id']);
-      $quotes_markup = '<a href='.$wrapper->value()->path['alias'].'><span class="first-double-apostrophe">&ldquo;</span>
+      $quotes_markup = '<a href='.base_path().$wrapper->value()->path['alias'].'><span class="first-double-apostrophe">&ldquo;</span>
         <span class="quote">'.$entity->field_body['und'][0]['value'].'</span><span class="last-double-apostrophe">&rdquo;</span><br/>
         <span class="dash">—</span><span class="attribution">'.$entity->field_attribution['und'][0]['value'].'</span><br/>
         <span class="attribution-title">'.$entity->field_attribution_title['und'][0]['value'].'</span></a>';
