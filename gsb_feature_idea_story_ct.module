@@ -280,7 +280,7 @@ function gsb_feature_idea_story_ct_entity_view($entity, $type, $view_mode, $lang
     }
   }
 
-  if ($entity->bundle == 'quotes') {
+  if ($type == 'fieldable_panels_pane' && $entity->bundle == 'quotes') {
     if (!empty($entity->field_existing_node_title_ref)){
       $wrapper = entity_metadata_wrapper('node', $entity->field_existing_node_title_ref['und'][0]['target_id']);
       $quotes_markup = '<a href='.base_path().$wrapper->value()->path['alias'].'><span class="first-double-apostrophe">&ldquo;</span>
