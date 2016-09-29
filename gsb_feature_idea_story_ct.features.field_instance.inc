@@ -2352,97 +2352,6 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-idea_story-field_region_of_interest'.
-  $field_instances['node-idea_story-field_region_of_interest'] = array(
-    'bundle' => 'idea_story',
-    'custom_add_another' => '',
-    'custom_remove' => '',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'alumni_featured_content' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 35,
-      ),
-      'compact' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 26,
-      ),
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'ds',
-        'settings' => array(
-          'conditions' => array(),
-          'taxonomy_term_reference_view_mode' => 'insight_topics',
-          'use_content_language' => 1,
-        ),
-        'type' => 'ds_taxonomy_view_mode',
-        'weight' => 30,
-      ),
-      'expanded' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 38,
-      ),
-      'idea_story_latest_stories' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 37,
-      ),
-      'idea_story_related' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 16,
-      ),
-      'idea_story_top_stories' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 31,
-      ),
-      'news_listing' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 36,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 26,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_region_of_interest',
-    'label' => 'Region of Interest',
-    'required' => 0,
-    'settings' => array(
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'hs_taxonomy',
-      'settings' => array(
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-      ),
-      'type' => 'taxonomy_hs',
-      'weight' => 30,
-    ),
-    'workbench_access_field' => 0,
-  );
-
   // Exported field_instance: 'node-idea_story-field_related_faculty'.
   $field_instances['node-idea_story-field_related_faculty'] = array(
     'bundle' => 'idea_story',
@@ -3347,7 +3256,6 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
   t('Publication Date');
   t('Publication or Event');
   t('ReThink date');
-  t('Region of Interest');
   t('Search field');
   t('Short URL');
   t('Stanford Business Season');
