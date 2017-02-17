@@ -385,3 +385,16 @@ function gsb_feature_idea_story_ct_ds_pre_render_alter(&$layout_render_array, $c
   }
 
 }
+
+/**
+ * Implements hook_node_export_node_import_alter()
+ *
+ * Maintains original nid while importing data using node export module
+ */
+
+function gsb_feature_idea_story_ct_node_export_node_import_alter(&$node, &$original_node, &$save_node) {
+$node->nid = $original_node->nid;
+$node->is_new = TRUE;
+$node = node_submit($node);
+node_save($node);
+}
