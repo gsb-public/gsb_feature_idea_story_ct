@@ -1219,133 +1219,6 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-idea_story-field_issue_number'.
-  $field_instances['node-idea_story-field_issue_number'] = array(
-    'bundle' => 'idea_story',
-    'custom_add_another' => '',
-    'custom_remove' => '',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'alumni_featured_content' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 41,
-      ),
-      'compact' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 44,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 37,
-      ),
-      'expanded' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 44,
-      ),
-      'idea_story_latest_stories' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 43,
-      ),
-      'idea_story_related' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'idea_story_top_stories' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'news_listing' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 42,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 22,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_issue_number',
-    'label' => 'Issue',
-    'required' => 0,
-    'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'full_html' => 'full_html',
-          'gsb_html_text' => 'gsb_html_text',
-          'gsb_wysiwyg_text' => 'gsb_wysiwyg_text',
-          'markdown' => 'markdown',
-          'plain_text' => 'plain_text',
-          'slideshow' => 'slideshow',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'full_html' => array(
-              'weight' => 1,
-            ),
-            'gsb_html_text' => array(
-              'weight' => -9,
-            ),
-            'gsb_wysiwyg_text' => array(
-              'weight' => -10,
-            ),
-            'markdown' => array(
-              'weight' => 0,
-            ),
-            'plain_text' => array(
-              'weight' => 10,
-            ),
-            'slideshow' => array(
-              'weight' => 0,
-            ),
-          ),
-        ),
-      ),
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'linkit' => array(
-        'enable' => 0,
-        'insert_plugin' => '',
-      ),
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'maxlength_js' => 0,
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 22,
-    ),
-    'workbench_access_field' => 0,
-  );
-
   // Exported field_instance: 'node-idea_story-field_key_taxonomy'.
   $field_instances['node-idea_story-field_key_taxonomy'] = array(
     'bundle' => 'idea_story',
@@ -1373,6 +1246,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'links' => 0,
+          'use_content_language' => TRUE,
           'view_mode' => 'insight_topics',
         ),
         'type' => 'entityreference_entity_view',
@@ -1390,6 +1264,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'links' => 0,
+          'use_content_language' => TRUE,
           'view_mode' => 'insight_topics',
         ),
         'type' => 'entityreference_entity_view',
@@ -1419,6 +1294,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'links' => 0,
+          'use_content_language' => TRUE,
           'view_mode' => 'insight_topics',
         ),
         'type' => 'entityreference_entity_view',
@@ -1899,188 +1775,6 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-idea_story-field_part_of_business_magazine'.
-  $field_instances['node-idea_story-field_part_of_business_magazine'] = array(
-    'bundle' => 'idea_story',
-    'custom_add_another' => '',
-    'custom_remove' => '',
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'alumni_featured_content' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 25,
-      ),
-      'compact' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 31,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 20,
-      ),
-      'expanded' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 29,
-      ),
-      'idea_story_latest_stories' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 26,
-      ),
-      'idea_story_related' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 27,
-      ),
-      'idea_story_top_stories' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 24,
-      ),
-      'news_listing' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 26,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 29,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_part_of_business_magazine',
-    'label' => 'Was this published in Stanford Business?',
-    'required' => 1,
-    'settings' => array(
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'checkall' => FALSE,
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-      ),
-      'type' => 'options_buttons',
-      'weight' => 18,
-    ),
-    'workbench_access_field' => 0,
-  );
-
-  // Exported field_instance: 'node-idea_story-field_part_of_rethink'.
-  $field_instances['node-idea_story-field_part_of_rethink'] = array(
-    'bundle' => 'idea_story',
-    'custom_add_another' => '',
-    'custom_remove' => '',
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'alumni_featured_content' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 24,
-      ),
-      'compact' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 30,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 19,
-      ),
-      'expanded' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 28,
-      ),
-      'idea_story_latest_stories' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 25,
-      ),
-      'idea_story_related' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 25,
-      ),
-      'idea_story_top_stories' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 21,
-      ),
-      'news_listing' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 25,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 27,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_part_of_rethink',
-    'label' => 'Was this promoted in Re:Think?',
-    'required' => 1,
-    'settings' => array(
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'checkall' => FALSE,
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-      ),
-      'type' => 'options_buttons',
-      'weight' => 17,
-    ),
-    'workbench_access_field' => 0,
-  );
-
   // Exported field_instance: 'node-idea_story-field_pathauto_title_alias'.
   $field_instances['node-idea_story-field_pathauto_title_alias'] = array(
     'bundle' => 'idea_story',
@@ -2199,6 +1893,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'links' => 0,
+          'use_content_language' => TRUE,
           'view_mode' => 'people_fpp',
         ),
         'type' => 'entityreference_entity_view',
@@ -2469,6 +2164,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'links' => 0,
+          'use_content_language' => TRUE,
           'view_mode' => 'idea_story_related',
         ),
         'type' => 'entityreference_entity_view',
@@ -2624,103 +2320,6 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-idea_story-field_rethink_date'.
-  $field_instances['node-idea_story-field_rethink_date'] = array(
-    'bundle' => 'idea_story',
-    'custom_add_another' => '',
-    'custom_remove' => '',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'alumni_featured_content' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 37,
-      ),
-      'compact' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 40,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 33,
-      ),
-      'expanded' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 40,
-      ),
-      'idea_story_latest_stories' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 39,
-      ),
-      'idea_story_related' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'idea_story_top_stories' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'news_listing' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 38,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 20,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_rethink_date',
-    'label' => 'ReThink date',
-    'required' => 0,
-    'settings' => array(
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'default_value' => 'now',
-      'default_value2' => 'same',
-      'default_value_code' => '',
-      'default_value_code2' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'date',
-      'settings' => array(
-        'display_all_day' => 0,
-        'increment' => 15,
-        'input_format' => 'M j Y - g:i:sa',
-        'input_format_custom' => '',
-        'label_position' => 'above',
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'repeat_collapsed' => 0,
-        'text_parts' => array(),
-        'year_range' => '-3:+3',
-      ),
-      'type' => 'date_popup',
-      'weight' => 18,
-    ),
-    'workbench_access_field' => 0,
-  );
-
   // Exported field_instance: 'node-idea_story-field_search_field'.
   $field_instances['node-idea_story-field_search_field'] = array(
     'bundle' => 'idea_story',
@@ -2802,6 +2401,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'field_centers_research_programs' => 'field_centers_research_programs',
         'field_date' => 'field_date',
         'field_editorial_summary' => 'field_editorial_summary',
+        'field_file_unlimited_public' => 0,
         'field_icon' => 0,
         'field_image_key_image' => 0,
         'field_key_taxonomy' => 'field_key_taxonomy',
@@ -2809,11 +2409,9 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'field_link_key_video' => 0,
         'field_link_single' => 0,
         'field_link_unlimited' => 0,
-        'field_part_of_business_magazine' => 0,
-        'field_part_of_rethink' => 0,
         'field_pathauto_title_alias' => 0,
-        'field_program_single' => 'field_program_single',
-        'field_region_of_interest' => 'field_region_of_interest',
+        'field_person_ref_unlimited' => 0,
+        'field_program_unlimited' => 0,
         'field_related_faculty' => 'field_related_faculty',
         'field_related_idea_story' => 0,
         'field_related_other_unlimited' => 0,
@@ -2824,98 +2422,9 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'widget' => array(
       'active' => 0,
       'module' => 'concat_field',
-      'settings' => array(
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-      ),
+      'settings' => array(),
       'type' => 'concat_field_default',
       'weight' => 18,
-    ),
-    'workbench_access_field' => 0,
-  );
-
-  // Exported field_instance: 'node-idea_story-field_season'.
-  $field_instances['node-idea_story-field_season'] = array(
-    'bundle' => 'idea_story',
-    'custom_add_another' => '',
-    'custom_remove' => '',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'alumni_featured_content' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 38,
-      ),
-      'compact' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 41,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 34,
-      ),
-      'expanded' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 41,
-      ),
-      'idea_story_latest_stories' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 40,
-      ),
-      'idea_story_related' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'idea_story_top_stories' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'news_listing' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 39,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 14,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_season',
-    'label' => 'Stanford Business Season',
-    'required' => 0,
-    'settings' => array(
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'use_hierarchical_select_lite' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-      ),
-      'type' => 'options_select',
-      'weight' => 19,
     ),
     'workbench_access_field' => 0,
   );
@@ -3008,230 +2517,6 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-idea_story-field_volume_number'.
-  $field_instances['node-idea_story-field_volume_number'] = array(
-    'bundle' => 'idea_story',
-    'custom_add_another' => '',
-    'custom_remove' => '',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'alumni_featured_content' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 40,
-      ),
-      'compact' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 43,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 36,
-      ),
-      'expanded' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 43,
-      ),
-      'idea_story_latest_stories' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 42,
-      ),
-      'idea_story_related' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'idea_story_top_stories' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'news_listing' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 41,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 15,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_volume_number',
-    'label' => 'Volume',
-    'required' => 0,
-    'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'full_html' => 'full_html',
-          'gsb_html_text' => 'gsb_html_text',
-          'gsb_wysiwyg_text' => 'gsb_wysiwyg_text',
-          'markdown' => 'markdown',
-          'plain_text' => 'plain_text',
-          'slideshow' => 'slideshow',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'full_html' => array(
-              'weight' => 1,
-            ),
-            'gsb_html_text' => array(
-              'weight' => -9,
-            ),
-            'gsb_wysiwyg_text' => array(
-              'weight' => -10,
-            ),
-            'markdown' => array(
-              'weight' => 0,
-            ),
-            'plain_text' => array(
-              'weight' => 10,
-            ),
-            'slideshow' => array(
-              'weight' => 0,
-            ),
-          ),
-        ),
-      ),
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'linkit' => array(
-        'enable' => 0,
-        'insert_plugin' => '',
-      ),
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'maxlength_js' => 0,
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 21,
-    ),
-    'workbench_access_field' => 0,
-  );
-
-  // Exported field_instance: 'node-idea_story-field_year'.
-  $field_instances['node-idea_story-field_year'] = array(
-    'bundle' => 'idea_story',
-    'custom_add_another' => '',
-    'custom_remove' => '',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'alumni_featured_content' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 39,
-      ),
-      'compact' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 42,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 35,
-      ),
-      'expanded' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 42,
-      ),
-      'idea_story_latest_stories' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 41,
-      ),
-      'idea_story_related' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'idea_story_top_stories' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'news_listing' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 40,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 16,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_year',
-    'label' => 'Year',
-    'required' => 0,
-    'settings' => array(
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'default_value' => 'now',
-      'default_value2' => 'same',
-      'default_value_code' => '',
-      'default_value_code2' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'date',
-      'settings' => array(
-        'display_all_day' => 0,
-        'increment' => 15,
-        'input_format' => 'M j Y - g:i:sa',
-        'input_format_custom' => '',
-        'label_position' => 'above',
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'repeat_collapsed' => 0,
-        'text_parts' => array(),
-        'year_range' => '-3:+3',
-      ),
-      'type' => 'date_text',
-      'weight' => 20,
-    ),
-    'workbench_access_field' => 0,
-  );
-
   // Translatables
   // Included for use with string extractors like potx.
   t('Academic Area');
@@ -3242,7 +2527,6 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
   t('Dek');
   t('Faculty');
   t('Files');
-  t('Issue');
   t('Key Audio');
   t('Key Image');
   t('Key Taxonomy');
@@ -3255,16 +2539,10 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
   t('Program');
   t('Publication Date');
   t('Publication or Event');
-  t('ReThink date');
   t('Search field');
   t('Short URL');
-  t('Stanford Business Season');
   t('Story or Announcement');
   t('URL Alias');
-  t('Volume');
-  t('Was this promoted in Re:Think?');
-  t('Was this published in Stanford Business?');
-  t('Year');
   t('minimum size 1200 x 630 px');
 
   return $field_instances;
