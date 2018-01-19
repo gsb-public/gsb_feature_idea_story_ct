@@ -1023,7 +1023,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 19,
       ),
       'expanded' => array(
         'label' => 'hidden',
@@ -1985,7 +1985,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 38,
+        'weight' => 29,
       ),
       'expanded' => array(
         'label' => 'above',
@@ -2344,7 +2344,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 32,
+        'weight' => 28,
       ),
       'expanded' => array(
         'label' => 'above',
