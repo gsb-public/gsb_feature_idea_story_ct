@@ -37,7 +37,7 @@ function gsb_feature_idea_story_ct_metatag_export_default() {
         'value' => 'summary_large_image',
       ),
       'twitter:creator' => array(
-        'value' => '@stanfordbiz',
+        'value' => '@stanfordgsb',
       ),
       'twitter:player' => array(
         'value' => '[node:field-link-key-video:url]',
