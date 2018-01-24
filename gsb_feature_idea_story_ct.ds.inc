@@ -170,11 +170,23 @@ function gsb_feature_idea_story_ct_ds_field_settings_info() {
       'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+        ),
+        'conditions' => array(),
+      ),
     ),
     'related_title' => array(
       'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+        ),
+        'conditions' => array(),
+      ),
     ),
     'social_buttons_bottom' => array(
       'weight' => '4',
