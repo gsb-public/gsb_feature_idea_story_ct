@@ -166,6 +166,16 @@ function gsb_feature_idea_story_ct_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'idea_story';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
+    'media_icon' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'related_title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'social_buttons_bottom' => array(
       'weight' => '4',
       'label' => 'hidden',
@@ -758,8 +768,8 @@ function gsb_feature_idea_story_ct_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'idea_story';
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
-    'media_icon' => array(
-      'weight' => '4',
+    'insights_label_insights' => array(
+      'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -769,8 +779,8 @@ function gsb_feature_idea_story_ct_ds_field_settings_info() {
         'conditions' => array(),
       ),
     ),
-    'insights_label_insights' => array(
-      'weight' => '0',
+    'media_icon' => array(
+      'weight' => '4',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -876,9 +886,6 @@ function gsb_feature_idea_story_ct_ds_custom_fields_info() {
   $ds_field->ui_limit = 'idea_story|*
 announcement|*
 school_story|*
-offsite_school_story|*
-offsite_idea_story|*
-ranking|*
 field_featured_item|*';
   $ds_field->properties = array(
     'code' => array(
@@ -1060,53 +1067,57 @@ function gsb_feature_idea_story_ct_ds_layout_settings_info() {
   $ds_layout->layout = 'ds_2col';
   $ds_layout->settings = array(
     'regions' => array(
-      'left' => array(
-        0 => 'group_wrapper_header',
-        2 => 'field_key_taxonomy',
-        3 => 'social_buttons_top',
-        5 => 'field_body',
-        7 => 'title',
-        8 => 'group_wrapper_taxonomy',
-        10 => 'social_buttons_bottom',
-        11 => 'field_editorial_summary',
-        13 => 'group_wrapper_byline',
-        14 => 'field_date',
-        15 => 'field_link_single',
-        16 => 'insights_signup_form',
-        18 => 'field_authors',
-        19 => 'gsb_media_inquiries',
-        20 => 'gsb_feature_idea_story_ct_explore_more',
-        23 => 'field_academic_area_unlimited',
-        24 => 'field_business_insight_topic',
-      ),
       'right' => array(
-        1 => 'field_related_faculty',
-        4 => 'field_person_ref_unlimited',
-        6 => 'field_related_idea_story',
-        9 => 'field_related_other_unlimited',
-        12 => 'field_link_unlimited',
-        17 => 'field_file_unlimited_public',
-        21 => 'gsb_feature_idea_story_display_top_stories_field',
-        22 => 'group_wrapper_related',
+        0 => 'related_title',
+        4 => 'field_related_faculty',
+        6 => 'field_person_ref_unlimited',
+        10 => 'field_related_idea_story',
+        12 => 'field_related_other_unlimited',
+        15 => 'field_link_unlimited',
+        19 => 'field_file_unlimited_public',
+        23 => 'gsb_feature_idea_story_display_top_stories_field',
+        24 => 'group_wrapper_related',
+      ),
+      'left' => array(
+        1 => 'group_wrapper_header',
+        2 => 'social_buttons_top',
+        3 => 'field_key_taxonomy',
+        5 => 'field_body',
+        7 => 'media_icon',
+        8 => 'title',
+        9 => 'group_wrapper_taxonomy',
+        11 => 'social_buttons_bottom',
+        13 => 'field_editorial_summary',
+        14 => 'field_link_single',
+        16 => 'group_wrapper_byline',
+        17 => 'field_date',
+        18 => 'insights_signup_form',
+        20 => 'field_authors',
+        21 => 'gsb_media_inquiries',
+        22 => 'gsb_feature_idea_story_ct_explore_more',
+        25 => 'field_academic_area_unlimited',
+        26 => 'field_business_insight_topic',
       ),
     ),
     'fields' => array(
+      'related_title' => 'right',
       'group_wrapper_header' => 'left',
-      'field_related_faculty' => 'right',
-      'field_key_taxonomy' => 'left',
       'social_buttons_top' => 'left',
-      'field_person_ref_unlimited' => 'right',
+      'field_key_taxonomy' => 'left',
+      'field_related_faculty' => 'right',
       'field_body' => 'left',
-      'field_related_idea_story' => 'right',
+      'field_person_ref_unlimited' => 'right',
+      'media_icon' => 'left',
       'title' => 'left',
       'group_wrapper_taxonomy' => 'left',
-      'field_related_other_unlimited' => 'right',
+      'field_related_idea_story' => 'right',
       'social_buttons_bottom' => 'left',
+      'field_related_other_unlimited' => 'right',
       'field_editorial_summary' => 'left',
+      'field_link_single' => 'left',
       'field_link_unlimited' => 'right',
       'group_wrapper_byline' => 'left',
       'field_date' => 'left',
-      'field_link_single' => 'left',
       'insights_signup_form' => 'left',
       'field_file_unlimited_public' => 'right',
       'field_authors' => 'left',
@@ -1355,6 +1366,7 @@ function gsb_feature_idea_story_ct_ds_layout_settings_info() {
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
   );
   $export['node|idea_story|teaser'] = $ds_layout;
 

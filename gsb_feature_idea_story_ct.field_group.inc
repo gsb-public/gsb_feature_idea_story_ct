@@ -314,8 +314,9 @@ function gsb_feature_idea_story_ct_field_group_info() {
     'children' => array(
       0 => 'field_editorial_summary',
       1 => 'field_key_taxonomy',
-      2 => 'title',
-      3 => 'group_wrapper_byline',
+      2 => 'media_icon',
+      3 => 'title',
+      4 => 'group_wrapper_byline',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -389,6 +390,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
       3 => 'field_related_other_unlimited',
       4 => 'field_file_unlimited_public',
       5 => 'field_person_ref_unlimited',
+      6 => 'related_title',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
