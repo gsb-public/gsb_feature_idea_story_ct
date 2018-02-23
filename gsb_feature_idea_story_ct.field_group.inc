@@ -197,6 +197,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
       3 => 'field_related_other_unlimited',
       4 => 'field_file_unlimited_public',
       5 => 'field_person_ref_unlimited',
+      6 => 'field_related_programs',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -253,8 +254,7 @@ function gsb_feature_idea_story_ct_field_group_info() {
       0 => 'group_academic_area',
       1 => 'group_additional_topics',
       2 => 'group_centers',
-      3 => 'group_regions_of_interest',
-      4 => 'group_tags',
+      3 => 'group_tags',
     ),
     'format_type' => 'tabs',
     'format_settings' => array(

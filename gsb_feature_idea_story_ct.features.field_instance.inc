@@ -96,7 +96,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'taxonomy_hs',
-      'weight' => 23,
+      'weight' => 31,
     ),
     'workbench_access_field' => 0,
   );
@@ -500,7 +500,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'taxonomy_hs',
-      'weight' => 23,
+      'weight' => 31,
     ),
     'workbench_access_field' => 0,
   );
@@ -989,7 +989,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 19,
+      'weight' => 20,
     ),
     'workbench_access_field' => 0,
   );
@@ -1324,7 +1324,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'options_select',
-      'weight' => 12,
+      'weight' => 11,
     ),
     'workbench_access_field' => 0,
   );
@@ -1770,7 +1770,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'link_field',
-      'weight' => 18,
+      'weight' => 19,
     ),
     'workbench_access_field' => 0,
   );
@@ -2042,7 +2042,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'options_select',
-      'weight' => 27,
+      'weight' => 26,
     ),
     'workbench_access_field' => 0,
   );
@@ -2320,6 +2320,99 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
+  // Exported field_instance: 'node-idea_story-field_related_programs'.
+  $field_instances['node-idea_story-field_related_programs'] = array(
+    'bundle' => 'idea_story',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'alumni_featured_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'compact' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'bypass_access' => FALSE,
+          'conditions' => array(),
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 30,
+      ),
+      'expanded' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'idea_story_latest_stories' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'idea_story_related' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'idea_story_top_stories' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'news_listing' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_related_programs',
+    'label' => 'Programs',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 18,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Exported field_instance: 'node-idea_story-field_search_field'.
   $field_instances['node-idea_story-field_search_field'] = array(
     'bundle' => 'idea_story',
@@ -2424,7 +2517,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
       'module' => 'concat_field',
       'settings' => array(),
       'type' => 'concat_field_default',
-      'weight' => 18,
+      'weight' => 16,
     ),
     'workbench_access_field' => 0,
   );
@@ -2537,6 +2630,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
   t('Mentioned');
   t('People (Faculty, Alumni, PhD Student, MSx Fellow, Staff)');
   t('Program');
+  t('Programs');
   t('Publication Date');
   t('Publication or Event');
   t('Search field');

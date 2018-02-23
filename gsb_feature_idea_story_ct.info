@@ -1,7 +1,7 @@
 name = GSB Feature Idea Story Content Type
 core = 7.x
 package = GSB
-version = 7.x-5.06
+version = 7.x-6.48
 project = gsb_feature_idea_story_ct
 dependencies[] = concat_field
 dependencies[] = ctools
@@ -101,6 +101,7 @@ features[field_instance][] = node-idea_story-field_program_unlimited
 features[field_instance][] = node-idea_story-field_related_faculty
 features[field_instance][] = node-idea_story-field_related_idea_story
 features[field_instance][] = node-idea_story-field_related_other_unlimited
+features[field_instance][] = node-idea_story-field_related_programs
 features[field_instance][] = node-idea_story-field_search_field
 features[field_instance][] = node-idea_story-field_tag
 features[metatag][] = node:idea_story
