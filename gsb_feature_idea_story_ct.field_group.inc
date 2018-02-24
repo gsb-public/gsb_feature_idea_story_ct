@@ -390,7 +390,8 @@ function gsb_feature_idea_story_ct_field_group_info() {
       3 => 'field_related_other_unlimited',
       4 => 'field_file_unlimited_public',
       5 => 'field_person_ref_unlimited',
-      6 => 'related_title',
+      6 => 'field_related_programs',
+      7 => 'related_title',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

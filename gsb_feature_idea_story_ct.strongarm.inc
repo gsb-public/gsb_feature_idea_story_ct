@@ -215,7 +215,7 @@ function gsb_feature_idea_story_ct_strongarm() {
       'display' => array(
         'gsb_feature_base_fields_faculty_authors' => array(
           'default' => array(
-            'weight' => '20',
+            'weight' => '19',
             'visible' => FALSE,
           ),
           'idea_story_related' => array(
