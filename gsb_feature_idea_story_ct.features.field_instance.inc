@@ -357,17 +357,27 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
+          'act' => 0,
           'full_html' => 0,
           'gsb_html_text' => 0,
           'gsb_wysiwyg_text' => 0,
-          'markdown' => 'markdown',
+          'image_resource_caption' => 0,
+          'image_text_equivalent' => 0,
+          'markdown' => 0,
+          'markdown_lite_minus_resources' => 0,
+          'markdown_plus_iframe' => 'markdown_plus_iframe',
+          'paragraphed_plain_text' => 0,
           'plain_text' => 0,
+          'sidebar' => 0,
           'slideshow' => 0,
         ),
         'allowed_formats_toggle' => 1,
         'default_order_toggle' => 0,
         'default_order_wrapper' => array(
           'formats' => array(
+            'act' => array(
+              'weight' => 0,
+            ),
             'full_html' => array(
               'weight' => 1,
             ),
@@ -377,11 +387,29 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
             'gsb_wysiwyg_text' => array(
               'weight' => -10,
             ),
+            'image_resource_caption' => array(
+              'weight' => 0,
+            ),
+            'image_text_equivalent' => array(
+              'weight' => 0,
+            ),
             'markdown' => array(
+              'weight' => 0,
+            ),
+            'markdown_lite_minus_resources' => array(
+              'weight' => 0,
+            ),
+            'markdown_plus_iframe' => array(
+              'weight' => 0,
+            ),
+            'paragraphed_plain_text' => array(
               'weight' => 0,
             ),
             'plain_text' => array(
               'weight' => 10,
+            ),
+            'sidebar' => array(
+              'weight' => 0,
             ),
             'slideshow' => array(
               'weight' => 0,
