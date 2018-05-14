@@ -190,6 +190,9 @@ function gsb_feature_idea_story_ct_strongarm() {
       'program_explore_other' => array(
         'custom_settings' => FALSE,
       ),
+      'homepage_school_news' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -250,6 +253,10 @@ function gsb_feature_idea_story_ct_strongarm() {
             'weight' => '27',
             'visible' => FALSE,
           ),
+          'homepage_school_news' => array(
+            'weight' => '27',
+            'visible' => FALSE,
+          ),
         ),
         'gsb_feature_idea_story_display_top_stories_field' => array(
           'default' => array(
@@ -285,6 +292,10 @@ function gsb_feature_idea_story_ct_strongarm() {
             'visible' => FALSE,
           ),
           'expanded' => array(
+            'weight' => '25',
+            'visible' => FALSE,
+          ),
+          'homepage_school_news' => array(
             'weight' => '25',
             'visible' => FALSE,
           ),
@@ -326,6 +337,10 @@ function gsb_feature_idea_story_ct_strongarm() {
             'weight' => '24',
             'visible' => FALSE,
           ),
+          'homepage_school_news' => array(
+            'weight' => '24',
+            'visible' => FALSE,
+          ),
         ),
         'insights_signup_form' => array(
           'default' => array(
@@ -356,6 +371,10 @@ function gsb_feature_idea_story_ct_strongarm() {
             'weight' => '21',
             'visible' => FALSE,
           ),
+          'homepage_school_news' => array(
+            'weight' => '19',
+            'visible' => FALSE,
+          ),
         ),
         'gsb_media_inquiries' => array(
           'default' => array(
@@ -384,6 +403,10 @@ function gsb_feature_idea_story_ct_strongarm() {
           ),
           'expanded' => array(
             'weight' => '23',
+            'visible' => FALSE,
+          ),
+          'homepage_school_news' => array(
+            'weight' => '22',
             'visible' => FALSE,
           ),
         ),

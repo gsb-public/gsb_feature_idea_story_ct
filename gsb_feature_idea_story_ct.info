@@ -66,6 +66,7 @@ features[field_group][] = group_academic_area|node|idea_story|form
 features[field_group][] = group_additional_topics|node|idea_story|form
 features[field_group][] = group_alumni_story|node|idea_story|form
 features[field_group][] = group_centers|node|idea_story|form
+features[field_group][] = group_news_wrapper|node|idea_story|homepage_school_news
 features[field_group][] = group_part_of_rethink|node|idea_story|form
 features[field_group][] = group_part_of_stanford_business|node|idea_story|form
 features[field_group][] = group_related_content|node|idea_story|form

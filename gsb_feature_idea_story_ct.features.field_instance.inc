@@ -48,6 +48,12 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 36,
       ),
+      'homepage_school_news' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 36,
+      ),
       'idea_story_latest_stories' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -138,6 +144,12 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 35,
       ),
+      'homepage_school_news' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 33,
+      ),
       'idea_story_latest_stories' => array(
         'label' => 'above',
         'settings' => array(),
@@ -224,6 +236,12 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'weight' => 6,
       ),
       'expanded' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 20,
+      ),
+      'homepage_school_news' => array(
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
@@ -317,6 +335,12 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 15,
+      ),
+      'homepage_school_news' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
       ),
       'idea_story_latest_stories' => array(
         'label' => 'hidden',
@@ -480,6 +504,12 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 37,
       ),
+      'homepage_school_news' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 37,
+      ),
       'idea_story_latest_stories' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -565,6 +595,12 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 32,
+      ),
+      'homepage_school_news' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 30,
       ),
       'idea_story_latest_stories' => array(
         'label' => 'above',
@@ -680,6 +716,22 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         ),
         'type' => 'date_default',
         'weight' => 0,
+      ),
+      'homepage_school_news' => array(
+        'label' => 'hidden',
+        'module' => 'date',
+        'settings' => array(
+          'conditions' => array(),
+          'format_type' => 'panopoly_day',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+          'show_remaining_days' => 0,
+          'show_repeat_rule' => 'show',
+        ),
+        'type' => 'date_default',
+        'weight' => 2,
       ),
       'idea_story_latest_stories' => array(
         'label' => 'hidden',
@@ -836,6 +888,12 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'type' => 'smart_trim_format',
         'weight' => 4,
       ),
+      'homepage_school_news' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
+      ),
       'idea_story_latest_stories' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -944,6 +1002,12 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 22,
+      ),
+      'homepage_school_news' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 23,
       ),
       'idea_story_latest_stories' => array(
         'label' => 'above',
@@ -1059,6 +1123,12 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 26,
       ),
+      'homepage_school_news' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 26,
+      ),
       'idea_story_latest_stories' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -1149,6 +1219,17 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         ),
         'type' => 'image',
         'weight' => 5,
+      ),
+      'homepage_school_news' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'conditions' => array(),
+          'image_link' => 'content',
+          'image_style' => '170x100',
+        ),
+        'type' => 'image',
+        'weight' => 0,
       ),
       'idea_story_latest_stories' => array(
         'label' => 'above',
@@ -1286,6 +1367,12 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 12,
       ),
+      'homepage_school_news' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
+      ),
       'idea_story_latest_stories' => array(
         'label' => 'hidden',
         'module' => 'gsb_feature_existing_node_list_fpp',
@@ -1389,6 +1476,12 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 31,
+      ),
+      'homepage_school_news' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 29,
       ),
       'idea_story_latest_stories' => array(
         'label' => 'above',
@@ -1500,6 +1593,12 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 30,
       ),
+      'homepage_school_news' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 28,
+      ),
       'idea_story_latest_stories' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1608,6 +1707,12 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'weight' => 5,
       ),
       'expanded' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 18,
+      ),
+      'homepage_school_news' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
@@ -1726,6 +1831,12 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 19,
       ),
+      'homepage_school_news' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 21,
+      ),
       'idea_story_latest_stories' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -1841,6 +1952,12 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 33,
       ),
+      'homepage_school_news' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 31,
+      ),
       'idea_story_latest_stories' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1933,6 +2050,12 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 14,
       ),
+      'homepage_school_news' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 13,
+      ),
       'idea_story_latest_stories' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2020,6 +2143,12 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 45,
+      ),
+      'homepage_school_news' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 35,
       ),
       'idea_story_latest_stories' => array(
         'label' => 'above',
@@ -2112,6 +2241,12 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 13,
       ),
+      'homepage_school_news' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
+      ),
       'idea_story_latest_stories' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -2203,6 +2338,12 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 16,
+      ),
+      'homepage_school_news' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 14,
       ),
       'idea_story_latest_stories' => array(
         'label' => 'hidden',
@@ -2297,6 +2438,12 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 17,
       ),
+      'homepage_school_news' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 16,
+      ),
       'idea_story_latest_stories' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -2387,6 +2534,12 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'homepage_school_news' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 17,
+      ),
       'idea_story_latest_stories' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2473,6 +2626,12 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 39,
+      ),
+      'homepage_school_news' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 34,
       ),
       'idea_story_latest_stories' => array(
         'label' => 'above',
@@ -2583,6 +2742,12 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 34,
+      ),
+      'homepage_school_news' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 32,
       ),
       'idea_story_latest_stories' => array(
         'label' => 'hidden',
