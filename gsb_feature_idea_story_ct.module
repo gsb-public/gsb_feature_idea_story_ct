@@ -398,3 +398,70 @@ $node->is_new = TRUE;
 $node = node_submit($node);
 node_save($node);
 }
+
+/**
+  * Implements hook_form_FORM_ID_alter().
+  */
+function gsb_feature_idea_story_ct_form_views_content_views_panes_content_type_edit_form_alter(&$form, &$form_state) {
+  // Add CTA - News:Home Page Two Across
+  if ($form_state['view']->name == 'gsb_insights_stanford_business' && $form_state['view']->current_display == 'panel_pane_1') {
+    if ($form_state['pane']->subtype == 'gsb_insights_stanford_business-panel_pane_1') {
+      $conf = $form_state['conf'];
+
+      $form['CTA'] = array(
+        '#type' => 'fieldset',
+        '#title' => t('CTA'),
+      );
+      $form['CTA']['cta_title'] = array(
+        '#title' => t('Text'),
+        '#type' => 'textfield',
+        '#description' => 'Enter an action statement.',
+        '#weight' => 1,
+        '#default_value' => !empty($conf['cta_title']) ? $conf['cta_title'] : '',
+      );
+      $form['CTA']['cta_url'] = array(
+        '#title' => t('URL'),
+        '#type' => 'textfield',
+        '#weight' => 2,
+        '#default_value' => !empty($conf['cta_url']) ? $conf['cta_url'] : '',
+      );
+    }
+    $form['#validate'][] = 'gsb_idea_story_pane_config_validate';
+    $form['#submit'][] = 'gsb_idea_story_pane_config_submit';
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_validate().
+ */
+function gsb_idea_story_pane_config_validate($form, &$form_state) {
+  if ($form_state['values']['cta_title'] != '' && $form_state['values']['cta_url'] == '') {
+    form_set_error('cta_url', t('CTA Url is required.'));
+  }
+  if ($form_state['values']['cta_title'] == '' && $form_state['values']['cta_url'] != '') {
+    form_set_error('cta_title', t('CTA title is required.'));
+  }
+}
+
+/**
+ * Submit handler for views_content_views_panes_content_type_edit_form.
+ *  - Save title link field in pane config.
+ */
+function gsb_idea_story_pane_config_submit($form, &$form_state) {
+   $form_state['conf']['cta_url'] = $form_state['values']['cta_url'];
+   $form_state['conf']['cta_title'] = $form_state['values']['cta_title'];
+}
+
+/**
+ * Implements hook_panels_pane_content_alter().
+ *  - Alter News by Criteria content pane title to be linked to a custom URL.
+ */
+function gsb_feature_idea_story_ct_panels_pane_content_alter($content, $pane, $args, $context) {
+  if ($content && $content->subtype == 'gsb_insights_stanford_business-panel_pane_1') {
+    if (!empty($pane->configuration['cta_title'])) {
+      $url_parts = drupal_parse_url($pane->configuration['cta_url']);
+      $url_parts['html'] = TRUE;
+      $content->content['#markup'] .= '<div class="homepage_insights-cta">' . l($pane->configuration['cta_title'], $url_parts['path'], $url_parts) . '</div>';
+    }
+  }
+}
