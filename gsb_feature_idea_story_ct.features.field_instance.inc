@@ -1226,7 +1226,7 @@ function gsb_feature_idea_story_ct_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(),
           'image_link' => 'content',
-          'image_style' => '170x100',
+          'image_style' => '566x_variable',
         ),
         'type' => 'image',
         'weight' => 0,
