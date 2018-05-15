@@ -518,6 +518,62 @@ function gsb_feature_idea_story_ct_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|idea_story|homepage_school_news';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'idea_story';
+  $ds_fieldsetting->view_mode = 'homepage_school_news';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '3',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h3',
+        'class' => '',
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => '',
+          'ow-def-cl' => TRUE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+        'conditions' => array(),
+      ),
+    ),
+    'field_date' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => '',
+          'ow-def-cl' => TRUE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_image_key_image' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => '',
+          'ow-def-cl' => TRUE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $export['node|idea_story|homepage_school_news'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|idea_story|idea_story_latest_stories';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'idea_story';
@@ -1210,6 +1266,41 @@ function gsb_feature_idea_story_ct_ds_layout_settings_info() {
     'layout_disable_css' => 0,
   );
   $export['node|idea_story|expanded'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|idea_story|homepage_school_news';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'idea_story';
+  $ds_layout->view_mode = 'homepage_school_news';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_image_key_image',
+        1 => 'group_news_wrapper',
+        2 => 'field_date',
+        3 => 'title',
+      ),
+    ),
+    'fields' => array(
+      'field_image_key_image' => 'ds_content',
+      'group_news_wrapper' => 'ds_content',
+      'field_date' => 'ds_content',
+      'title' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+  );
+  $export['node|idea_story|homepage_school_news'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
