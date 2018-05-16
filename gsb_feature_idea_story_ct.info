@@ -1,7 +1,7 @@
 name = GSB Feature Idea Story Content Type
 core = 7.x
 package = GSB
-version = 7.x-6.53
+version = 7.x-5.28
 project = gsb_feature_idea_story_ct
 dependencies[] = concat_field
 dependencies[] = ctools
@@ -28,7 +28,7 @@ dependencies[] = strongarm
 dependencies[] = taxonomy
 dependencies[] = text
 dependencies[] = views
-datestamp = 1426108952
+datestamp = 1526422875
 features[ctools][] = ds:ds:1
 features[ctools][] = field_group:field_group:1
 features[ctools][] = strongarm:strongarm:1

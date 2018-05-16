@@ -133,7 +133,8 @@ function gsb_feature_idea_story_ct_field_group_info() {
     'weight' => '1',
     'children' => array(
       0 => 'field_date',
-      1 => 'title',
+      1 => 'media_icon',
+      2 => 'title',
     ),
     'format_type' => 'div',
     'format_settings' => array(
