@@ -999,7 +999,8 @@ book|default
 publication|default
 working_paper|default
 case|default
-program|field_program_related';
+program|field_program_related,
+voices|default';
   $ds_field->properties = array(
     'code' => array(
       'value' => '<div class="superhead related">Related</div>',
