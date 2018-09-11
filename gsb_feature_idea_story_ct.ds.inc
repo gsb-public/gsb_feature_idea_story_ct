@@ -534,7 +534,7 @@ function gsb_feature_idea_story_ct_ds_field_settings_info() {
       'format' => 'default',
       'formatter_settings' => array(
         'link' => '1',
-        'wrapper' => 'h2',
+        'wrapper' => 'span',
         'class' => '',
         'ft' => array(
           'func' => 'theme_ds_field_expert',
